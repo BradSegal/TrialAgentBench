@@ -1,0 +1,72 @@
+{
+  "schema_id": "trialagentbench.practice_cases/v3",
+  "cases": [
+    {
+      "case_id": "trialdev.proper_interval_score",
+      "decision_scale": 2.0,
+      "expected": 21.0,
+      "lower": -1.0,
+      "operation": "interval_score",
+      "target": 2.0,
+      "upper": 1.0
+    },
+    {
+      "case_id": "trialdev.unit_equivalence",
+      "expected": true,
+      "operation": "unit",
+      "reference": "risk difference",
+      "reported": "difference in proportions"
+    },
+    {
+      "case_id": "trialdev.unit_wrong_scale",
+      "expected": false,
+      "operation": "unit",
+      "reference": "risk difference",
+      "reported": "odds ratio"
+    },
+    {
+      "case_id": "loss.accurate",
+      "operation": "numerical_loss",
+      "estimate": 0,
+      "lower": -0.1,
+      "upper": 0.1,
+      "target": 0,
+      "scale": 1,
+      "confidence_level": 0.95,
+      "expected": 0.1
+    },
+    {
+      "case_id": "loss.wide",
+      "operation": "numerical_loss",
+      "estimate": 0,
+      "lower": -2,
+      "upper": 2,
+      "target": 0,
+      "scale": 1,
+      "confidence_level": 0.95,
+      "expected": 2
+    },
+    {
+      "case_id": "loss.narrow_wrong",
+      "operation": "numerical_loss",
+      "estimate": 1,
+      "lower": 0.9,
+      "upper": 1.1,
+      "target": 0,
+      "scale": 1,
+      "confidence_level": 0.95,
+      "expected": 18.6
+    },
+    {
+      "case_id": "loss.point_outside_interval",
+      "operation": "numerical_loss",
+      "estimate": 0.3,
+      "lower": -0.1,
+      "upper": 0.1,
+      "target": 0,
+      "scale": 1,
+      "confidence_level": 0.95,
+      "expected": 0.25
+    }
+  ]
+}

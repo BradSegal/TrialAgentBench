@@ -1,0 +1,3726 @@
+{
+  "source": "development-control/current-programme-control/confirmation-readout",
+  "pool_manifest_json": "{\n  \"artifacts\": [\n    {\n      \"byte_length\": 59754,\n      \"relative_path\": \"baseline.parquet\",\n      \"sha256\": \"d4efc37b9add8bf51ec0765e0e26a8dfa66ea0aadc4e2782e7faad171521e3dd\"\n    },\n    {\n      \"byte_length\": 22913,\n      \"relative_path\": \"contacts.parquet\",\n      \"sha256\": \"690dc288fca176fa1cfa915acc254fd36de3bd4c0dd16cf6d7fb6d5da8743347\"\n    },\n    {\n      \"byte_length\": 7004,\n      \"relative_path\": \"numerical_runtime.json\",\n      \"sha256\": \"87a754a59f43b8175040df9d95ef6c61583d3fb7b8fbc2de9bc4aaea8049c35a\"\n    },\n    {\n      \"byte_length\": 16111,\n      \"relative_path\": \"participant_context/recruitment.json\",\n      \"sha256\": \"a06e6078c75510cedc888b012869160e21c5f85b67bcdef94bd155198a09f19f\"\n    },\n    {\n      \"byte_length\": 24633,\n      \"relative_path\": \"participant_context/target_population.parquet\",\n      \"sha256\": \"bc2e446e703294d370126bda8e915cb9482ad9b51ca4a0a8828d20bdca117051\"\n    },\n    {\n      \"byte_length\": 29186,\n      \"relative_path\": \"partitions/p000/complete_measurements.parquet\",\n      \"sha256\": \"19106b7a4d86304ae019520f27b472f65d81d4b36a313d33ddae9cf7fc060647\"\n    },\n    {\n      \"byte_length\": 17052,\n      \"relative_path\": \"partitions/p000/completion_records.parquet\",\n      \"sha256\": \"b17028f9caf8ce5d2562880c96a8dd31ca5f5278343f6a595081a7b097ad0f57\"\n    },\n    {\n      \"byte_length\": 22057,\n      \"relative_path\": \"partitions/p000/exposure.parquet\",\n      \"sha256\": \"4cc578c20cae66a51d97e1e6320b1e623a4ae3063b17b8af3b4b91416e6fff53\"\n    },\n    {\n      \"byte_length\": 62128,\n      \"relative_path\": \"partitions/p000/intercurrent_events.parquet\",\n      \"sha256\": \"0c625d3bc3c08a17b617645aaf2a6ea728e07bca933cfd2f24d9e8101f103ec7\"\n    },\n    {\n      \"byte_length\": 49080,\n      \"relative_path\": \"partitions/p000/observations.parquet\",\n      \"sha256\": \"732f318ab77301e489bc56703f64ceac33d267426fc5a3927e41ea2aba571f4b\"\n    },\n    {\n      \"byte_length\": 112670,\n      \"relative_path\": \"partitions/p000/safety_events.parquet\",\n      \"sha256\": \"d4ca7f42d547aeb3be7d4af9595059c56648e6e53c54b2da9230c2056537f256\"\n    },\n    {\n      \"byte_length\": 29186,\n      \"relative_path\": \"partitions/p001/complete_measurements.parquet\",\n      \"sha256\": \"14778e1119a96d7e550089304777b2f3d9b100b125a2bb0c1d23a5da87792839\"\n    },\n    {\n      \"byte_length\": 17052,\n      \"relative_path\": \"partitions/p001/completion_records.parquet\",\n      \"sha256\": \"b17028f9caf8ce5d2562880c96a8dd31ca5f5278343f6a595081a7b097ad0f57\"\n    },\n    {\n      \"byte_length\": 23292,\n      \"relative_path\": \"partitions/p001/exposure.parquet\",\n      \"sha256\": \"f89baacad0346b6c238bf1c3e30036a19f291629b9e449ec0356c15c25c3dddd\"\n    },\n    {\n      \"byte_length\": 62128,\n      \"relative_path\": \"partitions/p001/intercurrent_events.parquet\",\n      \"sha256\": \"0c625d3bc3c08a17b617645aaf2a6ea728e07bca933cfd2f24d9e8101f103ec7\"\n    },\n    {\n      \"byte_length\": 48864,\n      \"relative_path\": \"partitions/p001/observations.parquet\",\n      \"sha256\": \"1c0349c48e7116d7454a3a38e1af505b0c3286a0a0888bea90df9f828129442f\"\n    },\n    {\n      \"byte_length\": 123869,\n      \"relative_path\": \"partitions/p001/safety_events.parquet\",\n      \"sha256\": \"2f090f4654c60e1b46131f5e56712d1f65240b8727dae5f181a3dcf29c1c4e3b\"\n    },\n    {\n      \"byte_length\": 29186,\n      \"relative_path\": \"partitions/p002/complete_measurements.parquet\",\n      \"sha256\": \"bc568a2bcfab902b40325081e7fdf042a05febc1cc81ddc0df035c5ac8395ffb\"\n    },\n    {\n      \"byte_length\": 17052,\n      \"relative_path\": \"partitions/p002/completion_records.parquet\",\n      \"sha256\": \"b17028f9caf8ce5d2562880c96a8dd31ca5f5278343f6a595081a7b097ad0f57\"\n    },\n    {\n      \"byte_length\": 23300,\n      \"relative_path\": \"partitions/p002/exposure.parquet\",\n      \"sha256\": \"3df00c3ef3a4eb0769db40b7307132b820e952fe953b5442ea1c92a229c1da06\"\n    },\n    {\n      \"byte_length\": 62128,\n      \"relative_path\": \"partitions/p002/intercurrent_events.parquet\",\n      \"sha256\": \"0c625d3bc3c08a17b617645aaf2a6ea728e07bca933cfd2f24d9e8101f103ec7\"\n    },\n    {\n      \"byte_length\": 48889,\n      \"relative_path\": \"partitions/p002/observations.parquet\",\n      \"sha256\": \"2929ab3891deb6b90ecf7dc29fd5b8dc94c4c06d77f9825c0212e9affe800a8b\"\n    },\n    {\n      \"byte_length\": 163054,\n      \"relative_path\": \"partitions/p002/safety_events.parquet\",\n      \"sha256\": \"5d392ab0cf670b782d30d0a328b693374f584054399ce657f02455336c116b7c\"\n    },\n    {\n      \"byte_length\": 29186,\n      \"relative_path\": \"partitions/p003/complete_measurements.parquet\",\n      \"sha256\": \"dba39938a85e7240936bd254f6e44e7119b71e0b36ff60ef5decbf76aa75f844\"\n    },\n    {\n      \"byte_length\": 17052,\n      \"relative_path\": \"partitions/p003/completion_records.parquet\",\n      \"sha256\": \"b17028f9caf8ce5d2562880c96a8dd31ca5f5278343f6a595081a7b097ad0f57\"\n    },\n    {\n      \"byte_length\": 23292,\n      \"relative_path\": \"partitions/p003/exposure.parquet\",\n      \"sha256\": \"f89baacad0346b6c238bf1c3e30036a19f291629b9e449ec0356c15c25c3dddd\"\n    },\n    {\n      \"byte_length\": 62128,\n      \"relative_path\": \"partitions/p003/intercurrent_events.parquet\",\n      \"sha256\": \"0c625d3bc3c08a17b617645aaf2a6ea728e07bca933cfd2f24d9e8101f103ec7\"\n    },\n    {\n      \"byte_length\": 48855,\n      \"relative_path\": \"partitions/p003/observations.parquet\",\n      \"sha256\": \"12a3d0db276a2d58a063b7281c8f43dd5d02a0efa09911f39a24aa83fdc22ac5\"\n    },\n    {\n      \"byte_length\": 124007,\n      \"relative_path\": \"partitions/p003/safety_events.parquet\",\n      \"sha256\": \"99b5744f2f2fa082f569caebeb39b86f5d288def38d6ec97d02054f9adf55eaa\"\n    },\n    {\n      \"byte_length\": 29186,\n      \"relative_path\": \"partitions/p004/complete_measurements.parquet\",\n      \"sha256\": \"baca21e838df4d16bc37ab901de869d35e4795274df8befb4b5d90a4412e57fd\"\n    },\n    {\n      \"byte_length\": 17052,\n      \"relative_path\": \"partitions/p004/completion_records.parquet\",\n      \"sha256\": \"b17028f9caf8ce5d2562880c96a8dd31ca5f5278343f6a595081a7b097ad0f57\"\n    },\n    {\n      \"byte_length\": 23334,\n      \"relative_path\": \"partitions/p004/exposure.parquet\",\n      \"sha256\": \"aec8c20488a6d1071ffb96694cad55a77dd7bf8622d553669d2d38bdf0148d6d\"\n    },\n    {\n      \"byte_length\": 62128,\n      \"relative_path\": \"partitions/p004/intercurrent_events.parquet\",\n      \"sha256\": \"0c625d3bc3c08a17b617645aaf2a6ea728e07bca933cfd2f24d9e8101f103ec7\"\n    },\n    {\n      \"byte_length\": 49037,\n      \"relative_path\": \"partitions/p004/observations.parquet\",\n      \"sha256\": \"35c52892527d66debae5fa8a4bcf7dc4ef79022e4efe2f114dad5a15f97db189\"\n    },\n    {\n      \"byte_length\": 212263,\n      \"relative_path\": \"partitions/p004/safety_events.parquet\",\n      \"sha256\": \"2d540687410252038adca8595492337adf67e25b1ed0a49cb78c728187fc7d7a\"\n    },\n    {\n      \"byte_length\": 29186,\n      \"relative_path\": \"partitions/p005/complete_measurements.parquet\",\n      \"sha256\": \"7332ffa023adef88bb48c55c099c49b9a50e7f279e17b84a03302e3482e8f94c\"\n    },\n    {\n      \"byte_length\": 17052,\n      \"relative_path\": \"partitions/p005/completion_records.parquet\",\n      \"sha256\": \"b17028f9caf8ce5d2562880c96a8dd31ca5f5278343f6a595081a7b097ad0f57\"\n    },\n    {\n      \"byte_length\": 23292,\n      \"relative_path\": \"partitions/p005/exposure.parquet\",\n      \"sha256\": \"f89baacad0346b6c238bf1c3e30036a19f291629b9e449ec0356c15c25c3dddd\"\n    },\n    {\n      \"byte_length\": 62128,\n      \"relative_path\": \"partitions/p005/intercurrent_events.parquet\",\n      \"sha256\": \"0c625d3bc3c08a17b617645aaf2a6ea728e07bca933cfd2f24d9e8101f103ec7\"\n    },\n    {\n      \"byte_length\": 48871,\n      \"relative_path\": \"partitions/p005/observations.parquet\",\n      \"sha256\": \"96cf6a6bc0336e484f44bedb2ebff409bc2bd41b90a62c3c40ade3e1e120bd9d\"\n    },\n    {\n      \"byte_length\": 121293,\n      \"relative_path\": \"partitions/p005/safety_events.parquet\",\n      \"sha256\": \"954bbddeaa93ba4af0e2e20497b6171292cd4da118e207f5c405309d17a19457\"\n    },\n    {\n      \"byte_length\": 29186,\n      \"relative_path\": \"partitions/p006/complete_measurements.parquet\",\n      \"sha256\": \"49d0505c0006697831a40d836306797f59a560e45fe95fa7648694449fb8df99\"\n    },\n    {\n      \"byte_length\": 17052,\n      \"relative_path\": \"partitions/p006/completion_records.parquet\",\n      \"sha256\": \"b17028f9caf8ce5d2562880c96a8dd31ca5f5278343f6a595081a7b097ad0f57\"\n    },\n    {\n      \"byte_length\": 23292,\n      \"relative_path\": \"partitions/p006/exposure.parquet\",\n      \"sha256\": \"cc220e0e62b77a1e0fa69446b018d32bacf6b546927b21384bbb7547e3b4327f\"\n    },\n    {\n      \"byte_length\": 62128,\n      \"relative_path\": \"partitions/p006/intercurrent_events.parquet\",\n      \"sha256\": \"0c625d3bc3c08a17b617645aaf2a6ea728e07bca933cfd2f24d9e8101f103ec7\"\n    },\n    {\n      \"byte_length\": 48855,\n      \"relative_path\": \"partitions/p006/observations.parquet\",\n      \"sha256\": \"e792012b061ff9d0068479d08517bfb21eb2b7f2858219d7fa99f766eb52f736\"\n    },\n    {\n      \"byte_length\": 131569,\n      \"relative_path\": \"partitions/p006/safety_events.parquet\",\n      \"sha256\": \"53be2da610e7c711ed28882ea3374853f4710d520b8eac68c93578a18029165b\"\n    },\n    {\n      \"byte_length\": 83847,\n      \"relative_path\": \"world.json\",\n      \"sha256\": \"0443a91276b77dfcc8fd985f41763989d73a48ca6a3e6b26cebdee88e173106b\"\n    }\n  ],\n  \"audience\": \"evaluation\",\n  \"baseline_fields\": [\n    \"baseline_monthly_migraine_days\",\n    \"age_years\",\n    \"prior_oral_preventive_use\",\n    \"sex\",\n    \"baseline_body_mass_index\",\n    \"baseline_acute_medication_days\",\n    \"baseline_headache_impact_score\",\n    \"baseline_diagnosis_duration_months\"\n  ],\n  \"calendar_origin\": \"2024-01-01\",\n  \"collection_days\": [\n    28,\n    56,\n    84,\n    168,\n    336\n  ],\n  \"epochs\": [\n    [\n      \"TREATMENT\",\n      0.0,\n      336.0\n    ]\n  ],\n  \"monotone_dropout\": true,\n  \"outcome_object\": \"Migraine\",\n  \"participant_count\": 2000,\n  \"partitions\": [\n    {\n      \"asset_id\": \"control\",\n      \"directory\": \"partitions/p000\",\n      \"dose\": null\n    },\n    {\n      \"asset_id\": \"hzp-40604\",\n      \"directory\": \"partitions/p001\",\n      \"dose\": \"standard\"\n    },\n    {\n      \"asset_id\": \"hzp-40604\",\n      \"directory\": \"partitions/p002\",\n      \"dose\": \"intensified\"\n    },\n    {\n      \"asset_id\": \"hzp-43314\",\n      \"directory\": \"partitions/p003\",\n      \"dose\": \"standard\"\n    },\n    {\n      \"asset_id\": \"hzp-43314\",\n      \"directory\": \"partitions/p004\",\n      \"dose\": \"intensified\"\n    },\n    {\n      \"asset_id\": \"hzp-15325\",\n      \"directory\": \"partitions/p005\",\n      \"dose\": \"standard\"\n    },\n    {\n      \"asset_id\": \"hzp-15325\",\n      \"directory\": \"partitions/p006\",\n      \"dose\": \"intensified\"\n    }\n  ],\n  \"recruitment\": {\n    \"groups\": [\n      {\n        \"conditions\": [\n          {\n            \"field_id\": \"prior_oral_preventive_use\",\n            \"operator\": \"greater_than\",\n            \"value\": 0.0\n          }\n        ],\n        \"group_id\": \"prior_preventive\",\n        \"label\": \"Prior oral preventive use\",\n        \"participant_count\": 953\n      },\n      {\n        \"conditions\": [\n          {\n            \"field_id\": \"baseline_acute_medication_days\",\n            \"operator\": \"greater_than_or_equal\",\n            \"value\": 10.0\n          },\n          {\n            \"field_id\": \"baseline_headache_impact_score\",\n            \"operator\": \"greater_than_or_equal\",\n            \"value\": 60.0\n          }\n        ],\n        \"group_id\": \"medication_and_impact\",\n        \"label\": \"Acute medication on at least 10 days and HIT-6 at least 60\",\n        \"participant_count\": 1169\n      }\n    ],\n    \"screen_failure_fraction\": 0.3,\n    \"sites\": [\n      {\n        \"candidate_count\": 26,\n        \"country_code\": \"FIN\",\n        \"opening_day\": 10.0,\n        \"screening_candidates_per_month\": 0.927,\n        \"site_id\": \"site_020\"\n      },\n      {\n        \"candidate_count\": 30,\n        \"country_code\": \"USA\",\n        \"opening_day\": 64.0,\n        \"screening_candidates_per_month\": 1.3905,\n        \"site_id\": \"site_001\"\n      },\n      {\n        \"candidate_count\": 19,\n        \"country_code\": \"FIN\",\n        \"opening_day\": 27.0,\n        \"screening_candidates_per_month\": 0.927,\n        \"site_id\": \"site_012\"\n      },\n      {\n        \"candidate_count\": 15,\n        \"country_code\": \"FIN\",\n        \"opening_day\": 62.0,\n        \"screening_candidates_per_month\": 0.927,\n        \"site_id\": \"site_088\"\n      },\n      {\n        \"candidate_count\": 9,\n        \"country_code\": \"USA\",\n        \"opening_day\": 52.0,\n        \"screening_candidates_per_month\": 0.4635,\n        \"site_id\": \"site_065\"\n      },\n      {\n        \"candidate_count\": 33,\n        \"country_code\": \"USA\",\n        \"opening_day\": 38.0,\n        \"screening_candidates_per_month\": 1.3905,\n        \"site_id\": \"site_021\"\n      },\n      {\n        \"candidate_count\": 7,\n        \"country_code\": \"CAN\",\n        \"opening_day\": 58.0,\n        \"screening_candidates_per_month\": 0.4635,\n        \"site_id\": \"site_058\"\n      },\n      {\n        \"candidate_count\": 22,\n        \"country_code\": \"CAN\",\n        \"opening_day\": 78.0,\n        \"screening_candidates_per_month\": 0.927,\n        \"site_id\": \"site_086\"\n      },\n      {\n        \"candidate_count\": 24,\n        \"country_code\": \"ESP\",\n        \"opening_day\": 43.0,\n        \"screening_candidates_per_month\": 0.927,\n        \"site_id\": \"site_019\"\n      },\n      {\n        \"candidate_count\": 23,\n        \"country_code\": \"FIN\",\n        \"opening_day\": 13.0,\n        \"screening_candidates_per_month\": 0.927,\n        \"site_id\": \"site_016\"\n      },\n      {\n        \"candidate_count\": 11,\n        \"country_code\": \"USA\",\n        \"opening_day\": 49.0,\n        \"screening_candidates_per_month\": 0.4635,\n        \"site_id\": \"site_017\"\n      },\n      {\n        \"candidate_count\": 37,\n        \"country_code\": \"USA\",\n        \"opening_day\": 15.0,\n        \"screening_candidates_per_month\": 1.3905,\n        \"site_id\": \"site_081\"\n      },\n      {\n        \"candidate_count\": 24,\n        \"country_code\": \"ESP\",\n        \"opening_day\": 8.0,\n        \"screening_candidates_per_month\": 0.927,\n        \"site_id\": \"site_047\"\n      },\n      {\n        \"candidate_count\": 23,\n        \"country_code\": \"CAN\",\n        \"opening_day\": 61.0,\n        \"screening_candidates_per_month\": 0.927,\n        \"site_id\": \"site_006\"\n      },\n      {\n        \"candidate_count\": 30,\n        \"country_code\": \"FIN\",\n        \"opening_day\": 26.0,\n        \"screening_candidates_per_month\": 1.3905,\n        \"site_id\": \"site_004\"\n      },\n      {\n        \"candidate_count\": 33,\n        \"country_code\": \"USA\",\n        \"opening_day\": 31.0,\n        \"screening_candidates_per_month\": 1.3905,\n        \"site_id\": \"site_029\"\n      },\n      {\n        \"candidate_count\": 30,\n        \"country_code\": \"USA\",\n        \"opening_day\": 88.0,\n        \"screening_candidates_per_month\": 1.3905,\n        \"site_id\": \"site_073\"\n      },\n      {\n        \"candidate_count\": 15,\n        \"country_code\": \"USA\",\n        \"opening_day\": 28.0,\n        \"screening_candidates_per_month\": 0.4635,\n        \"site_id\": \"site_061\"\n      },\n      {\n        \"candidate_count\": 43,\n        \"country_code\": \"USA\",\n        \"opening_day\": 26.0,\n        \"screening_candidates_per_month\": 1.3905,\n        \"site_id\": \"site_009\"\n      },\n      {\n        \"candidate_count\": 18,\n        \"country_code\": \"FIN\",\n        \"opening_day\": 84.0,\n        \"screening_candidates_per_month\": 0.927,\n        \"site_id\": \"site_068\"\n      },\n      {\n        \"candidate_count\": 26,\n        \"country_code\": \"FIN\",\n        \"opening_day\": 0.0,\n        \"screening_candidates_per_month\": 0.927,\n        \"site_id\": \"site_008\"\n      },\n      {\n        \"candidate_count\": 23,\n        \"country_code\": \"USA\",\n        \"opening_day\": 33.0,\n        \"screening_candidates_per_month\": 0.927,\n        \"site_id\": \"site_037\"\n      },\n      {\n        \"candidate_count\": 10,\n        \"country_code\": \"USA\",\n        \"opening_day\": 24.0,\n        \"screening_candidates_per_month\": 0.4635,\n        \"site_id\": \"site_053\"\n      },\n      {\n        \"candidate_count\": 26,\n        \"country_code\": \"USA\",\n        \"opening_day\": 16.0,\n        \"screening_candidates_per_month\": 1.3905,\n        \"site_id\": \"site_045\"\n      },\n      {\n        \"candidate_count\": 36,\n        \"country_code\": \"ESP\",\n        \"opening_day\": 88.0,\n        \"screening_candidates_per_month\": 1.3905,\n        \"site_id\": \"site_007\"\n      },\n      {\n        \"candidate_count\": 13,\n        \"country_code\": \"CAN\",\n        \"opening_day\": 32.0,\n        \"screening_candidates_per_month\": 0.4635,\n        \"site_id\": \"site_002\"\n      },\n      {\n        \"candidate_count\": 31,\n        \"country_code\": \"CAN\",\n        \"opening_day\": 20.0,\n        \"screening_candidates_per_month\": 1.3905,\n        \"site_id\": \"site_030\"\n      },\n      {\n        \"candidate_count\": 22,\n        \"country_code\": \"USA\",\n        \"opening_day\": 12.0,\n        \"screening_candidates_per_month\": 0.927,\n        \"site_id\": \"site_069\"\n      },\n      {\n        \"candidate_count\": 33,\n        \"country_code\": \"CAN\",\n        \"opening_day\": 65.0,\n        \"screening_candidates_per_month\": 1.3905,\n        \"site_id\": \"site_022\"\n      },\n      {\n        \"candidate_count\": 32,\n        \"country_code\": \"CAN\",\n        \"opening_day\": 34.0,\n        \"screening_candidates_per_month\": 1.3905,\n        \"site_id\": \"site_014\"\n      },\n      {\n        \"candidate_count\": 25,\n        \"country_code\": \"USA\",\n        \"opening_day\": 4.0,\n        \"screening_candidates_per_month\": 0.927,\n        \"site_id\": \"site_085\"\n      },\n      {\n        \"candidate_count\": 15,\n        \"country_code\": \"USA\",\n        \"opening_day\": 60.0,\n        \"screening_candidates_per_month\": 0.927,\n        \"site_id\": \"site_057\"\n      },\n      {\n        \"candidate_count\": 33,\n        \"country_code\": \"CAN\",\n        \"opening_day\": 14.0,\n        \"screening_candidates_per_month\": 1.3905,\n        \"site_id\": \"site_046\"\n      },\n      {\n        \"candidate_count\": 32,\n        \"country_code\": \"ESP\",\n        \"opening_day\": 51.0,\n        \"screening_candidates_per_month\": 1.3905,\n        \"site_id\": \"site_067\"\n      },\n      {\n        \"candidate_count\": 19,\n        \"country_code\": \"FIN\",\n        \"opening_day\": 43.0,\n        \"screening_candidates_per_month\": 0.927,\n        \"site_id\": \"site_024\"\n      },\n      {\n        \"candidate_count\": 31,\n        \"country_code\": \"CAN\",\n        \"opening_day\": 19.0,\n        \"screening_candidates_per_month\": 1.3905,\n        \"site_id\": \"site_038\"\n      },\n      {\n        \"candidate_count\": 39,\n        \"country_code\": \"FIN\",\n        \"opening_day\": 35.0,\n        \"screening_candidates_per_month\": 1.3905,\n        \"site_id\": \"site_036\"\n      },\n      {\n        \"candidate_count\": 29,\n        \"country_code\": \"FIN\",\n        \"opening_day\": 75.0,\n        \"screening_candidates_per_month\": 1.3905,\n        \"site_id\": \"site_064\"\n      },\n      {\n        \"candidate_count\": 17,\n        \"country_code\": \"ESP\",\n        \"opening_day\": 86.0,\n        \"screening_candidates_per_month\": 0.927,\n        \"site_id\": \"site_031\"\n      },\n      {\n        \"candidate_count\": 21,\n        \"country_code\": \"USA\",\n        \"opening_day\": 89.0,\n        \"screening_candidates_per_month\": 1.3905,\n        \"site_id\": \"site_025\"\n      },\n      {\n        \"candidate_count\": 9,\n        \"country_code\": \"USA\",\n        \"opening_day\": 82.0,\n        \"screening_candidates_per_month\": 0.4635,\n        \"site_id\": \"site_033\"\n      },\n      {\n        \"candidate_count\": 3,\n        \"country_code\": \"ESP\",\n        \"opening_day\": 29.0,\n        \"screening_candidates_per_month\": 0.4635,\n        \"site_id\": \"site_039\"\n      },\n      {\n        \"candidate_count\": 13,\n        \"country_code\": \"ESP\",\n        \"opening_day\": 40.0,\n        \"screening_candidates_per_month\": 0.4635,\n        \"site_id\": \"site_011\"\n      },\n      {\n        \"candidate_count\": 26,\n        \"country_code\": \"ESP\",\n        \"opening_day\": 6.0,\n        \"screening_candidates_per_month\": 0.927,\n        \"site_id\": \"site_051\"\n      },\n      {\n        \"candidate_count\": 40,\n        \"country_code\": \"ESP\",\n        \"opening_day\": 6.0,\n        \"screening_candidates_per_month\": 1.3905,\n        \"site_id\": \"site_027\"\n      },\n      {\n        \"candidate_count\": 12,\n        \"country_code\": \"CAN\",\n        \"opening_day\": 47.0,\n        \"screening_candidates_per_month\": 0.4635,\n        \"site_id\": \"site_050\"\n      },\n      {\n        \"candidate_count\": 29,\n        \"country_code\": \"FIN\",\n        \"opening_day\": 75.0,\n        \"screening_candidates_per_month\": 1.3905,\n        \"site_id\": \"site_044\"\n      },\n      {\n        \"candidate_count\": 16,\n        \"country_code\": \"CAN\",\n        \"opening_day\": 71.0,\n        \"screening_candidates_per_month\": 0.927,\n        \"site_id\": \"site_074\"\n      },\n      {\n        \"candidate_count\": 18,\n        \"country_code\": \"FIN\",\n        \"opening_day\": 62.0,\n        \"screening_candidates_per_month\": 0.927,\n        \"site_id\": \"site_060\"\n      },\n      {\n        \"candidate_count\": 18,\n        \"country_code\": \"FIN\",\n        \"opening_day\": 83.0,\n        \"screening_candidates_per_month\": 0.927,\n        \"site_id\": \"site_056\"\n      },\n      {\n        \"candidate_count\": 32,\n        \"country_code\": \"CAN\",\n        \"opening_day\": 21.0,\n        \"screening_candidates_per_month\": 1.3905,\n        \"site_id\": \"site_082\"\n      },\n      {\n        \"candidate_count\": 33,\n        \"country_code\": \"CAN\",\n        \"opening_day\": 54.0,\n        \"screening_candidates_per_month\": 1.3905,\n        \"site_id\": \"site_034\"\n      },\n      {\n        \"candidate_count\": 23,\n        \"country_code\": \"ESP\",\n        \"opening_day\": 82.0,\n        \"screening_candidates_per_month\": 1.3905,\n        \"site_id\": \"site_003\"\n      },\n      {\n        \"candidate_count\": 9,\n        \"country_code\": \"CAN\",\n        \"opening_day\": 20.0,\n        \"screening_candidates_per_month\": 0.4635,\n        \"site_id\": \"site_070\"\n      },\n      {\n        \"candidate_count\": 17,\n        \"country_code\": \"ESP\",\n        \"opening_day\": 62.0,\n        \"screening_candidates_per_month\": 0.927,\n        \"site_id\": \"site_071\"\n      },\n      {\n        \"candidate_count\": 16,\n        \"country_code\": \"USA\",\n        \"opening_day\": 9.0,\n        \"screening_candidates_per_month\": 0.927,\n        \"site_id\": \"site_005\"\n      },\n      {\n        \"candidate_count\": 11,\n        \"country_code\": \"FIN\",\n        \"opening_day\": 62.0,\n        \"screening_candidates_per_month\": 0.4635,\n        \"site_id\": \"site_028\"\n      },\n      {\n        \"candidate_count\": 33,\n        \"country_code\": \"FIN\",\n        \"opening_day\": 86.0,\n        \"screening_candidates_per_month\": 1.3905,\n        \"site_id\": \"site_052\"\n      },\n      {\n        \"candidate_count\": 11,\n        \"country_code\": \"ESP\",\n        \"opening_day\": 12.0,\n        \"screening_candidates_per_month\": 0.4635,\n        \"site_id\": \"site_015\"\n      },\n      {\n        \"candidate_count\": 23,\n        \"country_code\": \"CAN\",\n        \"opening_day\": 56.0,\n        \"screening_candidates_per_month\": 1.3905,\n        \"site_id\": \"site_042\"\n      },\n      {\n        \"candidate_count\": 9,\n        \"country_code\": \"USA\",\n        \"opening_day\": 71.0,\n        \"screening_candidates_per_month\": 0.4635,\n        \"site_id\": \"site_013\"\n      },\n      {\n        \"candidate_count\": 3,\n        \"country_code\": \"FIN\",\n        \"opening_day\": 51.0,\n        \"screening_candidates_per_month\": 0.4635,\n        \"site_id\": \"site_084\"\n      },\n      {\n        \"candidate_count\": 7,\n        \"country_code\": \"ESP\",\n        \"opening_day\": 50.0,\n        \"screening_candidates_per_month\": 0.4635,\n        \"site_id\": \"site_023\"\n      },\n      {\n        \"candidate_count\": 13,\n        \"country_code\": \"FIN\",\n        \"opening_day\": 32.0,\n        \"screening_candidates_per_month\": 0.4635,\n        \"site_id\": \"site_032\"\n      },\n      {\n        \"candidate_count\": 9,\n        \"country_code\": \"USA\",\n        \"opening_day\": 37.0,\n        \"screening_candidates_per_month\": 0.4635,\n        \"site_id\": \"site_049\"\n      },\n      {\n        \"candidate_count\": 22,\n        \"country_code\": \"ESP\",\n        \"opening_day\": 72.0,\n        \"screening_candidates_per_month\": 0.927,\n        \"site_id\": \"site_087\"\n      },\n      {\n        \"candidate_count\": 42,\n        \"country_code\": \"USA\",\n        \"opening_day\": 2.0,\n        \"screening_candidates_per_month\": 1.3905,\n        \"site_id\": \"site_077\"\n      },\n      {\n        \"candidate_count\": 27,\n        \"country_code\": \"ESP\",\n        \"opening_day\": 68.0,\n        \"screening_candidates_per_month\": 1.3905,\n        \"site_id\": \"site_075\"\n      },\n      {\n        \"candidate_count\": 31,\n        \"country_code\": \"CAN\",\n        \"opening_day\": 67.0,\n        \"screening_candidates_per_month\": 0.927,\n        \"site_id\": \"site_066\"\n      },\n      {\n        \"candidate_count\": 42,\n        \"country_code\": \"ESP\",\n        \"opening_day\": 14.0,\n        \"screening_candidates_per_month\": 1.3905,\n        \"site_id\": \"site_035\"\n      },\n      {\n        \"candidate_count\": 36,\n        \"country_code\": \"ESP\",\n        \"opening_day\": 12.0,\n        \"screening_candidates_per_month\": 1.3905,\n        \"site_id\": \"site_043\"\n      },\n      {\n        \"candidate_count\": 8,\n        \"country_code\": \"ESP\",\n        \"opening_day\": 43.0,\n        \"screening_candidates_per_month\": 0.4635,\n        \"site_id\": \"site_063\"\n      },\n      {\n        \"candidate_count\": 9,\n        \"country_code\": \"CAN\",\n        \"opening_day\": 26.0,\n        \"screening_candidates_per_month\": 0.4635,\n        \"site_id\": \"site_026\"\n      },\n      {\n        \"candidate_count\": 15,\n        \"country_code\": \"CAN\",\n        \"opening_day\": 80.0,\n        \"screening_candidates_per_month\": 0.927,\n        \"site_id\": \"site_054\"\n      },\n      {\n        \"candidate_count\": 44,\n        \"country_code\": \"FIN\",\n        \"opening_day\": 9.0,\n        \"screening_candidates_per_month\": 1.3905,\n        \"site_id\": \"site_040\"\n      },\n      {\n        \"candidate_count\": 27,\n        \"country_code\": \"FIN\",\n        \"opening_day\": 74.0,\n        \"screening_candidates_per_month\": 1.3905,\n        \"site_id\": \"site_048\"\n      },\n      {\n        \"candidate_count\": 10,\n        \"country_code\": \"CAN\",\n        \"opening_day\": 7.0,\n        \"screening_candidates_per_month\": 0.4635,\n        \"site_id\": \"site_018\"\n      },\n      {\n        \"candidate_count\": 8,\n        \"country_code\": \"CAN\",\n        \"opening_day\": 70.0,\n        \"screening_candidates_per_month\": 0.4635,\n        \"site_id\": \"site_062\"\n      },\n      {\n        \"candidate_count\": 26,\n        \"country_code\": \"USA\",\n        \"opening_day\": 15.0,\n        \"screening_candidates_per_month\": 0.927,\n        \"site_id\": \"site_041\"\n      },\n      {\n        \"candidate_count\": 40,\n        \"country_code\": \"CAN\",\n        \"opening_day\": 5.0,\n        \"screening_candidates_per_month\": 1.3905,\n        \"site_id\": \"site_010\"\n      },\n      {\n        \"candidate_count\": 34,\n        \"country_code\": \"ESP\",\n        \"opening_day\": 21.0,\n        \"screening_candidates_per_month\": 0.927,\n        \"site_id\": \"site_079\"\n      },\n      {\n        \"candidate_count\": 18,\n        \"country_code\": \"FIN\",\n        \"opening_day\": 10.0,\n        \"screening_candidates_per_month\": 0.4635,\n        \"site_id\": \"site_072\"\n      },\n      {\n        \"candidate_count\": 17,\n        \"country_code\": \"CAN\",\n        \"opening_day\": 71.0,\n        \"screening_candidates_per_month\": 0.927,\n        \"site_id\": \"site_078\"\n      },\n      {\n        \"candidate_count\": 42,\n        \"country_code\": \"FIN\",\n        \"opening_day\": 19.0,\n        \"screening_candidates_per_month\": 1.3905,\n        \"site_id\": \"site_076\"\n      },\n      {\n        \"candidate_count\": 22,\n        \"country_code\": \"ESP\",\n        \"opening_day\": 44.0,\n        \"screening_candidates_per_month\": 0.927,\n        \"site_id\": \"site_083\"\n      },\n      {\n        \"candidate_count\": 19,\n        \"country_code\": \"ESP\",\n        \"opening_day\": 42.0,\n        \"screening_candidates_per_month\": 0.927,\n        \"site_id\": \"site_055\"\n      },\n      {\n        \"candidate_count\": 23,\n        \"country_code\": \"ESP\",\n        \"opening_day\": 67.0,\n        \"screening_candidates_per_month\": 1.3905,\n        \"site_id\": \"site_059\"\n      },\n      {\n        \"candidate_count\": 20,\n        \"country_code\": \"FIN\",\n        \"opening_day\": 56.0,\n        \"screening_candidates_per_month\": 0.927,\n        \"site_id\": \"site_080\"\n      }\n    ]\n  },\n  \"schema_id\": \"trialdev.frozen-pool/v8\",\n  \"source_provenance_sha256\": \"2eb3964d4f1644a807fdeb4334e3140fd5d0e8005baaaaea02c08644c6aab38b\",\n  \"targets\": [\n    {\n      \"asset_id\": \"hzp-40604\",\n      \"dose\": \"standard\",\n      \"outcome_mean_difference\": -1.7525,\n      \"outcome_unit\": \"days per 28 days\",\n      \"participant_count\": 2000,\n      \"reference_days\": 336.0,\n      \"safety_risk_difference\": 0.037\n    },\n    {\n      \"asset_id\": \"hzp-40604\",\n      \"dose\": \"intensified\",\n      \"outcome_mean_difference\": -2.3045,\n      \"outcome_unit\": \"days per 28 days\",\n      \"participant_count\": 2000,\n      \"reference_days\": 336.0,\n      \"safety_risk_difference\": 0.16\n    },\n    {\n      \"asset_id\": \"hzp-43314\",\n      \"dose\": \"standard\",\n      \"outcome_mean_difference\": -0.455,\n      \"outcome_unit\": \"days per 28 days\",\n      \"participant_count\": 2000,\n      \"reference_days\": 336.0,\n      \"safety_risk_difference\": 0.0375\n    },\n    {\n      \"asset_id\": \"hzp-43314\",\n      \"dose\": \"intensified\",\n      \"outcome_mean_difference\": -0.5015,\n      \"outcome_unit\": \"days per 28 days\",\n      \"participant_count\": 2000,\n      \"reference_days\": 336.0,\n      \"safety_risk_difference\": 0.31\n    },\n    {\n      \"asset_id\": \"hzp-15325\",\n      \"dose\": \"standard\",\n      \"outcome_mean_difference\": -1.4235,\n      \"outcome_unit\": \"days per 28 days\",\n      \"participant_count\": 2000,\n      \"reference_days\": 336.0,\n      \"safety_risk_difference\": 0.03\n    },\n    {\n      \"asset_id\": \"hzp-15325\",\n      \"dose\": \"intensified\",\n      \"outcome_mean_difference\": -2.3505,\n      \"outcome_unit\": \"days per 28 days\",\n      \"participant_count\": 2000,\n      \"reference_days\": 336.0,\n      \"safety_risk_difference\": 0.0595\n    }\n  ],\n  \"world_id\": \"tdw-9c620d01010f\"\n}\n",
+  "study_manifest_json": "{\n  \"arms\": [\n    {\n      \"arm_id\": \"control\",\n      \"asset_id\": \"control\",\n      \"dose\": null\n    },\n    {\n      \"arm_id\": \"active-0\",\n      \"asset_id\": \"hzp-15325\",\n      \"dose\": \"intensified\"\n    }\n  ],\n  \"assessment_days\": [\n    0,\n    28,\n    56,\n    84,\n    168\n  ],\n  \"calendar_origin\": \"2024-01-01\",\n  \"cost\": {\n    \"accrued_usd\": 28246000.0,\n    \"remaining_liability_usd\": 0.0\n  },\n  \"epochs\": [\n    [\n      \"TREATMENT\",\n      0.0,\n      168.0\n    ]\n  ],\n  \"follow_up_days\": 168,\n  \"outcome_object\": \"Migraine\",\n  \"readout_day\": 1413.0,\n  \"screened\": 907,\n  \"sites\": 88,\n  \"study_id\": \"study-301\",\n  \"surveillance_days\": [\n    0,\n    28,\n    56,\n    84,\n    168\n  ],\n  \"targets\": [\n    {\n      \"arm_id\": \"active-0\",\n      \"confidence_level\": 0.95,\n      \"contrast\": \"active_minus_control\",\n      \"endpoint\": \"clinical_outcome\",\n      \"population\": \"programme_eligible_population\",\n      \"target_id\": \"hzp-15325:intensified:vs_control:clinical_outcome\",\n      \"unit\": \"days per 28 days\"\n    },\n    {\n      \"arm_id\": \"active-0\",\n      \"confidence_level\": 0.95,\n      \"contrast\": \"active_minus_control\",\n      \"endpoint\": \"safety_risk\",\n      \"population\": \"programme_eligible_population\",\n      \"target_id\": \"hzp-15325:intensified:vs_control:safety_risk\",\n      \"unit\": \"risk difference\"\n    }\n  ],\n  \"tariff\": {\n    \"assessment\": 800.0,\n    \"closeout_days\": 45,\n    \"enrollment\": 12000.0,\n    \"followup_day\": 40.0,\n    \"per_site\": 100000.0,\n    \"screening\": 2000.0,\n    \"setup\": 4000000.0,\n    \"startup_days\": 120\n  }\n}\n",
+  "commitment": {
+    "study_id": "study-301",
+    "pool_manifest_sha256": "a79fb67730abe877a1ae7b3beedb6f721f1cc9bd3ed5ad5650871b7a65ee9ff2",
+    "readout": {
+      "calendar_origin": "2024-01-01",
+      "epochs": [
+        [
+          "TREATMENT",
+          0.0,
+          168.0
+        ]
+      ],
+      "study_id": "study-301",
+      "outcome_object": "Migraine",
+      "readout_day": 1413.0,
+      "follow_up_days": 168,
+      "assessment_days": [
+        0,
+        28,
+        56,
+        84,
+        168
+      ],
+      "surveillance_days": [
+        0,
+        28,
+        56,
+        84,
+        168
+      ],
+      "arms": [
+        {
+          "arm_id": "control",
+          "asset_id": "control",
+          "dose": null
+        },
+        {
+          "arm_id": "active-0",
+          "asset_id": "hzp-15325",
+          "dose": "intensified"
+        }
+      ],
+      "targets": [
+        {
+          "target_id": "hzp-15325:intensified:vs_control:clinical_outcome",
+          "arm_id": "active-0",
+          "endpoint": "clinical_outcome",
+          "unit": "days per 28 days",
+          "contrast": "active_minus_control",
+          "population": "programme_eligible_population",
+          "confidence_level": 0.95
+        },
+        {
+          "target_id": "hzp-15325:intensified:vs_control:safety_risk",
+          "arm_id": "active-0",
+          "endpoint": "safety_risk",
+          "unit": "risk difference",
+          "contrast": "active_minus_control",
+          "population": "programme_eligible_population",
+          "confidence_level": 0.95
+        }
+      ],
+      "tariff": {
+        "setup": 4000000.0,
+        "per_site": 100000.0,
+        "screening": 2000.0,
+        "enrollment": 12000.0,
+        "followup_day": 40.0,
+        "assessment": 800.0,
+        "startup_days": 120,
+        "closeout_days": 45
+      },
+      "sites": 88,
+      "screened": 907,
+      "cost": {
+        "accrued_usd": 28246000.0,
+        "remaining_liability_usd": 0.0
+      }
+    },
+    "assignments": [
+      {
+        "arm_id": "active-0",
+        "partition": {
+          "asset_id": "hzp-15325",
+          "dose": "intensified",
+          "directory": "partitions/p006"
+        }
+      },
+      {
+        "arm_id": "control",
+        "partition": {
+          "asset_id": "control",
+          "dose": null,
+          "directory": "partitions/p000"
+        }
+      }
+    ],
+    "patients": [
+      {
+        "participant_id": 1390,
+        "participant_label": "study-301:screen-10",
+        "arm_id": "active-0",
+        "enrollment_day": 734.2382276642769
+      },
+      {
+        "participant_id": 1039,
+        "participant_label": "study-301:screen-100",
+        "arm_id": "control",
+        "enrollment_day": 788.700138484029
+      },
+      {
+        "participant_id": 1104,
+        "participant_label": "study-301:screen-102",
+        "arm_id": "active-0",
+        "enrollment_day": 789.526580463013
+      },
+      {
+        "participant_id": 1396,
+        "participant_label": "study-301:screen-103",
+        "arm_id": "control",
+        "enrollment_day": 789.9753833191675
+      },
+      {
+        "participant_id": 566,
+        "participant_label": "study-301:screen-105",
+        "arm_id": "control",
+        "enrollment_day": 790.433479289501
+      },
+      {
+        "participant_id": 808,
+        "participant_label": "study-301:screen-109",
+        "arm_id": "active-0",
+        "enrollment_day": 792.5908130992533
+      },
+      {
+        "participant_id": 261,
+        "participant_label": "study-301:screen-11",
+        "arm_id": "control",
+        "enrollment_day": 734.5403082618694
+      },
+      {
+        "participant_id": 1779,
+        "participant_label": "study-301:screen-110",
+        "arm_id": "control",
+        "enrollment_day": 792.5959159727494
+      },
+      {
+        "participant_id": 1139,
+        "participant_label": "study-301:screen-112",
+        "arm_id": "active-0",
+        "enrollment_day": 793.0634354250892
+      },
+      {
+        "participant_id": 1792,
+        "participant_label": "study-301:screen-114",
+        "arm_id": "control",
+        "enrollment_day": 794.4182664819855
+      },
+      {
+        "participant_id": 28,
+        "participant_label": "study-301:screen-115",
+        "arm_id": "control",
+        "enrollment_day": 794.6844719584483
+      },
+      {
+        "participant_id": 179,
+        "participant_label": "study-301:screen-116",
+        "arm_id": "control",
+        "enrollment_day": 795.1834994906235
+      },
+      {
+        "participant_id": 1420,
+        "participant_label": "study-301:screen-117",
+        "arm_id": "control",
+        "enrollment_day": 795.2817308012079
+      },
+      {
+        "participant_id": 430,
+        "participant_label": "study-301:screen-118",
+        "arm_id": "active-0",
+        "enrollment_day": 796.0602229978217
+      },
+      {
+        "participant_id": 1447,
+        "participant_label": "study-301:screen-119",
+        "arm_id": "active-0",
+        "enrollment_day": 796.2830438757702
+      },
+      {
+        "participant_id": 281,
+        "participant_label": "study-301:screen-121",
+        "arm_id": "control",
+        "enrollment_day": 796.9049484346181
+      },
+      {
+        "participant_id": 1062,
+        "participant_label": "study-301:screen-122",
+        "arm_id": "control",
+        "enrollment_day": 796.9639723737777
+      },
+      {
+        "participant_id": 805,
+        "participant_label": "study-301:screen-124",
+        "arm_id": "active-0",
+        "enrollment_day": 797.3514463121751
+      },
+      {
+        "participant_id": 171,
+        "participant_label": "study-301:screen-125",
+        "arm_id": "control",
+        "enrollment_day": 797.5989780173769
+      },
+      {
+        "participant_id": 904,
+        "participant_label": "study-301:screen-126",
+        "arm_id": "control",
+        "enrollment_day": 797.8887511888133
+      },
+      {
+        "participant_id": 717,
+        "participant_label": "study-301:screen-128",
+        "arm_id": "active-0",
+        "enrollment_day": 798.1259433787326
+      },
+      {
+        "participant_id": 1183,
+        "participant_label": "study-301:screen-129",
+        "arm_id": "active-0",
+        "enrollment_day": 798.3180957111867
+      },
+      {
+        "participant_id": 978,
+        "participant_label": "study-301:screen-130",
+        "arm_id": "control",
+        "enrollment_day": 798.4803047918666
+      },
+      {
+        "participant_id": 218,
+        "participant_label": "study-301:screen-131",
+        "arm_id": "active-0",
+        "enrollment_day": 798.5694746216698
+      },
+      {
+        "participant_id": 12,
+        "participant_label": "study-301:screen-132",
+        "arm_id": "control",
+        "enrollment_day": 799.1916738782134
+      },
+      {
+        "participant_id": 1876,
+        "participant_label": "study-301:screen-133",
+        "arm_id": "control",
+        "enrollment_day": 799.3495582954637
+      },
+      {
+        "participant_id": 213,
+        "participant_label": "study-301:screen-134",
+        "arm_id": "control",
+        "enrollment_day": 799.3706733143982
+      },
+      {
+        "participant_id": 1797,
+        "participant_label": "study-301:screen-135",
+        "arm_id": "active-0",
+        "enrollment_day": 799.4239933734127
+      },
+      {
+        "participant_id": 116,
+        "participant_label": "study-301:screen-137",
+        "arm_id": "active-0",
+        "enrollment_day": 801.0157317747462
+      },
+      {
+        "participant_id": 847,
+        "participant_label": "study-301:screen-138",
+        "arm_id": "active-0",
+        "enrollment_day": 801.2284610137078
+      },
+      {
+        "participant_id": 935,
+        "participant_label": "study-301:screen-139",
+        "arm_id": "control",
+        "enrollment_day": 801.6871269185398
+      },
+      {
+        "participant_id": 524,
+        "participant_label": "study-301:screen-14",
+        "arm_id": "control",
+        "enrollment_day": 741.1440789561756
+      },
+      {
+        "participant_id": 558,
+        "participant_label": "study-301:screen-145",
+        "arm_id": "active-0",
+        "enrollment_day": 804.0717486160769
+      },
+      {
+        "participant_id": 1147,
+        "participant_label": "study-301:screen-147",
+        "arm_id": "active-0",
+        "enrollment_day": 804.9776317354497
+      },
+      {
+        "participant_id": 1758,
+        "participant_label": "study-301:screen-150",
+        "arm_id": "active-0",
+        "enrollment_day": 805.5149616324906
+      },
+      {
+        "participant_id": 1208,
+        "participant_label": "study-301:screen-152",
+        "arm_id": "active-0",
+        "enrollment_day": 805.6447847616372
+      },
+      {
+        "participant_id": 1231,
+        "participant_label": "study-301:screen-153",
+        "arm_id": "control",
+        "enrollment_day": 806.1065757261866
+      },
+      {
+        "participant_id": 234,
+        "participant_label": "study-301:screen-155",
+        "arm_id": "control",
+        "enrollment_day": 806.7618166536771
+      },
+      {
+        "participant_id": 0,
+        "participant_label": "study-301:screen-157",
+        "arm_id": "control",
+        "enrollment_day": 807.5266955283977
+      },
+      {
+        "participant_id": 359,
+        "participant_label": "study-301:screen-158",
+        "arm_id": "control",
+        "enrollment_day": 807.6111370126201
+      },
+      {
+        "participant_id": 270,
+        "participant_label": "study-301:screen-16",
+        "arm_id": "control",
+        "enrollment_day": 745.705609373545
+      },
+      {
+        "participant_id": 1497,
+        "participant_label": "study-301:screen-162",
+        "arm_id": "control",
+        "enrollment_day": 810.0103884157486
+      },
+      {
+        "participant_id": 1133,
+        "participant_label": "study-301:screen-163",
+        "arm_id": "active-0",
+        "enrollment_day": 810.0159693798264
+      },
+      {
+        "participant_id": 739,
+        "participant_label": "study-301:screen-164",
+        "arm_id": "active-0",
+        "enrollment_day": 810.4211571539975
+      },
+      {
+        "participant_id": 471,
+        "participant_label": "study-301:screen-166",
+        "arm_id": "control",
+        "enrollment_day": 811.7538628019598
+      },
+      {
+        "participant_id": 583,
+        "participant_label": "study-301:screen-168",
+        "arm_id": "active-0",
+        "enrollment_day": 812.320444674011
+      },
+      {
+        "participant_id": 111,
+        "participant_label": "study-301:screen-169",
+        "arm_id": "control",
+        "enrollment_day": 813.1779797799293
+      },
+      {
+        "participant_id": 1065,
+        "participant_label": "study-301:screen-17",
+        "arm_id": "active-0",
+        "enrollment_day": 751.7255892931848
+      },
+      {
+        "participant_id": 1520,
+        "participant_label": "study-301:screen-170",
+        "arm_id": "control",
+        "enrollment_day": 813.4618589892982
+      },
+      {
+        "participant_id": 833,
+        "participant_label": "study-301:screen-171",
+        "arm_id": "active-0",
+        "enrollment_day": 813.487724076706
+      },
+      {
+        "participant_id": 893,
+        "participant_label": "study-301:screen-172",
+        "arm_id": "active-0",
+        "enrollment_day": 815.2027449538213
+      },
+      {
+        "participant_id": 428,
+        "participant_label": "study-301:screen-173",
+        "arm_id": "control",
+        "enrollment_day": 815.4342223670219
+      },
+      {
+        "participant_id": 1601,
+        "participant_label": "study-301:screen-174",
+        "arm_id": "active-0",
+        "enrollment_day": 815.4762642123557
+      },
+      {
+        "participant_id": 1623,
+        "participant_label": "study-301:screen-175",
+        "arm_id": "control",
+        "enrollment_day": 815.808192593755
+      },
+      {
+        "participant_id": 172,
+        "participant_label": "study-301:screen-176",
+        "arm_id": "control",
+        "enrollment_day": 815.9367902920774
+      },
+      {
+        "participant_id": 1885,
+        "participant_label": "study-301:screen-178",
+        "arm_id": "active-0",
+        "enrollment_day": 816.205613036901
+      },
+      {
+        "participant_id": 636,
+        "participant_label": "study-301:screen-180",
+        "arm_id": "active-0",
+        "enrollment_day": 816.7940844991917
+      },
+      {
+        "participant_id": 964,
+        "participant_label": "study-301:screen-184",
+        "arm_id": "active-0",
+        "enrollment_day": 817.8441812418721
+      },
+      {
+        "participant_id": 1164,
+        "participant_label": "study-301:screen-185",
+        "arm_id": "active-0",
+        "enrollment_day": 818.4931922652726
+      },
+      {
+        "participant_id": 1356,
+        "participant_label": "study-301:screen-186",
+        "arm_id": "control",
+        "enrollment_day": 819.556822882693
+      },
+      {
+        "participant_id": 1832,
+        "participant_label": "study-301:screen-187",
+        "arm_id": "control",
+        "enrollment_day": 819.9287936358746
+      },
+      {
+        "participant_id": 1546,
+        "participant_label": "study-301:screen-189",
+        "arm_id": "control",
+        "enrollment_day": 821.0222979684103
+      },
+      {
+        "participant_id": 1368,
+        "participant_label": "study-301:screen-19",
+        "arm_id": "control",
+        "enrollment_day": 754.0033622421836
+      },
+      {
+        "participant_id": 273,
+        "participant_label": "study-301:screen-190",
+        "arm_id": "control",
+        "enrollment_day": 821.1553955069802
+      },
+      {
+        "participant_id": 1818,
+        "participant_label": "study-301:screen-191",
+        "arm_id": "control",
+        "enrollment_day": 821.2914413809264
+      },
+      {
+        "participant_id": 1825,
+        "participant_label": "study-301:screen-192",
+        "arm_id": "control",
+        "enrollment_day": 821.3287607550328
+      },
+      {
+        "participant_id": 767,
+        "participant_label": "study-301:screen-193",
+        "arm_id": "control",
+        "enrollment_day": 821.3959630378134
+      },
+      {
+        "participant_id": 1214,
+        "participant_label": "study-301:screen-195",
+        "arm_id": "active-0",
+        "enrollment_day": 822.1922080991995
+      },
+      {
+        "participant_id": 819,
+        "participant_label": "study-301:screen-197",
+        "arm_id": "control",
+        "enrollment_day": 823.6293645350354
+      },
+      {
+        "participant_id": 447,
+        "participant_label": "study-301:screen-199",
+        "arm_id": "active-0",
+        "enrollment_day": 823.7438273537465
+      },
+      {
+        "participant_id": 925,
+        "participant_label": "study-301:screen-20",
+        "arm_id": "active-0",
+        "enrollment_day": 754.8887920974728
+      },
+      {
+        "participant_id": 1667,
+        "participant_label": "study-301:screen-200",
+        "arm_id": "active-0",
+        "enrollment_day": 823.8525687961987
+      },
+      {
+        "participant_id": 180,
+        "participant_label": "study-301:screen-201",
+        "arm_id": "control",
+        "enrollment_day": 824.0298902711643
+      },
+      {
+        "participant_id": 1432,
+        "participant_label": "study-301:screen-204",
+        "arm_id": "control",
+        "enrollment_day": 825.1919204170765
+      },
+      {
+        "participant_id": 1916,
+        "participant_label": "study-301:screen-205",
+        "arm_id": "active-0",
+        "enrollment_day": 825.3305411347465
+      },
+      {
+        "participant_id": 1175,
+        "participant_label": "study-301:screen-207",
+        "arm_id": "control",
+        "enrollment_day": 826.8038165096646
+      },
+      {
+        "participant_id": 918,
+        "participant_label": "study-301:screen-209",
+        "arm_id": "active-0",
+        "enrollment_day": 826.9952917748806
+      },
+      {
+        "participant_id": 60,
+        "participant_label": "study-301:screen-21",
+        "arm_id": "control",
+        "enrollment_day": 755.4905685935071
+      },
+      {
+        "participant_id": 535,
+        "participant_label": "study-301:screen-210",
+        "arm_id": "active-0",
+        "enrollment_day": 827.0001031226575
+      },
+      {
+        "participant_id": 542,
+        "participant_label": "study-301:screen-211",
+        "arm_id": "control",
+        "enrollment_day": 827.1563654080077
+      },
+      {
+        "participant_id": 1075,
+        "participant_label": "study-301:screen-212",
+        "arm_id": "active-0",
+        "enrollment_day": 827.5136038059038
+      },
+      {
+        "participant_id": 235,
+        "participant_label": "study-301:screen-213",
+        "arm_id": "active-0",
+        "enrollment_day": 827.9708827887592
+      },
+      {
+        "participant_id": 1966,
+        "participant_label": "study-301:screen-214",
+        "arm_id": "active-0",
+        "enrollment_day": 828.0406021207323
+      },
+      {
+        "participant_id": 294,
+        "participant_label": "study-301:screen-215",
+        "arm_id": "active-0",
+        "enrollment_day": 828.9853795589147
+      },
+      {
+        "participant_id": 915,
+        "participant_label": "study-301:screen-22",
+        "arm_id": "active-0",
+        "enrollment_day": 755.8399793884321
+      },
+      {
+        "participant_id": 1278,
+        "participant_label": "study-301:screen-220",
+        "arm_id": "active-0",
+        "enrollment_day": 829.521836370809
+      },
+      {
+        "participant_id": 1986,
+        "participant_label": "study-301:screen-221",
+        "arm_id": "control",
+        "enrollment_day": 830.3576663357408
+      },
+      {
+        "participant_id": 581,
+        "participant_label": "study-301:screen-222",
+        "arm_id": "control",
+        "enrollment_day": 830.4868122406359
+      },
+      {
+        "participant_id": 446,
+        "participant_label": "study-301:screen-223",
+        "arm_id": "active-0",
+        "enrollment_day": 830.7319832170609
+      },
+      {
+        "participant_id": 92,
+        "participant_label": "study-301:screen-224",
+        "arm_id": "control",
+        "enrollment_day": 831.056595459467
+      },
+      {
+        "participant_id": 614,
+        "participant_label": "study-301:screen-226",
+        "arm_id": "control",
+        "enrollment_day": 831.1459392580625
+      },
+      {
+        "participant_id": 1044,
+        "participant_label": "study-301:screen-228",
+        "arm_id": "active-0",
+        "enrollment_day": 831.7244255257856
+      },
+      {
+        "participant_id": 1236,
+        "participant_label": "study-301:screen-23",
+        "arm_id": "active-0",
+        "enrollment_day": 756.3446575228844
+      },
+      {
+        "participant_id": 1976,
+        "participant_label": "study-301:screen-230",
+        "arm_id": "active-0",
+        "enrollment_day": 832.2344651815761
+      },
+      {
+        "participant_id": 652,
+        "participant_label": "study-301:screen-232",
+        "arm_id": "active-0",
+        "enrollment_day": 832.900023548128
+      },
+      {
+        "participant_id": 668,
+        "participant_label": "study-301:screen-235",
+        "arm_id": "active-0",
+        "enrollment_day": 833.5134606920875
+      },
+      {
+        "participant_id": 982,
+        "participant_label": "study-301:screen-238",
+        "arm_id": "control",
+        "enrollment_day": 833.7635794003914
+      },
+      {
+        "participant_id": 195,
+        "participant_label": "study-301:screen-239",
+        "arm_id": "active-0",
+        "enrollment_day": 833.9499310363693
+      },
+      {
+        "participant_id": 561,
+        "participant_label": "study-301:screen-24",
+        "arm_id": "active-0",
+        "enrollment_day": 756.9147975475054
+      },
+      {
+        "participant_id": 119,
+        "participant_label": "study-301:screen-240",
+        "arm_id": "control",
+        "enrollment_day": 834.0930662022447
+      },
+      {
+        "participant_id": 527,
+        "participant_label": "study-301:screen-242",
+        "arm_id": "control",
+        "enrollment_day": 834.3574965896412
+      },
+      {
+        "participant_id": 277,
+        "participant_label": "study-301:screen-243",
+        "arm_id": "active-0",
+        "enrollment_day": 834.381585169458
+      },
+      {
+        "participant_id": 1654,
+        "participant_label": "study-301:screen-245",
+        "arm_id": "control",
+        "enrollment_day": 835.501270650234
+      },
+      {
+        "participant_id": 1381,
+        "participant_label": "study-301:screen-247",
+        "arm_id": "active-0",
+        "enrollment_day": 836.1502082440074
+      },
+      {
+        "participant_id": 327,
+        "participant_label": "study-301:screen-248",
+        "arm_id": "control",
+        "enrollment_day": 836.1960894735755
+      },
+      {
+        "participant_id": 955,
+        "participant_label": "study-301:screen-249",
+        "arm_id": "active-0",
+        "enrollment_day": 836.2461857474773
+      },
+      {
+        "participant_id": 1776,
+        "participant_label": "study-301:screen-25",
+        "arm_id": "control",
+        "enrollment_day": 757.0078847163693
+      },
+      {
+        "participant_id": 19,
+        "participant_label": "study-301:screen-250",
+        "arm_id": "active-0",
+        "enrollment_day": 836.4584754176453
+      },
+      {
+        "participant_id": 330,
+        "participant_label": "study-301:screen-251",
+        "arm_id": "active-0",
+        "enrollment_day": 836.6137231652366
+      },
+      {
+        "participant_id": 331,
+        "participant_label": "study-301:screen-252",
+        "arm_id": "active-0",
+        "enrollment_day": 836.6291087779653
+      },
+      {
+        "participant_id": 761,
+        "participant_label": "study-301:screen-253",
+        "arm_id": "active-0",
+        "enrollment_day": 837.6812223102881
+      },
+      {
+        "participant_id": 1867,
+        "participant_label": "study-301:screen-254",
+        "arm_id": "active-0",
+        "enrollment_day": 837.7252863974416
+      },
+      {
+        "participant_id": 504,
+        "participant_label": "study-301:screen-255",
+        "arm_id": "active-0",
+        "enrollment_day": 839.1591905292127
+      },
+      {
+        "participant_id": 651,
+        "participant_label": "study-301:screen-257",
+        "arm_id": "control",
+        "enrollment_day": 840.4804354206383
+      },
+      {
+        "participant_id": 1391,
+        "participant_label": "study-301:screen-258",
+        "arm_id": "active-0",
+        "enrollment_day": 840.5566437294783
+      },
+      {
+        "participant_id": 575,
+        "participant_label": "study-301:screen-259",
+        "arm_id": "control",
+        "enrollment_day": 840.7703991075684
+      },
+      {
+        "participant_id": 1869,
+        "participant_label": "study-301:screen-260",
+        "arm_id": "control",
+        "enrollment_day": 841.0614810862946
+      },
+      {
+        "participant_id": 1421,
+        "participant_label": "study-301:screen-261",
+        "arm_id": "active-0",
+        "enrollment_day": 841.2925915260477
+      },
+      {
+        "participant_id": 1886,
+        "participant_label": "study-301:screen-263",
+        "arm_id": "control",
+        "enrollment_day": 842.3098502573139
+      },
+      {
+        "participant_id": 476,
+        "participant_label": "study-301:screen-266",
+        "arm_id": "active-0",
+        "enrollment_day": 844.3192834772203
+      },
+      {
+        "participant_id": 1006,
+        "participant_label": "study-301:screen-267",
+        "arm_id": "active-0",
+        "enrollment_day": 845.1145194922269
+      },
+      {
+        "participant_id": 1888,
+        "participant_label": "study-301:screen-268",
+        "arm_id": "active-0",
+        "enrollment_day": 845.5535674784769
+      },
+      {
+        "participant_id": 705,
+        "participant_label": "study-301:screen-269",
+        "arm_id": "control",
+        "enrollment_day": 846.3041211669092
+      },
+      {
+        "participant_id": 226,
+        "participant_label": "study-301:screen-27",
+        "arm_id": "active-0",
+        "enrollment_day": 758.5478689587583
+      },
+      {
+        "participant_id": 349,
+        "participant_label": "study-301:screen-270",
+        "arm_id": "control",
+        "enrollment_day": 846.3261309349234
+      },
+      {
+        "participant_id": 629,
+        "participant_label": "study-301:screen-271",
+        "arm_id": "control",
+        "enrollment_day": 846.6996241051188
+      },
+      {
+        "participant_id": 1080,
+        "participant_label": "study-301:screen-273",
+        "arm_id": "active-0",
+        "enrollment_day": 847.6107494555029
+      },
+      {
+        "participant_id": 534,
+        "participant_label": "study-301:screen-274",
+        "arm_id": "active-0",
+        "enrollment_day": 847.8405420524118
+      },
+      {
+        "participant_id": 110,
+        "participant_label": "study-301:screen-275",
+        "arm_id": "active-0",
+        "enrollment_day": 848.0044646576462
+      },
+      {
+        "participant_id": 1512,
+        "participant_label": "study-301:screen-276",
+        "arm_id": "active-0",
+        "enrollment_day": 848.2861938430556
+      },
+      {
+        "participant_id": 322,
+        "participant_label": "study-301:screen-277",
+        "arm_id": "active-0",
+        "enrollment_day": 849.1629802998027
+      },
+      {
+        "participant_id": 278,
+        "participant_label": "study-301:screen-279",
+        "arm_id": "control",
+        "enrollment_day": 849.6728461959185
+      },
+      {
+        "participant_id": 1631,
+        "participant_label": "study-301:screen-28",
+        "arm_id": "control",
+        "enrollment_day": 759.9359997108262
+      },
+      {
+        "participant_id": 1608,
+        "participant_label": "study-301:screen-283",
+        "arm_id": "active-0",
+        "enrollment_day": 851.0222549616336
+      },
+      {
+        "participant_id": 1272,
+        "participant_label": "study-301:screen-285",
+        "arm_id": "active-0",
+        "enrollment_day": 851.1874340092836
+      },
+      {
+        "participant_id": 1918,
+        "participant_label": "study-301:screen-287",
+        "arm_id": "control",
+        "enrollment_day": 851.2406030862115
+      },
+      {
+        "participant_id": 367,
+        "participant_label": "study-301:screen-288",
+        "arm_id": "control",
+        "enrollment_day": 852.0601980777799
+      },
+      {
+        "participant_id": 56,
+        "participant_label": "study-301:screen-290",
+        "arm_id": "active-0",
+        "enrollment_day": 853.2347751760384
+      },
+      {
+        "participant_id": 1676,
+        "participant_label": "study-301:screen-292",
+        "arm_id": "active-0",
+        "enrollment_day": 853.5274494730683
+      },
+      {
+        "participant_id": 798,
+        "participant_label": "study-301:screen-293",
+        "arm_id": "active-0",
+        "enrollment_day": 854.2372194763861
+      },
+      {
+        "participant_id": 1113,
+        "participant_label": "study-301:screen-294",
+        "arm_id": "control",
+        "enrollment_day": 854.3407056672215
+      },
+      {
+        "participant_id": 1898,
+        "participant_label": "study-301:screen-295",
+        "arm_id": "control",
+        "enrollment_day": 855.5974163108255
+      },
+      {
+        "participant_id": 1870,
+        "participant_label": "study-301:screen-298",
+        "arm_id": "active-0",
+        "enrollment_day": 857.3187363959389
+      },
+      {
+        "participant_id": 378,
+        "participant_label": "study-301:screen-299",
+        "arm_id": "control",
+        "enrollment_day": 857.5253758019551
+      },
+      {
+        "participant_id": 1177,
+        "participant_label": "study-301:screen-3",
+        "arm_id": "control",
+        "enrollment_day": 728.7482624824339
+      },
+      {
+        "participant_id": 405,
+        "participant_label": "study-301:screen-300",
+        "arm_id": "active-0",
+        "enrollment_day": 858.0916844493343
+      },
+      {
+        "participant_id": 1129,
+        "participant_label": "study-301:screen-303",
+        "arm_id": "active-0",
+        "enrollment_day": 859.1989043303523
+      },
+      {
+        "participant_id": 1805,
+        "participant_label": "study-301:screen-305",
+        "arm_id": "control",
+        "enrollment_day": 859.2963830893699
+      },
+      {
+        "participant_id": 1017,
+        "participant_label": "study-301:screen-306",
+        "arm_id": "active-0",
+        "enrollment_day": 859.8015218367639
+      },
+      {
+        "participant_id": 13,
+        "participant_label": "study-301:screen-31",
+        "arm_id": "control",
+        "enrollment_day": 762.1106664714746
+      },
+      {
+        "participant_id": 389,
+        "participant_label": "study-301:screen-310",
+        "arm_id": "control",
+        "enrollment_day": 861.3952377397894
+      },
+      {
+        "participant_id": 21,
+        "participant_label": "study-301:screen-311",
+        "arm_id": "control",
+        "enrollment_day": 862.3032685014182
+      },
+      {
+        "participant_id": 981,
+        "participant_label": "study-301:screen-315",
+        "arm_id": "control",
+        "enrollment_day": 863.6933737026794
+      },
+      {
+        "participant_id": 1387,
+        "participant_label": "study-301:screen-316",
+        "arm_id": "active-0",
+        "enrollment_day": 864.3725970001065
+      },
+      {
+        "participant_id": 671,
+        "participant_label": "study-301:screen-317",
+        "arm_id": "control",
+        "enrollment_day": 864.4740116830725
+      },
+      {
+        "participant_id": 489,
+        "participant_label": "study-301:screen-318",
+        "arm_id": "control",
+        "enrollment_day": 865.0743128484461
+      },
+      {
+        "participant_id": 811,
+        "participant_label": "study-301:screen-32",
+        "arm_id": "active-0",
+        "enrollment_day": 763.8408880918914
+      },
+      {
+        "participant_id": 1240,
+        "participant_label": "study-301:screen-321",
+        "arm_id": "control",
+        "enrollment_day": 865.7184173339048
+      },
+      {
+        "participant_id": 286,
+        "participant_label": "study-301:screen-322",
+        "arm_id": "active-0",
+        "enrollment_day": 866.2827822086068
+      },
+      {
+        "participant_id": 402,
+        "participant_label": "study-301:screen-323",
+        "arm_id": "control",
+        "enrollment_day": 866.3403273701804
+      },
+      {
+        "participant_id": 869,
+        "participant_label": "study-301:screen-324",
+        "arm_id": "active-0",
+        "enrollment_day": 866.4991264408756
+      },
+      {
+        "participant_id": 170,
+        "participant_label": "study-301:screen-325",
+        "arm_id": "control",
+        "enrollment_day": 866.7522216934609
+      },
+      {
+        "participant_id": 734,
+        "participant_label": "study-301:screen-327",
+        "arm_id": "control",
+        "enrollment_day": 867.3198957073059
+      },
+      {
+        "participant_id": 492,
+        "participant_label": "study-301:screen-328",
+        "arm_id": "active-0",
+        "enrollment_day": 867.4291207187738
+      },
+      {
+        "participant_id": 509,
+        "participant_label": "study-301:screen-330",
+        "arm_id": "control",
+        "enrollment_day": 868.4536817299238
+      },
+      {
+        "participant_id": 1096,
+        "participant_label": "study-301:screen-331",
+        "arm_id": "active-0",
+        "enrollment_day": 868.5190260727674
+      },
+      {
+        "participant_id": 716,
+        "participant_label": "study-301:screen-332",
+        "arm_id": "control",
+        "enrollment_day": 868.9365598615734
+      },
+      {
+        "participant_id": 262,
+        "participant_label": "study-301:screen-335",
+        "arm_id": "active-0",
+        "enrollment_day": 869.7992878636774
+      },
+      {
+        "participant_id": 35,
+        "participant_label": "study-301:screen-336",
+        "arm_id": "active-0",
+        "enrollment_day": 870.6955825488152
+      },
+      {
+        "participant_id": 77,
+        "participant_label": "study-301:screen-337",
+        "arm_id": "active-0",
+        "enrollment_day": 870.8143735408255
+      },
+      {
+        "participant_id": 996,
+        "participant_label": "study-301:screen-338",
+        "arm_id": "active-0",
+        "enrollment_day": 870.8413956429584
+      },
+      {
+        "participant_id": 1338,
+        "participant_label": "study-301:screen-34",
+        "arm_id": "active-0",
+        "enrollment_day": 764.8754484784238
+      },
+      {
+        "participant_id": 1023,
+        "participant_label": "study-301:screen-340",
+        "arm_id": "active-0",
+        "enrollment_day": 871.0438715942478
+      },
+      {
+        "participant_id": 420,
+        "participant_label": "study-301:screen-341",
+        "arm_id": "active-0",
+        "enrollment_day": 871.1830347717708
+      },
+      {
+        "participant_id": 1098,
+        "participant_label": "study-301:screen-342",
+        "arm_id": "control",
+        "enrollment_day": 871.2646748080962
+      },
+      {
+        "participant_id": 1377,
+        "participant_label": "study-301:screen-345",
+        "arm_id": "control",
+        "enrollment_day": 874.2457292564836
+      },
+      {
+        "participant_id": 425,
+        "participant_label": "study-301:screen-346",
+        "arm_id": "control",
+        "enrollment_day": 874.4938668652892
+      },
+      {
+        "participant_id": 63,
+        "participant_label": "study-301:screen-349",
+        "arm_id": "active-0",
+        "enrollment_day": 875.3393669572563
+      },
+      {
+        "participant_id": 526,
+        "participant_label": "study-301:screen-352",
+        "arm_id": "control",
+        "enrollment_day": 876.1258257763867
+      },
+      {
+        "participant_id": 344,
+        "participant_label": "study-301:screen-354",
+        "arm_id": "control",
+        "enrollment_day": 876.4165917860619
+      },
+      {
+        "participant_id": 632,
+        "participant_label": "study-301:screen-356",
+        "arm_id": "active-0",
+        "enrollment_day": 878.3662213345684
+      },
+      {
+        "participant_id": 986,
+        "participant_label": "study-301:screen-357",
+        "arm_id": "active-0",
+        "enrollment_day": 878.6973268114544
+      },
+      {
+        "participant_id": 903,
+        "participant_label": "study-301:screen-36",
+        "arm_id": "active-0",
+        "enrollment_day": 766.4840454121966
+      },
+      {
+        "participant_id": 319,
+        "participant_label": "study-301:screen-360",
+        "arm_id": "control",
+        "enrollment_day": 879.1301704479445
+      },
+      {
+        "participant_id": 133,
+        "participant_label": "study-301:screen-362",
+        "arm_id": "control",
+        "enrollment_day": 879.4014049685599
+      },
+      {
+        "participant_id": 221,
+        "participant_label": "study-301:screen-363",
+        "arm_id": "active-0",
+        "enrollment_day": 879.909670953416
+      },
+      {
+        "participant_id": 311,
+        "participant_label": "study-301:screen-366",
+        "arm_id": "control",
+        "enrollment_day": 880.9259998934763
+      },
+      {
+        "participant_id": 728,
+        "participant_label": "study-301:screen-367",
+        "arm_id": "control",
+        "enrollment_day": 881.2881997738255
+      },
+      {
+        "participant_id": 801,
+        "participant_label": "study-301:screen-368",
+        "arm_id": "control",
+        "enrollment_day": 881.4130985439214
+      },
+      {
+        "participant_id": 1521,
+        "participant_label": "study-301:screen-369",
+        "arm_id": "control",
+        "enrollment_day": 881.5415543865018
+      },
+      {
+        "participant_id": 1286,
+        "participant_label": "study-301:screen-371",
+        "arm_id": "active-0",
+        "enrollment_day": 882.472450860066
+      },
+      {
+        "participant_id": 595,
+        "participant_label": "study-301:screen-372",
+        "arm_id": "active-0",
+        "enrollment_day": 882.8404589179422
+      },
+      {
+        "participant_id": 1772,
+        "participant_label": "study-301:screen-373",
+        "arm_id": "active-0",
+        "enrollment_day": 882.9652683763527
+      },
+      {
+        "participant_id": 979,
+        "participant_label": "study-301:screen-375",
+        "arm_id": "active-0",
+        "enrollment_day": 883.3289502390436
+      },
+      {
+        "participant_id": 870,
+        "participant_label": "study-301:screen-376",
+        "arm_id": "control",
+        "enrollment_day": 883.6571958918461
+      },
+      {
+        "participant_id": 977,
+        "participant_label": "study-301:screen-377",
+        "arm_id": "control",
+        "enrollment_day": 883.8059821672305
+      },
+      {
+        "participant_id": 1084,
+        "participant_label": "study-301:screen-379",
+        "arm_id": "control",
+        "enrollment_day": 885.6700296715376
+      },
+      {
+        "participant_id": 1505,
+        "participant_label": "study-301:screen-38",
+        "arm_id": "control",
+        "enrollment_day": 766.8066082433737
+      },
+      {
+        "participant_id": 1419,
+        "participant_label": "study-301:screen-382",
+        "arm_id": "active-0",
+        "enrollment_day": 885.8325663657251
+      },
+      {
+        "participant_id": 768,
+        "participant_label": "study-301:screen-384",
+        "arm_id": "active-0",
+        "enrollment_day": 886.6076911132029
+      },
+      {
+        "participant_id": 1741,
+        "participant_label": "study-301:screen-385",
+        "arm_id": "control",
+        "enrollment_day": 886.6240441902507
+      },
+      {
+        "participant_id": 501,
+        "participant_label": "study-301:screen-386",
+        "arm_id": "control",
+        "enrollment_day": 886.6347153201455
+      },
+      {
+        "participant_id": 1709,
+        "participant_label": "study-301:screen-387",
+        "arm_id": "control",
+        "enrollment_day": 887.571386133407
+      },
+      {
+        "participant_id": 549,
+        "participant_label": "study-301:screen-388",
+        "arm_id": "active-0",
+        "enrollment_day": 887.7891484979912
+      },
+      {
+        "participant_id": 1141,
+        "participant_label": "study-301:screen-389",
+        "arm_id": "active-0",
+        "enrollment_day": 887.7947950957127
+      },
+      {
+        "participant_id": 1222,
+        "participant_label": "study-301:screen-39",
+        "arm_id": "control",
+        "enrollment_day": 766.8405366912978
+      },
+      {
+        "participant_id": 380,
+        "participant_label": "study-301:screen-390",
+        "arm_id": "control",
+        "enrollment_day": 887.8235259126191
+      },
+      {
+        "participant_id": 1935,
+        "participant_label": "study-301:screen-395",
+        "arm_id": "control",
+        "enrollment_day": 891.0131983028436
+      },
+      {
+        "participant_id": 196,
+        "participant_label": "study-301:screen-396",
+        "arm_id": "control",
+        "enrollment_day": 891.73272476186
+      },
+      {
+        "participant_id": 1431,
+        "participant_label": "study-301:screen-398",
+        "arm_id": "control",
+        "enrollment_day": 892.7208492760676
+      },
+      {
+        "participant_id": 1271,
+        "participant_label": "study-301:screen-399",
+        "arm_id": "active-0",
+        "enrollment_day": 892.9945822605433
+      },
+      {
+        "participant_id": 1541,
+        "participant_label": "study-301:screen-4",
+        "arm_id": "control",
+        "enrollment_day": 729.1195371794977
+      },
+      {
+        "participant_id": 1151,
+        "participant_label": "study-301:screen-400",
+        "arm_id": "control",
+        "enrollment_day": 893.3152571591643
+      },
+      {
+        "participant_id": 682,
+        "participant_label": "study-301:screen-402",
+        "arm_id": "active-0",
+        "enrollment_day": 894.1135540944158
+      },
+      {
+        "participant_id": 1118,
+        "participant_label": "study-301:screen-403",
+        "arm_id": "active-0",
+        "enrollment_day": 894.4910660868151
+      },
+      {
+        "participant_id": 1345,
+        "participant_label": "study-301:screen-404",
+        "arm_id": "active-0",
+        "enrollment_day": 894.883871091206
+      },
+      {
+        "participant_id": 16,
+        "participant_label": "study-301:screen-406",
+        "arm_id": "active-0",
+        "enrollment_day": 895.1753840602591
+      },
+      {
+        "participant_id": 995,
+        "participant_label": "study-301:screen-407",
+        "arm_id": "active-0",
+        "enrollment_day": 895.3241736950105
+      },
+      {
+        "participant_id": 604,
+        "participant_label": "study-301:screen-408",
+        "arm_id": "active-0",
+        "enrollment_day": 895.545134198579
+      },
+      {
+        "participant_id": 264,
+        "participant_label": "study-301:screen-409",
+        "arm_id": "active-0",
+        "enrollment_day": 895.8869184127548
+      },
+      {
+        "participant_id": 120,
+        "participant_label": "study-301:screen-41",
+        "arm_id": "control",
+        "enrollment_day": 767.2346781564089
+      },
+      {
+        "participant_id": 1784,
+        "participant_label": "study-301:screen-410",
+        "arm_id": "control",
+        "enrollment_day": 896.4516431056758
+      },
+      {
+        "participant_id": 106,
+        "participant_label": "study-301:screen-411",
+        "arm_id": "active-0",
+        "enrollment_day": 896.6939391297321
+      },
+      {
+        "participant_id": 1626,
+        "participant_label": "study-301:screen-413",
+        "arm_id": "active-0",
+        "enrollment_day": 898.5590855415671
+      },
+      {
+        "participant_id": 372,
+        "participant_label": "study-301:screen-414",
+        "arm_id": "control",
+        "enrollment_day": 898.8740994357918
+      },
+      {
+        "participant_id": 408,
+        "participant_label": "study-301:screen-415",
+        "arm_id": "active-0",
+        "enrollment_day": 899.6111662935764
+      },
+      {
+        "participant_id": 1617,
+        "participant_label": "study-301:screen-416",
+        "arm_id": "control",
+        "enrollment_day": 900.225993483411
+      },
+      {
+        "participant_id": 814,
+        "participant_label": "study-301:screen-417",
+        "arm_id": "control",
+        "enrollment_day": 900.835672175962
+      },
+      {
+        "participant_id": 640,
+        "participant_label": "study-301:screen-419",
+        "arm_id": "active-0",
+        "enrollment_day": 901.5465023106256
+      },
+      {
+        "participant_id": 862,
+        "participant_label": "study-301:screen-42",
+        "arm_id": "control",
+        "enrollment_day": 767.6948922586625
+      },
+      {
+        "participant_id": 499,
+        "participant_label": "study-301:screen-420",
+        "arm_id": "active-0",
+        "enrollment_day": 901.5469807924837
+      },
+      {
+        "participant_id": 948,
+        "participant_label": "study-301:screen-421",
+        "arm_id": "control",
+        "enrollment_day": 902.9210975989288
+      },
+      {
+        "participant_id": 688,
+        "participant_label": "study-301:screen-422",
+        "arm_id": "control",
+        "enrollment_day": 903.41975007737
+      },
+      {
+        "participant_id": 989,
+        "participant_label": "study-301:screen-423",
+        "arm_id": "active-0",
+        "enrollment_day": 903.4767215252452
+      },
+      {
+        "participant_id": 1374,
+        "participant_label": "study-301:screen-424",
+        "arm_id": "active-0",
+        "enrollment_day": 903.850437403835
+      },
+      {
+        "participant_id": 1001,
+        "participant_label": "study-301:screen-425",
+        "arm_id": "active-0",
+        "enrollment_day": 904.0014258129636
+      },
+      {
+        "participant_id": 1604,
+        "participant_label": "study-301:screen-427",
+        "arm_id": "control",
+        "enrollment_day": 904.2493940278761
+      },
+      {
+        "participant_id": 1384,
+        "participant_label": "study-301:screen-428",
+        "arm_id": "active-0",
+        "enrollment_day": 904.3015125433009
+      },
+      {
+        "participant_id": 1459,
+        "participant_label": "study-301:screen-429",
+        "arm_id": "active-0",
+        "enrollment_day": 904.5538336471213
+      },
+      {
+        "participant_id": 1638,
+        "participant_label": "study-301:screen-430",
+        "arm_id": "active-0",
+        "enrollment_day": 905.8377901762761
+      },
+      {
+        "participant_id": 1565,
+        "participant_label": "study-301:screen-432",
+        "arm_id": "control",
+        "enrollment_day": 905.9925436551115
+      },
+      {
+        "participant_id": 249,
+        "participant_label": "study-301:screen-433",
+        "arm_id": "active-0",
+        "enrollment_day": 906.078280993867
+      },
+      {
+        "participant_id": 1173,
+        "participant_label": "study-301:screen-434",
+        "arm_id": "active-0",
+        "enrollment_day": 906.4695303581799
+      },
+      {
+        "participant_id": 104,
+        "participant_label": "study-301:screen-435",
+        "arm_id": "active-0",
+        "enrollment_day": 906.5641730488974
+      },
+      {
+        "participant_id": 516,
+        "participant_label": "study-301:screen-437",
+        "arm_id": "control",
+        "enrollment_day": 908.1678515579844
+      },
+      {
+        "participant_id": 1943,
+        "participant_label": "study-301:screen-438",
+        "arm_id": "control",
+        "enrollment_day": 908.4019231785794
+      },
+      {
+        "participant_id": 764,
+        "participant_label": "study-301:screen-439",
+        "arm_id": "control",
+        "enrollment_day": 908.6371346117071
+      },
+      {
+        "participant_id": 1965,
+        "participant_label": "study-301:screen-44",
+        "arm_id": "active-0",
+        "enrollment_day": 767.7920569344626
+      },
+      {
+        "participant_id": 1035,
+        "participant_label": "study-301:screen-440",
+        "arm_id": "active-0",
+        "enrollment_day": 908.6415883984243
+      },
+      {
+        "participant_id": 846,
+        "participant_label": "study-301:screen-441",
+        "arm_id": "control",
+        "enrollment_day": 908.8533340904488
+      },
+      {
+        "participant_id": 1130,
+        "participant_label": "study-301:screen-443",
+        "arm_id": "control",
+        "enrollment_day": 909.2537808785053
+      },
+      {
+        "participant_id": 601,
+        "participant_label": "study-301:screen-445",
+        "arm_id": "active-0",
+        "enrollment_day": 910.5063495922683
+      },
+      {
+        "participant_id": 1452,
+        "participant_label": "study-301:screen-446",
+        "arm_id": "active-0",
+        "enrollment_day": 910.9328347966344
+      },
+      {
+        "participant_id": 472,
+        "participant_label": "study-301:screen-448",
+        "arm_id": "control",
+        "enrollment_day": 911.4654550205362
+      },
+      {
+        "participant_id": 85,
+        "participant_label": "study-301:screen-449",
+        "arm_id": "control",
+        "enrollment_day": 911.5832852102177
+      },
+      {
+        "participant_id": 1998,
+        "participant_label": "study-301:screen-45",
+        "arm_id": "control",
+        "enrollment_day": 767.8619789983974
+      },
+      {
+        "participant_id": 1105,
+        "participant_label": "study-301:screen-451",
+        "arm_id": "active-0",
+        "enrollment_day": 912.1771764067095
+      },
+      {
+        "participant_id": 1455,
+        "participant_label": "study-301:screen-452",
+        "arm_id": "control",
+        "enrollment_day": 912.4550930563911
+      },
+      {
+        "participant_id": 178,
+        "participant_label": "study-301:screen-454",
+        "arm_id": "control",
+        "enrollment_day": 912.6179689974008
+      },
+      {
+        "participant_id": 1364,
+        "participant_label": "study-301:screen-455",
+        "arm_id": "active-0",
+        "enrollment_day": 912.6202757001636
+      },
+      {
+        "participant_id": 397,
+        "participant_label": "study-301:screen-457",
+        "arm_id": "control",
+        "enrollment_day": 912.7811237529537
+      },
+      {
+        "participant_id": 662,
+        "participant_label": "study-301:screen-458",
+        "arm_id": "active-0",
+        "enrollment_day": 913.0210325047534
+      },
+      {
+        "participant_id": 1519,
+        "participant_label": "study-301:screen-461",
+        "arm_id": "control",
+        "enrollment_day": 913.859861102786
+      },
+      {
+        "participant_id": 721,
+        "participant_label": "study-301:screen-464",
+        "arm_id": "active-0",
+        "enrollment_day": 915.1789444518832
+      },
+      {
+        "participant_id": 1683,
+        "participant_label": "study-301:screen-465",
+        "arm_id": "control",
+        "enrollment_day": 915.5848986126484
+      },
+      {
+        "participant_id": 1110,
+        "participant_label": "study-301:screen-466",
+        "arm_id": "active-0",
+        "enrollment_day": 915.5968088170155
+      },
+      {
+        "participant_id": 1332,
+        "participant_label": "study-301:screen-468",
+        "arm_id": "active-0",
+        "enrollment_day": 916.0911878622923
+      },
+      {
+        "participant_id": 1348,
+        "participant_label": "study-301:screen-469",
+        "arm_id": "active-0",
+        "enrollment_day": 917.9572780870494
+      },
+      {
+        "participant_id": 1989,
+        "participant_label": "study-301:screen-47",
+        "arm_id": "active-0",
+        "enrollment_day": 769.2626048850564
+      },
+      {
+        "participant_id": 2,
+        "participant_label": "study-301:screen-470",
+        "arm_id": "control",
+        "enrollment_day": 918.125417519803
+      },
+      {
+        "participant_id": 1135,
+        "participant_label": "study-301:screen-471",
+        "arm_id": "control",
+        "enrollment_day": 918.2054760716985
+      },
+      {
+        "participant_id": 1553,
+        "participant_label": "study-301:screen-474",
+        "arm_id": "active-0",
+        "enrollment_day": 920.2150715722205
+      },
+      {
+        "participant_id": 320,
+        "participant_label": "study-301:screen-475",
+        "arm_id": "active-0",
+        "enrollment_day": 921.9739399227668
+      },
+      {
+        "participant_id": 1333,
+        "participant_label": "study-301:screen-476",
+        "arm_id": "active-0",
+        "enrollment_day": 922.1743104489371
+      },
+      {
+        "participant_id": 1198,
+        "participant_label": "study-301:screen-477",
+        "arm_id": "control",
+        "enrollment_day": 922.7542333105116
+      },
+      {
+        "participant_id": 956,
+        "participant_label": "study-301:screen-48",
+        "arm_id": "active-0",
+        "enrollment_day": 769.2669091069334
+      },
+      {
+        "participant_id": 573,
+        "participant_label": "study-301:screen-481",
+        "arm_id": "control",
+        "enrollment_day": 925.3251235431447
+      },
+      {
+        "participant_id": 1829,
+        "participant_label": "study-301:screen-485",
+        "arm_id": "active-0",
+        "enrollment_day": 926.4649521659662
+      },
+      {
+        "participant_id": 1392,
+        "participant_label": "study-301:screen-486",
+        "arm_id": "control",
+        "enrollment_day": 926.6137685227668
+      },
+      {
+        "participant_id": 392,
+        "participant_label": "study-301:screen-488",
+        "arm_id": "control",
+        "enrollment_day": 927.3533631118967
+      },
+      {
+        "participant_id": 227,
+        "participant_label": "study-301:screen-493",
+        "arm_id": "active-0",
+        "enrollment_day": 929.0036181138819
+      },
+      {
+        "participant_id": 1413,
+        "participant_label": "study-301:screen-494",
+        "arm_id": "control",
+        "enrollment_day": 929.0996484565917
+      },
+      {
+        "participant_id": 574,
+        "participant_label": "study-301:screen-495",
+        "arm_id": "control",
+        "enrollment_day": 929.5284715112066
+      },
+      {
+        "participant_id": 932,
+        "participant_label": "study-301:screen-496",
+        "arm_id": "active-0",
+        "enrollment_day": 929.5851933759157
+      },
+      {
+        "participant_id": 280,
+        "participant_label": "study-301:screen-497",
+        "arm_id": "control",
+        "enrollment_day": 929.7489070404938
+      },
+      {
+        "participant_id": 167,
+        "participant_label": "study-301:screen-499",
+        "arm_id": "control",
+        "enrollment_day": 930.2984154142787
+      },
+      {
+        "participant_id": 496,
+        "participant_label": "study-301:screen-50",
+        "arm_id": "control",
+        "enrollment_day": 769.3901783808279
+      },
+      {
+        "participant_id": 576,
+        "participant_label": "study-301:screen-500",
+        "arm_id": "control",
+        "enrollment_day": 930.4371683986369
+      },
+      {
+        "participant_id": 1416,
+        "participant_label": "study-301:screen-503",
+        "arm_id": "active-0",
+        "enrollment_day": 932.8768284238278
+      },
+      {
+        "participant_id": 1089,
+        "participant_label": "study-301:screen-504",
+        "arm_id": "active-0",
+        "enrollment_day": 933.0799457929822
+      },
+      {
+        "participant_id": 1213,
+        "participant_label": "study-301:screen-505",
+        "arm_id": "active-0",
+        "enrollment_day": 934.1359479422333
+      },
+      {
+        "participant_id": 585,
+        "participant_label": "study-301:screen-506",
+        "arm_id": "control",
+        "enrollment_day": 934.6425024710529
+      },
+      {
+        "participant_id": 1500,
+        "participant_label": "study-301:screen-507",
+        "arm_id": "active-0",
+        "enrollment_day": 934.6543587134905
+      },
+      {
+        "participant_id": 140,
+        "participant_label": "study-301:screen-508",
+        "arm_id": "active-0",
+        "enrollment_day": 935.3596272734496
+      },
+      {
+        "participant_id": 1437,
+        "participant_label": "study-301:screen-512",
+        "arm_id": "active-0",
+        "enrollment_day": 936.0678462980213
+      },
+      {
+        "participant_id": 531,
+        "participant_label": "study-301:screen-515",
+        "arm_id": "control",
+        "enrollment_day": 936.8241903089172
+      },
+      {
+        "participant_id": 1242,
+        "participant_label": "study-301:screen-516",
+        "arm_id": "active-0",
+        "enrollment_day": 936.8898944301839
+      },
+      {
+        "participant_id": 236,
+        "participant_label": "study-301:screen-52",
+        "arm_id": "control",
+        "enrollment_day": 769.8199062259255
+      },
+      {
+        "participant_id": 297,
+        "participant_label": "study-301:screen-520",
+        "arm_id": "active-0",
+        "enrollment_day": 937.4835040604537
+      },
+      {
+        "participant_id": 736,
+        "participant_label": "study-301:screen-523",
+        "arm_id": "control",
+        "enrollment_day": 939.1032430979849
+      },
+      {
+        "participant_id": 735,
+        "participant_label": "study-301:screen-524",
+        "arm_id": "control",
+        "enrollment_day": 939.5009948565989
+      },
+      {
+        "participant_id": 1358,
+        "participant_label": "study-301:screen-526",
+        "arm_id": "active-0",
+        "enrollment_day": 940.0498073029617
+      },
+      {
+        "participant_id": 782,
+        "participant_label": "study-301:screen-527",
+        "arm_id": "active-0",
+        "enrollment_day": 940.1414625315069
+      },
+      {
+        "participant_id": 168,
+        "participant_label": "study-301:screen-528",
+        "arm_id": "active-0",
+        "enrollment_day": 940.2314974617608
+      },
+      {
+        "participant_id": 409,
+        "participant_label": "study-301:screen-53",
+        "arm_id": "active-0",
+        "enrollment_day": 770.0540239248779
+      },
+      {
+        "participant_id": 609,
+        "participant_label": "study-301:screen-530",
+        "arm_id": "control",
+        "enrollment_day": 940.339197817349
+      },
+      {
+        "participant_id": 1917,
+        "participant_label": "study-301:screen-531",
+        "arm_id": "control",
+        "enrollment_day": 940.5489344252658
+      },
+      {
+        "participant_id": 1281,
+        "participant_label": "study-301:screen-532",
+        "arm_id": "control",
+        "enrollment_day": 940.9347082152697
+      },
+      {
+        "participant_id": 1043,
+        "participant_label": "study-301:screen-535",
+        "arm_id": "control",
+        "enrollment_day": 942.0006068101982
+      },
+      {
+        "participant_id": 450,
+        "participant_label": "study-301:screen-536",
+        "arm_id": "control",
+        "enrollment_day": 942.1905778764042
+      },
+      {
+        "participant_id": 1103,
+        "participant_label": "study-301:screen-537",
+        "arm_id": "control",
+        "enrollment_day": 942.2517251552933
+      },
+      {
+        "participant_id": 1854,
+        "participant_label": "study-301:screen-539",
+        "arm_id": "active-0",
+        "enrollment_day": 944.1648640801682
+      },
+      {
+        "participant_id": 548,
+        "participant_label": "study-301:screen-54",
+        "arm_id": "control",
+        "enrollment_day": 770.9629678371841
+      },
+      {
+        "participant_id": 1233,
+        "participant_label": "study-301:screen-540",
+        "arm_id": "active-0",
+        "enrollment_day": 944.2936993784432
+      },
+      {
+        "participant_id": 185,
+        "participant_label": "study-301:screen-543",
+        "arm_id": "active-0",
+        "enrollment_day": 945.5511753747012
+      },
+      {
+        "participant_id": 52,
+        "participant_label": "study-301:screen-544",
+        "arm_id": "active-0",
+        "enrollment_day": 945.5909608803954
+      },
+      {
+        "participant_id": 252,
+        "participant_label": "study-301:screen-545",
+        "arm_id": "active-0",
+        "enrollment_day": 945.6392385949614
+      },
+      {
+        "participant_id": 1636,
+        "participant_label": "study-301:screen-546",
+        "arm_id": "active-0",
+        "enrollment_day": 945.748352835928
+      },
+      {
+        "participant_id": 664,
+        "participant_label": "study-301:screen-549",
+        "arm_id": "active-0",
+        "enrollment_day": 947.300010761795
+      },
+      {
+        "participant_id": 1524,
+        "participant_label": "study-301:screen-550",
+        "arm_id": "active-0",
+        "enrollment_day": 947.7298915035597
+      },
+      {
+        "participant_id": 1450,
+        "participant_label": "study-301:screen-551",
+        "arm_id": "control",
+        "enrollment_day": 948.4160662227312
+      },
+      {
+        "participant_id": 1206,
+        "participant_label": "study-301:screen-552",
+        "arm_id": "active-0",
+        "enrollment_day": 948.5115339698093
+      },
+      {
+        "participant_id": 231,
+        "participant_label": "study-301:screen-553",
+        "arm_id": "active-0",
+        "enrollment_day": 948.5934549557624
+      },
+      {
+        "participant_id": 1144,
+        "participant_label": "study-301:screen-555",
+        "arm_id": "active-0",
+        "enrollment_day": 949.1702437163297
+      },
+      {
+        "participant_id": 1429,
+        "participant_label": "study-301:screen-556",
+        "arm_id": "active-0",
+        "enrollment_day": 949.5779363173266
+      },
+      {
+        "participant_id": 259,
+        "participant_label": "study-301:screen-557",
+        "arm_id": "control",
+        "enrollment_day": 949.6646033263523
+      },
+      {
+        "participant_id": 1503,
+        "participant_label": "study-301:screen-558",
+        "arm_id": "control",
+        "enrollment_day": 949.7779731687996
+      },
+      {
+        "participant_id": 215,
+        "participant_label": "study-301:screen-56",
+        "arm_id": "control",
+        "enrollment_day": 771.3032098906647
+      },
+      {
+        "participant_id": 386,
+        "participant_label": "study-301:screen-560",
+        "arm_id": "active-0",
+        "enrollment_day": 949.8317900020304
+      },
+      {
+        "participant_id": 211,
+        "participant_label": "study-301:screen-561",
+        "arm_id": "active-0",
+        "enrollment_day": 950.2460876693012
+      },
+      {
+        "participant_id": 22,
+        "participant_label": "study-301:screen-566",
+        "arm_id": "active-0",
+        "enrollment_day": 951.0327325611966
+      },
+      {
+        "participant_id": 1354,
+        "participant_label": "study-301:screen-568",
+        "arm_id": "active-0",
+        "enrollment_day": 951.4961020783006
+      },
+      {
+        "participant_id": 122,
+        "participant_label": "study-301:screen-57",
+        "arm_id": "active-0",
+        "enrollment_day": 771.4103226789776
+      },
+      {
+        "participant_id": 1252,
+        "participant_label": "study-301:screen-570",
+        "arm_id": "control",
+        "enrollment_day": 951.7273514005185
+      },
+      {
+        "participant_id": 1620,
+        "participant_label": "study-301:screen-571",
+        "arm_id": "control",
+        "enrollment_day": 951.9667851818726
+      },
+      {
+        "participant_id": 1622,
+        "participant_label": "study-301:screen-573",
+        "arm_id": "control",
+        "enrollment_day": 953.0750641366262
+      },
+      {
+        "participant_id": 1247,
+        "participant_label": "study-301:screen-574",
+        "arm_id": "active-0",
+        "enrollment_day": 953.5542229430673
+      },
+      {
+        "participant_id": 797,
+        "participant_label": "study-301:screen-575",
+        "arm_id": "control",
+        "enrollment_day": 954.0795329428023
+      },
+      {
+        "participant_id": 1862,
+        "participant_label": "study-301:screen-576",
+        "arm_id": "control",
+        "enrollment_day": 954.5344950888964
+      },
+      {
+        "participant_id": 1463,
+        "participant_label": "study-301:screen-577",
+        "arm_id": "active-0",
+        "enrollment_day": 954.5843724958321
+      },
+      {
+        "participant_id": 443,
+        "participant_label": "study-301:screen-578",
+        "arm_id": "control",
+        "enrollment_day": 954.6896009170378
+      },
+      {
+        "participant_id": 313,
+        "participant_label": "study-301:screen-58",
+        "arm_id": "control",
+        "enrollment_day": 771.5738553190797
+      },
+      {
+        "participant_id": 659,
+        "participant_label": "study-301:screen-580",
+        "arm_id": "active-0",
+        "enrollment_day": 955.2081266814046
+      },
+      {
+        "participant_id": 1486,
+        "participant_label": "study-301:screen-582",
+        "arm_id": "active-0",
+        "enrollment_day": 955.8520076207035
+      },
+      {
+        "participant_id": 571,
+        "participant_label": "study-301:screen-585",
+        "arm_id": "active-0",
+        "enrollment_day": 956.6609158303609
+      },
+      {
+        "participant_id": 198,
+        "participant_label": "study-301:screen-588",
+        "arm_id": "control",
+        "enrollment_day": 958.1751291129714
+      },
+      {
+        "participant_id": 1660,
+        "participant_label": "study-301:screen-59",
+        "arm_id": "control",
+        "enrollment_day": 771.8292722822323
+      },
+      {
+        "participant_id": 971,
+        "participant_label": "study-301:screen-590",
+        "arm_id": "active-0",
+        "enrollment_day": 958.767543645005
+      },
+      {
+        "participant_id": 884,
+        "participant_label": "study-301:screen-591",
+        "arm_id": "active-0",
+        "enrollment_day": 958.9368934394922
+      },
+      {
+        "participant_id": 1508,
+        "participant_label": "study-301:screen-592",
+        "arm_id": "active-0",
+        "enrollment_day": 959.5492551028904
+      },
+      {
+        "participant_id": 987,
+        "participant_label": "study-301:screen-593",
+        "arm_id": "active-0",
+        "enrollment_day": 959.7605056504062
+      },
+      {
+        "participant_id": 1149,
+        "participant_label": "study-301:screen-594",
+        "arm_id": "active-0",
+        "enrollment_day": 959.7887986861592
+      },
+      {
+        "participant_id": 398,
+        "participant_label": "study-301:screen-595",
+        "arm_id": "control",
+        "enrollment_day": 960.178076459309
+      },
+      {
+        "participant_id": 1282,
+        "participant_label": "study-301:screen-598",
+        "arm_id": "active-0",
+        "enrollment_day": 961.7811253820191
+      },
+      {
+        "participant_id": 1453,
+        "participant_label": "study-301:screen-6",
+        "arm_id": "control",
+        "enrollment_day": 731.362480627797
+      },
+      {
+        "participant_id": 1700,
+        "participant_label": "study-301:screen-60",
+        "arm_id": "active-0",
+        "enrollment_day": 772.1078932219727
+      },
+      {
+        "participant_id": 1721,
+        "participant_label": "study-301:screen-600",
+        "arm_id": "control",
+        "enrollment_day": 962.0935466346962
+      },
+      {
+        "participant_id": 1234,
+        "participant_label": "study-301:screen-601",
+        "arm_id": "active-0",
+        "enrollment_day": 962.2375724262079
+      },
+      {
+        "participant_id": 1436,
+        "participant_label": "study-301:screen-602",
+        "arm_id": "active-0",
+        "enrollment_day": 962.5366100096303
+      },
+      {
+        "participant_id": 760,
+        "participant_label": "study-301:screen-606",
+        "arm_id": "control",
+        "enrollment_day": 963.5900258321044
+      },
+      {
+        "participant_id": 1544,
+        "participant_label": "study-301:screen-607",
+        "arm_id": "control",
+        "enrollment_day": 963.7734489698078
+      },
+      {
+        "participant_id": 804,
+        "participant_label": "study-301:screen-608",
+        "arm_id": "active-0",
+        "enrollment_day": 964.0238037040989
+      },
+      {
+        "participant_id": 907,
+        "participant_label": "study-301:screen-609",
+        "arm_id": "active-0",
+        "enrollment_day": 964.2237486357342
+      },
+      {
+        "participant_id": 1655,
+        "participant_label": "study-301:screen-61",
+        "arm_id": "control",
+        "enrollment_day": 772.7824529388857
+      },
+      {
+        "participant_id": 1990,
+        "participant_label": "study-301:screen-610",
+        "arm_id": "active-0",
+        "enrollment_day": 964.523879505236
+      },
+      {
+        "participant_id": 1740,
+        "participant_label": "study-301:screen-611",
+        "arm_id": "control",
+        "enrollment_day": 964.8157489250702
+      },
+      {
+        "participant_id": 1794,
+        "participant_label": "study-301:screen-613",
+        "arm_id": "control",
+        "enrollment_day": 966.0946911792671
+      },
+      {
+        "participant_id": 308,
+        "participant_label": "study-301:screen-616",
+        "arm_id": "control",
+        "enrollment_day": 967.2028738068177
+      },
+      {
+        "participant_id": 1568,
+        "participant_label": "study-301:screen-619",
+        "arm_id": "active-0",
+        "enrollment_day": 968.5823959723056
+      },
+      {
+        "participant_id": 384,
+        "participant_label": "study-301:screen-62",
+        "arm_id": "control",
+        "enrollment_day": 772.8284340477602
+      },
+      {
+        "participant_id": 444,
+        "participant_label": "study-301:screen-621",
+        "arm_id": "active-0",
+        "enrollment_day": 968.705314124717
+      },
+      {
+        "participant_id": 291,
+        "participant_label": "study-301:screen-622",
+        "arm_id": "active-0",
+        "enrollment_day": 969.5337888201652
+      },
+      {
+        "participant_id": 413,
+        "participant_label": "study-301:screen-623",
+        "arm_id": "control",
+        "enrollment_day": 969.9850762342148
+      },
+      {
+        "participant_id": 679,
+        "participant_label": "study-301:screen-625",
+        "arm_id": "control",
+        "enrollment_day": 970.513772158741
+      },
+      {
+        "participant_id": 598,
+        "participant_label": "study-301:screen-626",
+        "arm_id": "control",
+        "enrollment_day": 970.8249716694254
+      },
+      {
+        "participant_id": 415,
+        "participant_label": "study-301:screen-627",
+        "arm_id": "control",
+        "enrollment_day": 971.2918543603291
+      },
+      {
+        "participant_id": 1863,
+        "participant_label": "study-301:screen-628",
+        "arm_id": "active-0",
+        "enrollment_day": 971.4976252819079
+      },
+      {
+        "participant_id": 845,
+        "participant_label": "study-301:screen-629",
+        "arm_id": "active-0",
+        "enrollment_day": 971.5910683728127
+      },
+      {
+        "participant_id": 1936,
+        "participant_label": "study-301:screen-630",
+        "arm_id": "control",
+        "enrollment_day": 971.6135775616095
+      },
+      {
+        "participant_id": 1680,
+        "participant_label": "study-301:screen-631",
+        "arm_id": "control",
+        "enrollment_day": 971.7316065195757
+      },
+      {
+        "participant_id": 1684,
+        "participant_label": "study-301:screen-632",
+        "arm_id": "active-0",
+        "enrollment_day": 971.7764243068773
+      },
+      {
+        "participant_id": 1630,
+        "participant_label": "study-301:screen-633",
+        "arm_id": "active-0",
+        "enrollment_day": 971.9359820307848
+      },
+      {
+        "participant_id": 653,
+        "participant_label": "study-301:screen-634",
+        "arm_id": "control",
+        "enrollment_day": 972.3608552173466
+      },
+      {
+        "participant_id": 1483,
+        "participant_label": "study-301:screen-635",
+        "arm_id": "active-0",
+        "enrollment_day": 972.915094175922
+      },
+      {
+        "participant_id": 1730,
+        "participant_label": "study-301:screen-636",
+        "arm_id": "active-0",
+        "enrollment_day": 972.9837985769254
+      },
+      {
+        "participant_id": 1050,
+        "participant_label": "study-301:screen-637",
+        "arm_id": "active-0",
+        "enrollment_day": 973.031255304265
+      },
+      {
+        "participant_id": 593,
+        "participant_label": "study-301:screen-638",
+        "arm_id": "control",
+        "enrollment_day": 973.0550069216499
+      },
+      {
+        "participant_id": 1882,
+        "participant_label": "study-301:screen-639",
+        "arm_id": "control",
+        "enrollment_day": 973.1496537707831
+      },
+      {
+        "participant_id": 1190,
+        "participant_label": "study-301:screen-642",
+        "arm_id": "active-0",
+        "enrollment_day": 973.8459247221678
+      },
+      {
+        "participant_id": 375,
+        "participant_label": "study-301:screen-643",
+        "arm_id": "control",
+        "enrollment_day": 975.0644899796432
+      },
+      {
+        "participant_id": 1228,
+        "participant_label": "study-301:screen-644",
+        "arm_id": "control",
+        "enrollment_day": 975.4102889072601
+      },
+      {
+        "participant_id": 725,
+        "participant_label": "study-301:screen-646",
+        "arm_id": "active-0",
+        "enrollment_day": 976.3169094249754
+      },
+      {
+        "participant_id": 435,
+        "participant_label": "study-301:screen-648",
+        "arm_id": "control",
+        "enrollment_day": 977.3952182842781
+      },
+      {
+        "participant_id": 815,
+        "participant_label": "study-301:screen-649",
+        "arm_id": "active-0",
+        "enrollment_day": 977.4899204024521
+      },
+      {
+        "participant_id": 905,
+        "participant_label": "study-301:screen-650",
+        "arm_id": "control",
+        "enrollment_day": 978.0854052242056
+      },
+      {
+        "participant_id": 149,
+        "participant_label": "study-301:screen-651",
+        "arm_id": "control",
+        "enrollment_day": 978.5973488518434
+      },
+      {
+        "participant_id": 1826,
+        "participant_label": "study-301:screen-653",
+        "arm_id": "active-0",
+        "enrollment_day": 979.5736025683216
+      },
+      {
+        "participant_id": 757,
+        "participant_label": "study-301:screen-655",
+        "arm_id": "control",
+        "enrollment_day": 980.2181922222705
+      },
+      {
+        "participant_id": 1649,
+        "participant_label": "study-301:screen-657",
+        "arm_id": "control",
+        "enrollment_day": 980.6870432345881
+      },
+      {
+        "participant_id": 1468,
+        "participant_label": "study-301:screen-66",
+        "arm_id": "control",
+        "enrollment_day": 774.7144939734915
+      },
+      {
+        "participant_id": 1575,
+        "participant_label": "study-301:screen-660",
+        "arm_id": "active-0",
+        "enrollment_day": 981.6137860166297
+      },
+      {
+        "participant_id": 38,
+        "participant_label": "study-301:screen-661",
+        "arm_id": "control",
+        "enrollment_day": 982.2055937601093
+      },
+      {
+        "participant_id": 1598,
+        "participant_label": "study-301:screen-665",
+        "arm_id": "active-0",
+        "enrollment_day": 983.9381724610546
+      },
+      {
+        "participant_id": 830,
+        "participant_label": "study-301:screen-666",
+        "arm_id": "active-0",
+        "enrollment_day": 984.182625532606
+      },
+      {
+        "participant_id": 1901,
+        "participant_label": "study-301:screen-669",
+        "arm_id": "control",
+        "enrollment_day": 984.9634368768839
+      },
+      {
+        "participant_id": 695,
+        "participant_label": "study-301:screen-670",
+        "arm_id": "active-0",
+        "enrollment_day": 986.4398171588068
+      },
+      {
+        "participant_id": 1584,
+        "participant_label": "study-301:screen-671",
+        "arm_id": "control",
+        "enrollment_day": 986.5468728957985
+      },
+      {
+        "participant_id": 643,
+        "participant_label": "study-301:screen-672",
+        "arm_id": "control",
+        "enrollment_day": 986.694905626188
+      },
+      {
+        "participant_id": 998,
+        "participant_label": "study-301:screen-673",
+        "arm_id": "active-0",
+        "enrollment_day": 986.7509004362237
+      },
+      {
+        "participant_id": 360,
+        "participant_label": "study-301:screen-674",
+        "arm_id": "active-0",
+        "enrollment_day": 986.8642900050089
+      },
+      {
+        "participant_id": 1985,
+        "participant_label": "study-301:screen-676",
+        "arm_id": "control",
+        "enrollment_day": 987.613502211281
+      },
+      {
+        "participant_id": 1318,
+        "participant_label": "study-301:screen-677",
+        "arm_id": "control",
+        "enrollment_day": 987.8440443173167
+      },
+      {
+        "participant_id": 886,
+        "participant_label": "study-301:screen-678",
+        "arm_id": "active-0",
+        "enrollment_day": 988.0110701833548
+      },
+      {
+        "participant_id": 1394,
+        "participant_label": "study-301:screen-679",
+        "arm_id": "active-0",
+        "enrollment_day": 988.1017080096113
+      },
+      {
+        "participant_id": 147,
+        "participant_label": "study-301:screen-68",
+        "arm_id": "control",
+        "enrollment_day": 775.1054712721383
+      },
+      {
+        "participant_id": 867,
+        "participant_label": "study-301:screen-683",
+        "arm_id": "control",
+        "enrollment_day": 989.865968485115
+      },
+      {
+        "participant_id": 1732,
+        "participant_label": "study-301:screen-684",
+        "arm_id": "active-0",
+        "enrollment_day": 989.9331182943696
+      },
+      {
+        "participant_id": 1201,
+        "participant_label": "study-301:screen-685",
+        "arm_id": "control",
+        "enrollment_day": 990.6107743761265
+      },
+      {
+        "participant_id": 260,
+        "participant_label": "study-301:screen-687",
+        "arm_id": "active-0",
+        "enrollment_day": 993.0136276217111
+      },
+      {
+        "participant_id": 696,
+        "participant_label": "study-301:screen-689",
+        "arm_id": "active-0",
+        "enrollment_day": 994.2047692965227
+      },
+      {
+        "participant_id": 91,
+        "participant_label": "study-301:screen-69",
+        "arm_id": "active-0",
+        "enrollment_day": 776.1429396851098
+      },
+      {
+        "participant_id": 130,
+        "participant_label": "study-301:screen-691",
+        "arm_id": "control",
+        "enrollment_day": 995.0570162126737
+      },
+      {
+        "participant_id": 994,
+        "participant_label": "study-301:screen-692",
+        "arm_id": "active-0",
+        "enrollment_day": 995.6423626993208
+      },
+      {
+        "participant_id": 1651,
+        "participant_label": "study-301:screen-693",
+        "arm_id": "active-0",
+        "enrollment_day": 996.7639428100607
+      },
+      {
+        "participant_id": 1328,
+        "participant_label": "study-301:screen-694",
+        "arm_id": "active-0",
+        "enrollment_day": 997.2851881427748
+      },
+      {
+        "participant_id": 691,
+        "participant_label": "study-301:screen-695",
+        "arm_id": "active-0",
+        "enrollment_day": 997.4075726614442
+      },
+      {
+        "participant_id": 1199,
+        "participant_label": "study-301:screen-697",
+        "arm_id": "active-0",
+        "enrollment_day": 997.975917476574
+      },
+      {
+        "participant_id": 9,
+        "participant_label": "study-301:screen-699",
+        "arm_id": "control",
+        "enrollment_day": 998.8659103769929
+      },
+      {
+        "participant_id": 41,
+        "participant_label": "study-301:screen-7",
+        "arm_id": "active-0",
+        "enrollment_day": 732.2446563649844
+      },
+      {
+        "participant_id": 1576,
+        "participant_label": "study-301:screen-70",
+        "arm_id": "active-0",
+        "enrollment_day": 776.540524960092
+      },
+      {
+        "participant_id": 1011,
+        "participant_label": "study-301:screen-700",
+        "arm_id": "active-0",
+        "enrollment_day": 998.9586995113453
+      },
+      {
+        "participant_id": 1334,
+        "participant_label": "study-301:screen-701",
+        "arm_id": "active-0",
+        "enrollment_day": 999.1606452467199
+      },
+      {
+        "participant_id": 1277,
+        "participant_label": "study-301:screen-702",
+        "arm_id": "control",
+        "enrollment_day": 999.2962617250828
+      },
+      {
+        "participant_id": 475,
+        "participant_label": "study-301:screen-704",
+        "arm_id": "control",
+        "enrollment_day": 999.9138134209697
+      },
+      {
+        "participant_id": 607,
+        "participant_label": "study-301:screen-705",
+        "arm_id": "active-0",
+        "enrollment_day": 1000.098352452371
+      },
+      {
+        "participant_id": 1616,
+        "participant_label": "study-301:screen-706",
+        "arm_id": "control",
+        "enrollment_day": 1000.2218424588116
+      },
+      {
+        "participant_id": 786,
+        "participant_label": "study-301:screen-707",
+        "arm_id": "active-0",
+        "enrollment_day": 1000.7194775737462
+      },
+      {
+        "participant_id": 752,
+        "participant_label": "study-301:screen-708",
+        "arm_id": "control",
+        "enrollment_day": 1001.0558891929546
+      },
+      {
+        "participant_id": 1478,
+        "participant_label": "study-301:screen-709",
+        "arm_id": "active-0",
+        "enrollment_day": 1001.5060502168865
+      },
+      {
+        "participant_id": 1528,
+        "participant_label": "study-301:screen-71",
+        "arm_id": "control",
+        "enrollment_day": 777.0595508388635
+      },
+      {
+        "participant_id": 1977,
+        "participant_label": "study-301:screen-710",
+        "arm_id": "control",
+        "enrollment_day": 1001.5526341861948
+      },
+      {
+        "participant_id": 1028,
+        "participant_label": "study-301:screen-711",
+        "arm_id": "control",
+        "enrollment_day": 1001.6190464381283
+      },
+      {
+        "participant_id": 896,
+        "participant_label": "study-301:screen-712",
+        "arm_id": "control",
+        "enrollment_day": 1001.7909483043595
+      },
+      {
+        "participant_id": 693,
+        "participant_label": "study-301:screen-713",
+        "arm_id": "control",
+        "enrollment_day": 1001.9751301298672
+      },
+      {
+        "participant_id": 1238,
+        "participant_label": "study-301:screen-715",
+        "arm_id": "active-0",
+        "enrollment_day": 1002.7756742788424
+      },
+      {
+        "participant_id": 143,
+        "participant_label": "study-301:screen-716",
+        "arm_id": "control",
+        "enrollment_day": 1002.9350728693183
+      },
+      {
+        "participant_id": 183,
+        "participant_label": "study-301:screen-717",
+        "arm_id": "active-0",
+        "enrollment_day": 1003.224988119174
+      },
+      {
+        "participant_id": 1789,
+        "participant_label": "study-301:screen-718",
+        "arm_id": "active-0",
+        "enrollment_day": 1004.2912333855427
+      },
+      {
+        "participant_id": 1449,
+        "participant_label": "study-301:screen-72",
+        "arm_id": "active-0",
+        "enrollment_day": 777.2634420891147
+      },
+      {
+        "participant_id": 1767,
+        "participant_label": "study-301:screen-721",
+        "arm_id": "control",
+        "enrollment_day": 1006.2190955341865
+      },
+      {
+        "participant_id": 1635,
+        "participant_label": "study-301:screen-722",
+        "arm_id": "active-0",
+        "enrollment_day": 1006.3106148742484
+      },
+      {
+        "participant_id": 983,
+        "participant_label": "study-301:screen-723",
+        "arm_id": "control",
+        "enrollment_day": 1006.747190238003
+      },
+      {
+        "participant_id": 546,
+        "participant_label": "study-301:screen-724",
+        "arm_id": "control",
+        "enrollment_day": 1006.804917687783
+      },
+      {
+        "participant_id": 881,
+        "participant_label": "study-301:screen-725",
+        "arm_id": "control",
+        "enrollment_day": 1006.9422565008683
+      },
+      {
+        "participant_id": 141,
+        "participant_label": "study-301:screen-726",
+        "arm_id": "control",
+        "enrollment_day": 1007.2914703194502
+      },
+      {
+        "participant_id": 208,
+        "participant_label": "study-301:screen-728",
+        "arm_id": "active-0",
+        "enrollment_day": 1007.427310400385
+      },
+      {
+        "participant_id": 1040,
+        "participant_label": "study-301:screen-729",
+        "arm_id": "control",
+        "enrollment_day": 1007.9916433753523
+      },
+      {
+        "participant_id": 1499,
+        "participant_label": "study-301:screen-73",
+        "arm_id": "control",
+        "enrollment_day": 777.728995178209
+      },
+      {
+        "participant_id": 1283,
+        "participant_label": "study-301:screen-730",
+        "arm_id": "active-0",
+        "enrollment_day": 1008.0029030633699
+      },
+      {
+        "participant_id": 657,
+        "participant_label": "study-301:screen-731",
+        "arm_id": "control",
+        "enrollment_day": 1008.0140727728732
+      },
+      {
+        "participant_id": 1593,
+        "participant_label": "study-301:screen-732",
+        "arm_id": "control",
+        "enrollment_day": 1008.196770679926
+      },
+      {
+        "participant_id": 246,
+        "participant_label": "study-301:screen-733",
+        "arm_id": "control",
+        "enrollment_day": 1008.4255693040886
+      },
+      {
+        "participant_id": 565,
+        "participant_label": "study-301:screen-734",
+        "arm_id": "control",
+        "enrollment_day": 1008.9097285827199
+      },
+      {
+        "participant_id": 146,
+        "participant_label": "study-301:screen-735",
+        "arm_id": "active-0",
+        "enrollment_day": 1008.9214458090187
+      },
+      {
+        "participant_id": 1696,
+        "participant_label": "study-301:screen-737",
+        "arm_id": "control",
+        "enrollment_day": 1009.2177204137224
+      },
+      {
+        "participant_id": 1325,
+        "participant_label": "study-301:screen-738",
+        "arm_id": "control",
+        "enrollment_day": 1009.6739092572384
+      },
+      {
+        "participant_id": 1661,
+        "participant_label": "study-301:screen-739",
+        "arm_id": "control",
+        "enrollment_day": 1009.9106295783863
+      },
+      {
+        "participant_id": 1717,
+        "participant_label": "study-301:screen-74",
+        "arm_id": "active-0",
+        "enrollment_day": 778.651565687425
+      },
+      {
+        "participant_id": 1289,
+        "participant_label": "study-301:screen-741",
+        "arm_id": "control",
+        "enrollment_day": 1010.8224390743974
+      },
+      {
+        "participant_id": 1868,
+        "participant_label": "study-301:screen-742",
+        "arm_id": "active-0",
+        "enrollment_day": 1011.1796506665992
+      },
+      {
+        "participant_id": 1582,
+        "participant_label": "study-301:screen-743",
+        "arm_id": "control",
+        "enrollment_day": 1011.2621720018694
+      },
+      {
+        "participant_id": 913,
+        "participant_label": "study-301:screen-745",
+        "arm_id": "active-0",
+        "enrollment_day": 1011.85977144438
+      },
+      {
+        "participant_id": 1142,
+        "participant_label": "study-301:screen-746",
+        "arm_id": "active-0",
+        "enrollment_day": 1012.418612139222
+      },
+      {
+        "participant_id": 880,
+        "participant_label": "study-301:screen-75",
+        "arm_id": "control",
+        "enrollment_day": 779.3078574095781
+      },
+      {
+        "participant_id": 1107,
+        "participant_label": "study-301:screen-750",
+        "arm_id": "control",
+        "enrollment_day": 1013.8350938364961
+      },
+      {
+        "participant_id": 822,
+        "participant_label": "study-301:screen-751",
+        "arm_id": "active-0",
+        "enrollment_day": 1013.8980651539762
+      },
+      {
+        "participant_id": 1109,
+        "participant_label": "study-301:screen-754",
+        "arm_id": "control",
+        "enrollment_day": 1014.5997407815021
+      },
+      {
+        "participant_id": 521,
+        "participant_label": "study-301:screen-755",
+        "arm_id": "active-0",
+        "enrollment_day": 1014.6354661910567
+      },
+      {
+        "participant_id": 550,
+        "participant_label": "study-301:screen-757",
+        "arm_id": "active-0",
+        "enrollment_day": 1014.7315819436858
+      },
+      {
+        "participant_id": 1408,
+        "participant_label": "study-301:screen-759",
+        "arm_id": "control",
+        "enrollment_day": 1016.1822503984272
+      },
+      {
+        "participant_id": 1679,
+        "participant_label": "study-301:screen-761",
+        "arm_id": "control",
+        "enrollment_day": 1016.8017237429432
+      },
+      {
+        "participant_id": 272,
+        "participant_label": "study-301:screen-762",
+        "arm_id": "active-0",
+        "enrollment_day": 1017.1583840498471
+      },
+      {
+        "participant_id": 201,
+        "participant_label": "study-301:screen-763",
+        "arm_id": "control",
+        "enrollment_day": 1017.1605591392522
+      },
+      {
+        "participant_id": 1467,
+        "participant_label": "study-301:screen-764",
+        "arm_id": "active-0",
+        "enrollment_day": 1018.4081602879519
+      },
+      {
+        "participant_id": 919,
+        "participant_label": "study-301:screen-766",
+        "arm_id": "control",
+        "enrollment_day": 1018.4890939680389
+      },
+      {
+        "participant_id": 454,
+        "participant_label": "study-301:screen-769",
+        "arm_id": "control",
+        "enrollment_day": 1019.0027498555164
+      },
+      {
+        "participant_id": 1316,
+        "participant_label": "study-301:screen-77",
+        "arm_id": "control",
+        "enrollment_day": 780.662596237096
+      },
+      {
+        "participant_id": 33,
+        "participant_label": "study-301:screen-771",
+        "arm_id": "active-0",
+        "enrollment_day": 1019.8810721209477
+      },
+      {
+        "participant_id": 1602,
+        "participant_label": "study-301:screen-773",
+        "arm_id": "active-0",
+        "enrollment_day": 1019.9902149071593
+      },
+      {
+        "participant_id": 256,
+        "participant_label": "study-301:screen-774",
+        "arm_id": "control",
+        "enrollment_day": 1020.0330466918086
+      },
+      {
+        "participant_id": 839,
+        "participant_label": "study-301:screen-775",
+        "arm_id": "control",
+        "enrollment_day": 1020.3357051849212
+      },
+      {
+        "participant_id": 1830,
+        "participant_label": "study-301:screen-777",
+        "arm_id": "active-0",
+        "enrollment_day": 1022.2894373082577
+      },
+      {
+        "participant_id": 747,
+        "participant_label": "study-301:screen-778",
+        "arm_id": "control",
+        "enrollment_day": 1022.7350072624106
+      },
+      {
+        "participant_id": 1913,
+        "participant_label": "study-301:screen-780",
+        "arm_id": "active-0",
+        "enrollment_day": 1023.1539371241153
+      },
+      {
+        "participant_id": 686,
+        "participant_label": "study-301:screen-781",
+        "arm_id": "control",
+        "enrollment_day": 1023.5124035022089
+      },
+      {
+        "participant_id": 1763,
+        "participant_label": "study-301:screen-782",
+        "arm_id": "control",
+        "enrollment_day": 1024.1248813975867
+      },
+      {
+        "participant_id": 950,
+        "participant_label": "study-301:screen-783",
+        "arm_id": "active-0",
+        "enrollment_day": 1024.2260488307284
+      },
+      {
+        "participant_id": 850,
+        "participant_label": "study-301:screen-784",
+        "arm_id": "control",
+        "enrollment_day": 1024.2810204852005
+      },
+      {
+        "participant_id": 321,
+        "participant_label": "study-301:screen-785",
+        "arm_id": "control",
+        "enrollment_day": 1025.1423984690073
+      },
+      {
+        "participant_id": 1212,
+        "participant_label": "study-301:screen-786",
+        "arm_id": "control",
+        "enrollment_day": 1025.7830761585922
+      },
+      {
+        "participant_id": 702,
+        "participant_label": "study-301:screen-789",
+        "arm_id": "active-0",
+        "enrollment_day": 1026.286738030747
+      },
+      {
+        "participant_id": 1824,
+        "participant_label": "study-301:screen-79",
+        "arm_id": "control",
+        "enrollment_day": 781.8185923132328
+      },
+      {
+        "participant_id": 1795,
+        "participant_label": "study-301:screen-790",
+        "arm_id": "active-0",
+        "enrollment_day": 1026.3958021199012
+      },
+      {
+        "participant_id": 1912,
+        "participant_label": "study-301:screen-791",
+        "arm_id": "active-0",
+        "enrollment_day": 1026.4752292300257
+      },
+      {
+        "participant_id": 1207,
+        "participant_label": "study-301:screen-793",
+        "arm_id": "active-0",
+        "enrollment_day": 1026.8815968458803
+      },
+      {
+        "participant_id": 1015,
+        "participant_label": "study-301:screen-794",
+        "arm_id": "control",
+        "enrollment_day": 1027.0788706936933
+      },
+      {
+        "participant_id": 328,
+        "participant_label": "study-301:screen-795",
+        "arm_id": "control",
+        "enrollment_day": 1027.1598487019933
+      },
+      {
+        "participant_id": 1669,
+        "participant_label": "study-301:screen-796",
+        "arm_id": "active-0",
+        "enrollment_day": 1027.6857172189098
+      },
+      {
+        "participant_id": 591,
+        "participant_label": "study-301:screen-797",
+        "arm_id": "control",
+        "enrollment_day": 1028.2820156737375
+      },
+      {
+        "participant_id": 477,
+        "participant_label": "study-301:screen-798",
+        "arm_id": "control",
+        "enrollment_day": 1028.327282638928
+      },
+      {
+        "participant_id": 225,
+        "participant_label": "study-301:screen-799",
+        "arm_id": "control",
+        "enrollment_day": 1028.6841372318668
+      },
+      {
+        "participant_id": 200,
+        "participant_label": "study-301:screen-8",
+        "arm_id": "control",
+        "enrollment_day": 732.8131065272553
+      },
+      {
+        "participant_id": 844,
+        "participant_label": "study-301:screen-800",
+        "arm_id": "control",
+        "enrollment_day": 1028.6981496280807
+      },
+      {
+        "participant_id": 1379,
+        "participant_label": "study-301:screen-802",
+        "arm_id": "control",
+        "enrollment_day": 1028.7521131717863
+      },
+      {
+        "participant_id": 1952,
+        "participant_label": "study-301:screen-805",
+        "arm_id": "active-0",
+        "enrollment_day": 1030.0477785607532
+      },
+      {
+        "participant_id": 885,
+        "participant_label": "study-301:screen-806",
+        "arm_id": "control",
+        "enrollment_day": 1030.159323665302
+      },
+      {
+        "participant_id": 290,
+        "participant_label": "study-301:screen-807",
+        "arm_id": "active-0",
+        "enrollment_day": 1030.3391128465012
+      },
+      {
+        "participant_id": 1890,
+        "participant_label": "study-301:screen-809",
+        "arm_id": "active-0",
+        "enrollment_day": 1030.7016428451936
+      },
+      {
+        "participant_id": 1245,
+        "participant_label": "study-301:screen-81",
+        "arm_id": "control",
+        "enrollment_day": 781.9755411117904
+      },
+      {
+        "participant_id": 65,
+        "participant_label": "study-301:screen-810",
+        "arm_id": "control",
+        "enrollment_day": 1030.818679692146
+      },
+      {
+        "participant_id": 184,
+        "participant_label": "study-301:screen-811",
+        "arm_id": "active-0",
+        "enrollment_day": 1030.9361691627291
+      },
+      {
+        "participant_id": 1179,
+        "participant_label": "study-301:screen-812",
+        "arm_id": "control",
+        "enrollment_day": 1031.091255444023
+      },
+      {
+        "participant_id": 88,
+        "participant_label": "study-301:screen-813",
+        "arm_id": "active-0",
+        "enrollment_day": 1031.1690727771336
+      },
+      {
+        "participant_id": 1714,
+        "participant_label": "study-301:screen-814",
+        "arm_id": "active-0",
+        "enrollment_day": 1031.8635410990157
+      },
+      {
+        "participant_id": 894,
+        "participant_label": "study-301:screen-815",
+        "arm_id": "control",
+        "enrollment_day": 1031.9855880445916
+      },
+      {
+        "participant_id": 500,
+        "participant_label": "study-301:screen-816",
+        "arm_id": "control",
+        "enrollment_day": 1032.1538927199852
+      },
+      {
+        "participant_id": 1002,
+        "participant_label": "study-301:screen-817",
+        "arm_id": "active-0",
+        "enrollment_day": 1032.7237202569204
+      },
+      {
+        "participant_id": 199,
+        "participant_label": "study-301:screen-818",
+        "arm_id": "control",
+        "enrollment_day": 1033.0413671544052
+      },
+      {
+        "participant_id": 1619,
+        "participant_label": "study-301:screen-819",
+        "arm_id": "active-0",
+        "enrollment_day": 1033.0918530872943
+      },
+      {
+        "participant_id": 707,
+        "participant_label": "study-301:screen-820",
+        "arm_id": "control",
+        "enrollment_day": 1034.2771194691586
+      },
+      {
+        "participant_id": 1095,
+        "participant_label": "study-301:screen-821",
+        "arm_id": "active-0",
+        "enrollment_day": 1034.80343907212
+      },
+      {
+        "participant_id": 1874,
+        "participant_label": "study-301:screen-823",
+        "arm_id": "control",
+        "enrollment_day": 1036.0009438402633
+      },
+      {
+        "participant_id": 1642,
+        "participant_label": "study-301:screen-824",
+        "arm_id": "control",
+        "enrollment_day": 1036.5341850607203
+      },
+      {
+        "participant_id": 518,
+        "participant_label": "study-301:screen-825",
+        "arm_id": "active-0",
+        "enrollment_day": 1036.7737563401295
+      },
+      {
+        "participant_id": 1526,
+        "participant_label": "study-301:screen-83",
+        "arm_id": "active-0",
+        "enrollment_day": 782.6585216766697
+      },
+      {
+        "participant_id": 1595,
+        "participant_label": "study-301:screen-830",
+        "arm_id": "control",
+        "enrollment_day": 1038.2988551994667
+      },
+      {
+        "participant_id": 1550,
+        "participant_label": "study-301:screen-832",
+        "arm_id": "control",
+        "enrollment_day": 1038.5804433422081
+      },
+      {
+        "participant_id": 972,
+        "participant_label": "study-301:screen-833",
+        "arm_id": "active-0",
+        "enrollment_day": 1038.9982421182892
+      },
+      {
+        "participant_id": 648,
+        "participant_label": "study-301:screen-834",
+        "arm_id": "active-0",
+        "enrollment_day": 1039.0777416976118
+      },
+      {
+        "participant_id": 807,
+        "participant_label": "study-301:screen-835",
+        "arm_id": "active-0",
+        "enrollment_day": 1039.183934343681
+      },
+      {
+        "participant_id": 730,
+        "participant_label": "study-301:screen-836",
+        "arm_id": "control",
+        "enrollment_day": 1039.3217411952985
+      },
+      {
+        "participant_id": 1919,
+        "participant_label": "study-301:screen-837",
+        "arm_id": "control",
+        "enrollment_day": 1039.388382267203
+      },
+      {
+        "participant_id": 917,
+        "participant_label": "study-301:screen-838",
+        "arm_id": "active-0",
+        "enrollment_day": 1040.5358277133053
+      },
+      {
+        "participant_id": 1663,
+        "participant_label": "study-301:screen-839",
+        "arm_id": "active-0",
+        "enrollment_day": 1040.8024339382355
+      },
+      {
+        "participant_id": 1303,
+        "participant_label": "study-301:screen-84",
+        "arm_id": "active-0",
+        "enrollment_day": 783.0733450243995
+      },
+      {
+        "participant_id": 821,
+        "participant_label": "study-301:screen-840",
+        "arm_id": "control",
+        "enrollment_day": 1040.8477227244834
+      },
+      {
+        "participant_id": 1694,
+        "participant_label": "study-301:screen-842",
+        "arm_id": "active-0",
+        "enrollment_day": 1041.0356540882813
+      },
+      {
+        "participant_id": 1685,
+        "participant_label": "study-301:screen-843",
+        "arm_id": "control",
+        "enrollment_day": 1041.174025645699
+      },
+      {
+        "participant_id": 672,
+        "participant_label": "study-301:screen-844",
+        "arm_id": "control",
+        "enrollment_day": 1041.3482755370483
+      },
+      {
+        "participant_id": 346,
+        "participant_label": "study-301:screen-847",
+        "arm_id": "control",
+        "enrollment_day": 1043.131667989016
+      },
+      {
+        "participant_id": 142,
+        "participant_label": "study-301:screen-852",
+        "arm_id": "active-0",
+        "enrollment_day": 1044.3901773902253
+      },
+      {
+        "participant_id": 210,
+        "participant_label": "study-301:screen-856",
+        "arm_id": "control",
+        "enrollment_day": 1045.0942468950373
+      },
+      {
+        "participant_id": 1448,
+        "participant_label": "study-301:screen-857",
+        "arm_id": "control",
+        "enrollment_day": 1045.2178269629876
+      },
+      {
+        "participant_id": 470,
+        "participant_label": "study-301:screen-858",
+        "arm_id": "control",
+        "enrollment_day": 1045.6466972585656
+      },
+      {
+        "participant_id": 1884,
+        "participant_label": "study-301:screen-859",
+        "arm_id": "active-0",
+        "enrollment_day": 1045.942952685767
+      },
+      {
+        "participant_id": 973,
+        "participant_label": "study-301:screen-86",
+        "arm_id": "active-0",
+        "enrollment_day": 783.4407913482569
+      },
+      {
+        "participant_id": 1454,
+        "participant_label": "study-301:screen-860",
+        "arm_id": "control",
+        "enrollment_day": 1046.115996588086
+      },
+      {
+        "participant_id": 1204,
+        "participant_label": "study-301:screen-861",
+        "arm_id": "active-0",
+        "enrollment_day": 1046.3334125538431
+      },
+      {
+        "participant_id": 1695,
+        "participant_label": "study-301:screen-862",
+        "arm_id": "control",
+        "enrollment_day": 1046.3617080835397
+      },
+      {
+        "participant_id": 1125,
+        "participant_label": "study-301:screen-868",
+        "arm_id": "active-0",
+        "enrollment_day": 1048.5199245031145
+      },
+      {
+        "participant_id": 617,
+        "participant_label": "study-301:screen-869",
+        "arm_id": "active-0",
+        "enrollment_day": 1049.8779765613072
+      },
+      {
+        "participant_id": 1229,
+        "participant_label": "study-301:screen-870",
+        "arm_id": "active-0",
+        "enrollment_day": 1049.8846249059357
+      },
+      {
+        "participant_id": 62,
+        "participant_label": "study-301:screen-871",
+        "arm_id": "active-0",
+        "enrollment_day": 1050.7432313461068
+      },
+      {
+        "participant_id": 1548,
+        "participant_label": "study-301:screen-872",
+        "arm_id": "control",
+        "enrollment_day": 1050.8364719060855
+      },
+      {
+        "participant_id": 1566,
+        "participant_label": "study-301:screen-873",
+        "arm_id": "active-0",
+        "enrollment_day": 1052.1158358868636
+      },
+      {
+        "participant_id": 1737,
+        "participant_label": "study-301:screen-874",
+        "arm_id": "active-0",
+        "enrollment_day": 1052.1334013302512
+      },
+      {
+        "participant_id": 1517,
+        "participant_label": "study-301:screen-878",
+        "arm_id": "control",
+        "enrollment_day": 1052.966450333376
+      },
+      {
+        "participant_id": 1979,
+        "participant_label": "study-301:screen-881",
+        "arm_id": "active-0",
+        "enrollment_day": 1053.5263807578447
+      },
+      {
+        "participant_id": 961,
+        "participant_label": "study-301:screen-882",
+        "arm_id": "active-0",
+        "enrollment_day": 1053.7898005929812
+      },
+      {
+        "participant_id": 1564,
+        "participant_label": "study-301:screen-883",
+        "arm_id": "active-0",
+        "enrollment_day": 1054.2448945033857
+      },
+      {
+        "participant_id": 429,
+        "participant_label": "study-301:screen-884",
+        "arm_id": "control",
+        "enrollment_day": 1054.3398057686934
+      },
+      {
+        "participant_id": 263,
+        "participant_label": "study-301:screen-885",
+        "arm_id": "control",
+        "enrollment_day": 1055.3139703017885
+      },
+      {
+        "participant_id": 1514,
+        "participant_label": "study-301:screen-886",
+        "arm_id": "active-0",
+        "enrollment_day": 1055.4671184112558
+      },
+      {
+        "participant_id": 861,
+        "participant_label": "study-301:screen-887",
+        "arm_id": "control",
+        "enrollment_day": 1055.9473239518154
+      },
+      {
+        "participant_id": 1846,
+        "participant_label": "study-301:screen-889",
+        "arm_id": "active-0",
+        "enrollment_day": 1056.1723591137727
+      },
+      {
+        "participant_id": 105,
+        "participant_label": "study-301:screen-89",
+        "arm_id": "control",
+        "enrollment_day": 784.8931428646988
+      },
+      {
+        "participant_id": 1312,
+        "participant_label": "study-301:screen-890",
+        "arm_id": "active-0",
+        "enrollment_day": 1056.385691229331
+      },
+      {
+        "participant_id": 1605,
+        "participant_label": "study-301:screen-891",
+        "arm_id": "active-0",
+        "enrollment_day": 1056.4088419909851
+      },
+      {
+        "participant_id": 1948,
+        "participant_label": "study-301:screen-892",
+        "arm_id": "control",
+        "enrollment_day": 1056.4188747835524
+      },
+      {
+        "participant_id": 699,
+        "participant_label": "study-301:screen-893",
+        "arm_id": "active-0",
+        "enrollment_day": 1057.0488677497792
+      },
+      {
+        "participant_id": 1090,
+        "participant_label": "study-301:screen-894",
+        "arm_id": "control",
+        "enrollment_day": 1057.066998200543
+      },
+      {
+        "participant_id": 974,
+        "participant_label": "study-301:screen-895",
+        "arm_id": "active-0",
+        "enrollment_day": 1057.0776131320508
+      },
+      {
+        "participant_id": 1774,
+        "participant_label": "study-301:screen-898",
+        "arm_id": "active-0",
+        "enrollment_day": 1057.5424292313712
+      },
+      {
+        "participant_id": 497,
+        "participant_label": "study-301:screen-899",
+        "arm_id": "control",
+        "enrollment_day": 1057.6597850824205
+      },
+      {
+        "participant_id": 843,
+        "participant_label": "study-301:screen-9",
+        "arm_id": "active-0",
+        "enrollment_day": 733.1765427236585
+      },
+      {
+        "participant_id": 109,
+        "participant_label": "study-301:screen-90",
+        "arm_id": "active-0",
+        "enrollment_day": 785.0001914068381
+      },
+      {
+        "participant_id": 394,
+        "participant_label": "study-301:screen-902",
+        "arm_id": "control",
+        "enrollment_day": 1058.2728775589603
+      },
+      {
+        "participant_id": 1845,
+        "participant_label": "study-301:screen-903",
+        "arm_id": "control",
+        "enrollment_day": 1059.1275919866555
+      },
+      {
+        "participant_id": 1176,
+        "participant_label": "study-301:screen-904",
+        "arm_id": "control",
+        "enrollment_day": 1060.6354213072946
+      },
+      {
+        "participant_id": 1423,
+        "participant_label": "study-301:screen-905",
+        "arm_id": "control",
+        "enrollment_day": 1061.3749513055297
+      },
+      {
+        "participant_id": 1216,
+        "participant_label": "study-301:screen-906",
+        "arm_id": "active-0",
+        "enrollment_day": 1061.7164021710842
+      },
+      {
+        "participant_id": 334,
+        "participant_label": "study-301:screen-907",
+        "arm_id": "control",
+        "enrollment_day": 1061.9024800187283
+      },
+      {
+        "participant_id": 711,
+        "participant_label": "study-301:screen-92",
+        "arm_id": "control",
+        "enrollment_day": 785.8058570024535
+      },
+      {
+        "participant_id": 58,
+        "participant_label": "study-301:screen-93",
+        "arm_id": "active-0",
+        "enrollment_day": 786.5420839102048
+      },
+      {
+        "participant_id": 1827,
+        "participant_label": "study-301:screen-94",
+        "arm_id": "control",
+        "enrollment_day": 787.3784063983912
+      },
+      {
+        "participant_id": 191,
+        "participant_label": "study-301:screen-95",
+        "arm_id": "control",
+        "enrollment_day": 787.9713578174517
+      },
+      {
+        "participant_id": 362,
+        "participant_label": "study-301:screen-96",
+        "arm_id": "active-0",
+        "enrollment_day": 788.1700093160242
+      },
+      {
+        "participant_id": 1412,
+        "participant_label": "study-301:screen-97",
+        "arm_id": "control",
+        "enrollment_day": 788.3561528764046
+      },
+      {
+        "participant_id": 1611,
+        "participant_label": "study-301:screen-98",
+        "arm_id": "control",
+        "enrollment_day": 788.5383337676021
+      },
+      {
+        "participant_id": 594,
+        "participant_label": "study-301:screen-99",
+        "arm_id": "active-0",
+        "enrollment_day": 788.6550199070768
+      }
+    ]
+  },
+  "preferences": {
+    "outcome_unit": "days per 28 days",
+    "benefit_unit": 2.0,
+    "annual_profit_per_benefit_unit_usd": 250000000.0,
+    "annual_cost_per_safety_percentage_point_usd": 12500000.0,
+    "discount_rate_per_year": 0.1,
+    "exclusivity_end_day": 6575,
+    "regulatory_review_days": 365,
+    "programme_cost_per_day_usd": 15000.0
+  },
+  "contrasts": {
+    "active-0": {
+      "asset_id": "hzp-15325",
+      "dose": "intensified",
+      "participant_count": 2000,
+      "reference_days": 168.0,
+      "outcome_unit": "days per 28 days",
+      "outcome_mean_difference": -2.724,
+      "safety_risk_difference": 0.033
+    }
+  }
+}

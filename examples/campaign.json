@@ -1,0 +1,31 @@
+{
+  "release_directory": "../release",
+  "models": [
+    {
+      "name": "first",
+      "model": "REPLACE_WITH_EXACT_MODEL_ID",
+      "upstream_provider": "REPLACE_WITH_EXACT_UPSTREAM_PROVIDER",
+      "spend_limit_micro_usd": 10000000,
+      "requests_per_minute": 10,
+      "tokens_per_minute": 1000000
+    }
+  ],
+  "panel": {
+    "repetitions": 1,
+    "benchmarks": [
+      "trialeval",
+      "trialdev"
+    ],
+    "trialeval_tasks": [
+      "te_01c3a21948a2f2a66be3"
+    ],
+    "trialdev_tasks": [
+      "td-985624a3c246"
+    ]
+  },
+  "operations": {
+    "model_workers": 1,
+    "task_workers": 1,
+    "spend_limit_micro_usd": 10000000
+  }
+}

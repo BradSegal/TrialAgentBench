@@ -1,0 +1,11 @@
+lifelines
+jsonschema
+matplotlib
+numpy
+pandas
+pip==26.2.1
+pyarrow
+pydantic==2.12.5
+scikit-learn
+scipy
+statsmodels

@@ -1,0 +1,7 @@
+{
+  "schema_version": "trialagentbench.release_dataset/v1",
+  "repository": "BradSegal/TrialAgentBench",
+  "revision": "v1.1.0",
+  "payload_sha256": "8c01315f776f0d429502cf490d685e4626fa9fd3e8eed0d7700e824d088f6cf7",
+  "sha256sums_sha256": "f52de9d9c33881f7b7092c2b816335933674ffb4e180930373141891b24540c7"
+}

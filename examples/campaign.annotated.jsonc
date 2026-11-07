@@ -1,0 +1,83 @@
+// Every campaign setting, at its default unless noted. A reference, not a runnable file: strip the comments and keep
+// only what you change. Start from campaign.json (a small panel) or smoke.json (no model calls). Run
+// `trialagentbench campaign --help` for the commands. Changing a setting needs a newly prepared campaign.
+{
+  "release_directory": "../benchmark/full", // Relative to this file.
+  "input_mode": "qualified",
+  // Both are filled from the release and the local executor at prepare; set them only to pin an identity.
+  "expected_release_manifest_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "executor_image_id": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "models": [
+    {
+      "name": "first", // Your label for this model in the campaign; unique.
+      "model": "REPLACE_WITH_EXACT_MODEL_ID", // One route per model per campaign. Web-enabled routes are refused.
+      "provider": "openrouter", // Or "offline_control", with model smoke-zero-python or smoke-zero-r and no upstream.
+      "upstream_provider": "REPLACE_WITH_EXACT_UPSTREAM_PROVIDER",
+      "reasoning_effort": "high", // none, minimal, low, medium, high, xhigh or max; null leaves the route's default.
+      "exclude_reasoning": false, // Ask the route not to return reasoning.
+      "replay_reasoning": false, // Send returned reasoning back on later turns; not with exclude_reasoning.
+      "capability_snapshot": null, // Path to a saved route capability file; null takes a snapshot at prepare.
+      "maximum_completion_tokens": 32768,
+      "send_temperature": false,
+      "decoding_seed": null,
+      "request_timeout_seconds": 90,
+      "retry": {
+        "maximum_attempts": 5,
+        "base_delay_seconds": 2.0,
+        // charge_all_v1 charges every failure to the task. defer_unanswered_v1 defers eligible unanswered transport
+        // failures (connection errors, HTTP 429, 500, 502, 503, 504, a timeout with the full timeout still remaining).
+        "unavailability_policy": "charge_all_v1"
+      },
+      // Money is in micro USD: one dollar is 1,000,000. Ceilings, not cost estimates.
+      "spend_limit_micro_usd": 10000000,
+      // Omit these three together to derive them from the route's prices at prepare, which also sets request_pricing.
+      "reservation_micro_usd": 100000,
+      "reservation_tokens": 40000,
+      "pricing_premise": "REPLACE_WITH_THE_PRICE_SOURCE",
+      "request_pricing": null,
+      "requests_per_minute": 10,
+      "tokens_per_minute": 1000000
+    }
+  ],
+  // For a published selection, replace this object with the selection's campaign-panel.json.
+  "panel": {
+    "benchmarks": ["trialeval", "trialdev"],
+    "trialeval_tasks": ["te_01c3a21948a2f2a66be3"], // Empty uses the benchmark's default inventory.
+    "trialdev_tasks": ["td-985624a3c246"],
+    "repetitions": 1, // Repeats measure model variability; they add no independent worlds.
+    "condition_id": "primary",
+    "analysis_language": "python_r", // Or python, or r. Compare languages in separate campaigns.
+    "procedure_assistance": "output_contract_only", // Or unordered_checklist, which TrialDev refuses.
+    "trialeval_turns": 50,
+    "trialdev_turns_per_step": 100,
+    "watchdog_seconds": null, // Per-task agent-time allowance; null uses 3,600 for TrialEval and 1,800 for TrialDev.
+    "split": "public", // withheld needs the privately held evaluator.
+    "reporting_interface": "v1" // Or clarified. Keep the two in separate comparisons.
+  },
+  "operations": {
+    "model_workers": 1,
+    "task_workers": 1,
+    "executor_workers": null, // null: two slots per active task.
+    "grading_workers": null,
+    "spend_limit_micro_usd": 10000000 // Campaign ceiling across all models.
+  },
+  // The comparison policy of campaign finish.
+  "analysis": {
+    "bootstrap_repetitions": 2000,
+    "seed": 65009,
+    "confidence_level": 0.95,
+    "minimum_worlds_per_stratum": 2,
+    "multiplicity": "holm_within_metric"
+  },
+  // Optional; leave out for one run per model. Lists every panel task once, in the order to dispatch them.
+  "dispatch": {
+    "task_order": [
+      {"benchmark": "trialeval", "task_id": "te_01c3a21948a2f2a66be3"},
+      {"benchmark": "trialdev", "task_id": "td-985624a3c246"}
+    ],
+    "tasks_per_slice": 1,
+    "defer_seconds": 300,
+    "maximum_provider_deferrals_per_task": 3,
+    "maximum_consecutive_provider_deferrals": 3
+  }
+}

@@ -1,0 +1,204 @@
+[
+  {
+    "source": "development-control/evaluator_records.jsonl",
+    "source_sha256": "1cc40330f3628617189047ae66fbb6cd1d2909c4d08d3a63a87ee731f78282e3",
+    "task_id": "te_02994484210bfc5ef8f1",
+    "target": {
+      "kind": "point",
+      "binding": {
+        "schema_id": "trialagentbench.trialeval_question_binding/v1",
+        "analysis_population_id": "all_randomized_participants",
+        "estimand_id": "marginal_recurrent_vte_risk_difference",
+        "intercurrent_event_strategy_ids": [],
+        "assessment_horizon_days": 180.0,
+        "treatment_id": "active",
+        "comparator_id": "control",
+        "endpoint_id": "recurrent_venous_thromboembolism",
+        "effect_measure": "risk_difference",
+        "analysis_unit": "participant",
+        "population_basis": "superpopulation",
+        "identification_status": "point_identified",
+        "identification_assumption_ids": [],
+        "result_unit": "proportion",
+        "uncertainty_type": "repeated_confidence_interval",
+        "confidence_level": 0.95,
+        "sidedness": "two_sided_central",
+        "null_value": 0.0,
+        "favorable_direction": "lower"
+      },
+      "value": -0.004450183021611598,
+      "confidence_level": 0.95,
+      "reference_sampling_standard_deviation": 0.022418909245461003,
+      "reference_sampling_basis_id": "finite_world_oracle_contrast",
+      "point_scored": false,
+      "consequence": {
+        "participants": 616,
+        "credited": [
+          [
+            -0.003962,
+            -0.048516,
+            0.040593
+          ]
+        ],
+        "economics": {
+          "cost_type": "anticoagulant",
+          "value_of_success_musd": 588.72,
+          "replicate_cost_musd": 12.8831472,
+          "fixed_trial_cost_musd": 5.9
+        }
+      }
+    }
+  },
+  {
+    "source": "development-control/evaluator_records.jsonl",
+    "source_sha256": "1cc40330f3628617189047ae66fbb6cd1d2909c4d08d3a63a87ee731f78282e3",
+    "task_id": "te_2eab2f1000897cccb50a",
+    "target": {
+      "kind": "point",
+      "binding": {
+        "schema_id": "trialagentbench.trialeval_question_binding/v1",
+        "analysis_population_id": "all_randomized_participants",
+        "estimand_id": "marginal_severe_asthma_exacerbation_count_rate_ratio",
+        "intercurrent_event_strategy_ids": [],
+        "assessment_horizon_days": 365.0,
+        "treatment_id": "active",
+        "comparator_id": "control",
+        "endpoint_id": "severe_asthma_exacerbation_count",
+        "effect_measure": "rate_ratio",
+        "analysis_unit": "participant",
+        "population_basis": "superpopulation",
+        "identification_status": "point_identified",
+        "identification_assumption_ids": [],
+        "result_unit": "ratio",
+        "uncertainty_type": "central_confidence_interval",
+        "confidence_level": 0.95,
+        "sidedness": "two_sided_central",
+        "null_value": 1.0,
+        "favorable_direction": "lower"
+      },
+      "value": 1.1279963441485605,
+      "confidence_level": 0.95,
+      "reference_sampling_standard_deviation": 0.0980280238338257,
+      "reference_sampling_basis_id": "finite_world_oracle_contrast",
+      "consequence": {
+        "participants": 880,
+        "credited": [
+          [
+            1.3649966541286191,
+            1.039531825958486,
+            1.7923605793063355
+          ]
+        ],
+        "economics": {
+          "cost_type": "respiratory",
+          "value_of_success_musd": 1552.08,
+          "replicate_cost_musd": 28.29552,
+          "fixed_trial_cost_musd": 5.9
+        }
+      }
+    }
+  },
+  {
+    "source": "development-control/evaluator_records.jsonl",
+    "source_sha256": "1cc40330f3628617189047ae66fbb6cd1d2909c4d08d3a63a87ee731f78282e3",
+    "task_id": "te_4acf11fd0af6103a0c4d",
+    "target": {
+      "kind": "point",
+      "binding": {
+        "schema_id": "trialagentbench.trialeval_question_binding/v1",
+        "analysis_population_id": "all_randomized_participants",
+        "estimand_id": "marginal_hba1c_percent_mean_difference",
+        "intercurrent_event_strategy_ids": [],
+        "assessment_horizon_days": 365.0,
+        "treatment_id": "active",
+        "comparator_id": "control",
+        "endpoint_id": "hba1c_percent",
+        "effect_measure": "mean_difference",
+        "analysis_unit": "participant",
+        "population_basis": "superpopulation",
+        "identification_status": "point_identified",
+        "identification_assumption_ids": [],
+        "result_unit": "percentage points",
+        "uncertainty_type": "central_confidence_interval",
+        "confidence_level": 0.95,
+        "sidedness": "two_sided_central",
+        "null_value": 0.0,
+        "favorable_direction": "lower"
+      },
+      "value": -0.0051460823373172815,
+      "confidence_level": 0.95,
+      "reference_sampling_standard_deviation": 0.0916441884469343,
+      "reference_sampling_basis_id": "finite_world_oracle_contrast",
+      "consequence": {
+        "participants": 456,
+        "credited": [
+          [
+            -0.12131519274376393,
+            -0.2869623652726012,
+            0.04433197978507333
+          ]
+        ],
+        "economics": {
+          "cost_type": "metabolic",
+          "value_of_success_musd": 945.52,
+          "replicate_cost_musd": 11.1114432,
+          "fixed_trial_cost_musd": 5.9
+        }
+      }
+    }
+  },
+  {
+    "source": "development-control/evaluator_records.jsonl",
+    "source_sha256": "1cc40330f3628617189047ae66fbb6cd1d2909c4d08d3a63a87ee731f78282e3",
+    "task_id": "te_27c3aa246343723f6c4f",
+    "target": {
+      "kind": "point",
+      "binding": {
+        "schema_id": "trialagentbench.trialeval_question_binding/v1",
+        "analysis_population_id": "all_randomized_participants",
+        "estimand_id": "marginal_kidney_failure_free_rmst_difference",
+        "intercurrent_event_strategy_ids": [],
+        "assessment_horizon_days": 1095.0,
+        "treatment_id": "active",
+        "comparator_id": "control",
+        "endpoint_id": "kidney_failure_or_death",
+        "effect_measure": "restricted_mean_survival_time_difference",
+        "analysis_unit": "participant",
+        "population_basis": "superpopulation",
+        "identification_status": "point_identified",
+        "identification_assumption_ids": [],
+        "result_unit": "days",
+        "uncertainty_type": "central_confidence_interval",
+        "confidence_level": 0.95,
+        "sidedness": "two_sided_central",
+        "null_value": 0.0,
+        "favorable_direction": "higher"
+      },
+      "value": -24.925277071913115,
+      "confidence_level": 0.95,
+      "reference_sampling_standard_deviation": 18.093715497606905,
+      "reference_sampling_basis_id": "finite_world_oracle_contrast",
+      "consequence": {
+        "participants": 580,
+        "credited": [
+          [
+            -5.885080579129863,
+            -38.23297460934246,
+            26.462813451082738
+          ],
+          [
+            -5.954765940356651,
+            -42.033872153649845,
+            30.124340272936543
+          ]
+        ],
+        "economics": {
+          "cost_type": "kidney",
+          "value_of_success_musd": 945.52,
+          "replicate_cost_musd": 13.79472,
+          "fixed_trial_cost_musd": 5.9
+        }
+      }
+    }
+  }
+]

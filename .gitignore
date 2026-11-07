@@ -1,0 +1,34 @@
+# Python build artefacts
+__pycache__/
+*.py[oc]
+/build/
+# Runtime source, even where a global ignore excludes build/ directories
+!/trialagentbench/tools/build/
+/dist/
+/wheels/
+*.egg-info/
+
+# Virtual environments and tool caches
+.venv/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+
+# Environment variables
+.env
+
+# Run outputs
+results/
+/benchmark/
+executor-attestation*.json
+.cache/
+cache/
+
+# Large extras users may stage at the repository root
+/*.zip
+*.log
+
+# Editor and OS noise
+.DS_Store
+.idea/
+.vscode/

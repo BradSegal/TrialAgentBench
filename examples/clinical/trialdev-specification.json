@@ -1,0 +1,22 @@
+{
+  "description": "Provenance of the bundled offline demo; not a generation specification.",
+  "trialeval": {
+    "archive": "demo-trialeval-evaluator.zip",
+    "source": "One released public task rebuilt for one trial",
+    "participants": 128,
+    "analysis_rows": 640,
+    "references": "Recomputed for the single trial; agree within Monte Carlo error, not bitwise"
+  },
+  "trialdev": {
+    "archive": "demo-trialdev-evaluator.zip",
+    "source": "World of the first rheumatoid-arthritis task in the public release ablation selection",
+    "observational_participants": 2400,
+    "treatment_candidates": 5,
+    "comparator_arms": 1,
+    "study_pool_participants": 2048,
+    "observational_reference_log2_draws": 4,
+    "observational_reference_quadrature_order": 8,
+    "initial_participant_records": "Match the release bytes",
+    "study_readouts_and_references": "May differ from the released world because the study pool and reference precision are reduced"
+  }
+}

@@ -1,0 +1,198 @@
+{
+  "schema_id": "ariadne.diagnostic_registry/v1",
+  "version": "2026-10-17",
+  "assumption_tier_operating_definitions": {
+    "A1": {
+      "label": "assumption-compatible",
+      "operative_definition": "The default analysis' assumptions hold: the observed study conditions do not invalidate the default method for the declared estimand, design, and observation process.",
+      "participant_evidence_requirement": "The public design declaration or diagnostic must support the assumption-compatible classification.",
+      "release_evidence_requirement": "The qualification evidence must state why the default remains supported, and the released reference result must be independently reproducible.",
+      "scoring_constraint": "The tier is descriptive and does not determine the submitted estimator or its numerical score."
+    },
+    "A2": {
+      "label": "default-defensible; tempting correction consequential",
+      "operative_definition": "The default analysis' assumptions hold, but a participant-visible departure tempts a correction that is valid yet discards information and so costs a consequential decision.",
+      "participant_evidence_requirement": "The tempting departure must be reproducible from participant-visible evidence rather than a hidden generating parameter or a single p-value.",
+      "release_evidence_requirement": "Repeated-world qualification must show that the default analysis recovers its target and that applying the tempting correction changes a consequential decision; the released reference result must be independently reproducible.",
+      "scoring_constraint": "The A2 label alone does not require or prefer an alternative estimator; the correction is credited only where the cell's credited analyses include it."
+    },
+    "A3": {
+      "label": "default fails; alternative required",
+      "operative_definition": "The default analysis' assumption fails detectably and makes the default consequentially misleading for the declared question; at least one prespecified alternative analysis remains point-identified from participant-visible evidence and is required.",
+      "participant_evidence_requirement": "The relevant diagnostic or design feature and its declared practical consequence must be recoverable from the released participant surface.",
+      "release_evidence_requirement": "Repeated-world qualification must show that the default crosses the declared consequence criterion and that a supported analysis remains identified; released reference results must be independently reproducible.",
+      "scoring_constraint": "The tier does not select an estimator. Numerical performance is evaluated against the declared estimand oracle, with plan adherence assessed only when a participant-visible plan fixes a procedure."
+    }
+  },
+  "diagnostic_keys": {
+    "randomization_integrity": {
+      "public_key": "randomization_integrity_public",
+      "diagnostic_scale": "design-declaration",
+      "threshold": "no empirical severity threshold; the participant-visible protocol and assignment records declare randomized allocation",
+      "interpretation": "Summarizes chance baseline imbalance across prespecified prognostic variables and checks allocation against the randomization records.",
+      "primary_credit_policy": "design_modifier"
+    },
+    "censoring_ignorability": {
+      "public_key": "censoring_followup_public",
+      "diagnostic_scale": "prognostic-censoring-log-hazard",
+      "threshold": "simultaneous lower absolute prognostic censoring log-HR: log(1.25) stressed, log(1.75) fragile, log(3.00) broken",
+      "interpretation": "Estimates whether measured baseline prognosis predicts observed follow-up.",
+      "primary_credit_policy": "always",
+      "nonidentified_evidence_class": "factual_premise",
+      "severity_thresholds": {
+        "metric_name": "lower_abs_prognostic_censoring_log_hr",
+        "metric_unit": "log_hazard_ratio",
+        "decision_metric_names": {
+          "stressed": "lower_abs_prognostic_censoring_log_hr",
+          "fragile": "lower_abs_prognostic_censoring_log_hr",
+          "broken": "lower_abs_prognostic_censoring_log_hr"
+        },
+        "confidence_level": 0.95,
+        "multiplicity_adjustment": "bonferroni",
+        "stressed": 0.22314355131420976,
+        "fragile": 0.5596157879354227,
+        "broken": 1.0986122886681098
+      }
+    },
+    "proportional_hazards": {
+      "public_key": "proportional_hazards_public",
+      "diagnostic_scale": "time-varying-log-hazard-range",
+      "threshold": "prespecified method-change boundary: the lower 95% confidence bound for the absolute scaled-Schoenfeld rank-slope range is at least log(1.25); report the continuous diagnostic and its uncertainty without converting it to a categorical severity label",
+      "interpretation": "Measures time variation in the treatment log hazard ratio over prespecified follow-up intervals.",
+      "primary_credit_policy": "method_dependent",
+      "severity_thresholds": {
+        "metric_name": "simultaneous_lower_abs_time_varying_log_hazard_range",
+        "metric_unit": "log_hazard_ratio",
+        "decision_metric_names": {
+          "stressed": "simultaneous_lower_abs_time_varying_log_hazard_range",
+          "fragile": "simultaneous_lower_abs_time_varying_log_hazard_range",
+          "broken": "simultaneous_lower_abs_time_varying_log_hazard_range"
+        },
+        "confidence_level": 0.95,
+        "multiplicity_adjustment": "none",
+        "stressed": 0.09060233512029495,
+        "fragile": 0.40249857212657514,
+        "broken": 0.8826172714134936
+      },
+      "primary_method_change_threshold": 0.22314355131420976
+    },
+    "model_form": {
+      "public_key": "model_form_public",
+      "diagnostic_scale": "log-hazard",
+      "threshold": "largest simultaneous lower 95% confidence bound for the absolute omitted nonlinear BMI prognostic or treatment-response log hazard-ratio contrast from mean BMI to two standard deviations above the mean",
+      "interpretation": "Tests whether a linear outcome model omits clinically relevant curvature in baseline BMI prognosis or treatment response. Estimator comparisons separately determine whether that departure changes the treatment contrast.",
+      "primary_credit_policy": "always",
+      "severity_thresholds": {
+        "metric_name": "lower_abs_omitted_nonlinear_model_log_hazard_contrast",
+        "metric_unit": "log_hazard_ratio_0_to_2_sd",
+        "decision_metric_names": {
+          "stressed": "lower_abs_omitted_nonlinear_model_log_hazard_contrast",
+          "fragile": "lower_abs_omitted_nonlinear_model_log_hazard_contrast",
+          "broken": "lower_abs_omitted_nonlinear_model_log_hazard_contrast"
+        },
+        "confidence_level": 0.95,
+        "multiplicity_adjustment": "bonferroni",
+        "stressed": 0.22314355131420976,
+        "fragile": 0.5596157879354227,
+        "broken": 1.0986122886681098
+      }
+    },
+  "endpoint_ascertainment": {
+    "public_key": "endpoint_ascertainment_public",
+    "diagnostic_scale": "validation-discordance-probability",
+    "threshold": "validated observed-versus-adjudicated endpoint discordance: 0.025 stressed and 0.10 fragile; any wholly unsupported prognostic stratum is broken",
+      "interpretation": "Estimates arm- and prognostic-stratum-specific sensitivity and specificity; unsupported validation cells require sensitivity bounds.",
+    "primary_credit_policy": "method_dependent",
+    "nonidentified_evidence_class": "empirical_diagnostic",
+    "severity_thresholds": {
+      "metric_name": "validation_discordance_fraction",
+      "metric_unit": "proportion",
+      "decision_metric_names": {
+        "stressed": "validation_discordance_fraction",
+        "fragile": "validation_discordance_fraction",
+        "broken": "unsupported_validation_stratum_fraction"
+      },
+      "confidence_level": 0.95,
+      "multiplicity_adjustment": "none",
+      "stressed": 0.025,
+      "fragile": 0.1,
+      "broken": 0.1
+    },
+    "primary_method_change_threshold": 0.1
+  },
+    "cluster_structure": {
+      "public_key": "cluster_structure_public",
+      "diagnostic_scale": "cluster-information-loss-fraction",
+      "threshold": "no empirical severity threshold; the participant-visible randomization unit requires cluster-aware inference",
+      "interpretation": "Estimates outcome intracluster correlation and the variance inflation induced by unequal cluster sizes.",
+      "primary_credit_policy": "design_modifier"
+    },
+    "secular_trend": {
+      "public_key": "secular_trend_public",
+      "diagnostic_scale": "period-log-hazard-range",
+      "threshold": "lower 95% absolute treatment-adjusted secular log-hazard range over the released stepped-wedge periods",
+      "interpretation": "Estimates calendar-period outcome change after adjustment for current intervention exposure.",
+      "primary_credit_policy": "always",
+      "severity_thresholds": {
+        "metric_name": "lower_abs_treatment_adjusted_secular_log_hazard_range",
+        "metric_unit": "log_hazard_ratio",
+        "decision_metric_names": {
+          "stressed": "lower_abs_treatment_adjusted_secular_log_hazard_range",
+          "fragile": "lower_abs_treatment_adjusted_secular_log_hazard_range",
+          "broken": "lower_abs_treatment_adjusted_secular_log_hazard_range"
+        },
+        "confidence_level": 0.95,
+        "multiplicity_adjustment": "none",
+        "stressed": 0.09531017980432493,
+        "fragile": 0.5596157879354227,
+        "broken": 1.0986122886681098
+      }
+    },
+    "dispersion": {
+      "public_key": "dispersion_public",
+      "diagnostic_scale": "pearson_variance_to_mean_ratio",
+      "threshold": "report the Pearson chi-square divided by residual degrees of freedom; interpret departure from one with the endpoint mechanism and use robust uncertainty rather than a universal pass/fail cutoff",
+      "interpretation": "Checks whether the conditional variance of a count endpoint is compatible with the working Poisson mean-variance relation.",
+      "primary_credit_policy": "method_dependent",
+      "metric_units": {
+        "pearson_variance_to_mean_ratio": "ratio",
+        "pearson_chi_square": "chi_square",
+        "residual_degrees_of_freedom": "count"
+      }
+    },
+    "missingness_pattern": {
+      "public_key": "missingness_pattern_public",
+      "diagnostic_scale": "visit_specific_observation_fraction",
+      "threshold": "report observed and missing counts by randomized arm and scheduled or recorded time; no universal categorical severity cutoff",
+      "interpretation": "Describes whether repeated endpoint availability varies across treatment arms and follow-up times in ways relevant to the declared observation process.",
+      "primary_credit_policy": "method_dependent",
+      "metric_units": {
+        "maximum_arm_observation_fraction_difference": "proportion",
+        "minimum_observation_fraction": "proportion",
+        "overall_observation_fraction": "proportion",
+        "time_stratum_count": "count"
+      }
+    },
+    "model_residuals": {
+      "public_key": "model_residuals_public",
+      "diagnostic_scale": "standardized_residual_pattern",
+      "threshold": "report residual location and spread across fitted values, randomized arms, and follow-up time; no universal categorical severity cutoff",
+      "interpretation": "Checks for gross mean-model or variance misspecification in a repeated continuous endpoint analysis.",
+      "primary_credit_policy": "method_dependent",
+      "metric_units": {
+        "maximum_absolute_cell_standardized_residual_mean": "standardized_residual",
+        "absolute_residual_fitted_value_correlation": "correlation",
+        "absolute_residual_time_correlation": "correlation",
+        "standardized_residual_standard_deviation": "standardized_residual",
+        "complete_record_count": "count"
+      }
+    },
+    "sequential_design_adjustment": {
+      "public_key": "sequential_design_adjustment_public",
+      "diagnostic_scale": "design-declaration",
+      "threshold": "no empirical severity threshold; a complete participant-visible group-sequential plan declares looks, information fractions, boundaries, and alpha control",
+      "interpretation": "Reconstructs look-specific information, efficacy-boundary crossing, and the repeated confidence interval from the monitoring plan.",
+      "primary_credit_policy": "design_modifier"
+    }
+  }
+}

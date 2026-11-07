@@ -1,0 +1,67 @@
+{
+  "analysis": {
+    "bootstrap_repetitions": 2000,
+    "confidence_level": 0.95,
+    "minimum_worlds_per_stratum": 2,
+    "multiplicity": "holm_within_metric",
+    "seed": 65009
+  },
+  "input_mode": "qualified",
+  "models": [
+    {
+      "name": "smoke-zero-python",
+      "model": "smoke-zero-python",
+      "provider": "offline_control",
+      "maximum_completion_tokens": 1000,
+      "spend_limit_micro_usd": 1,
+      "reservation_micro_usd": 1,
+      "reservation_tokens": 200000,
+      "pricing_premise": "Local deterministic control: zero provider requests and zero charges.",
+      "requests_per_minute": 100000,
+      "tokens_per_minute": 10000000,
+      "send_temperature": false
+    },
+    {
+      "name": "smoke-zero-r",
+      "model": "smoke-zero-r",
+      "provider": "offline_control",
+      "maximum_completion_tokens": 1000,
+      "spend_limit_micro_usd": 1,
+      "reservation_micro_usd": 1,
+      "reservation_tokens": 200000,
+      "pricing_premise": "Local deterministic control: zero provider requests and zero charges.",
+      "requests_per_minute": 100000,
+      "tokens_per_minute": 10000000,
+      "send_temperature": false
+    }
+  ],
+  "operations": {
+    "executor_workers": 2,
+    "grading_workers": 1,
+    "model_workers": 1,
+    "spend_limit_micro_usd": 2,
+    "task_workers": 1
+  },
+  "panel": {
+    "benchmarks": [
+      "trialeval",
+      "trialdev"
+    ],
+    "condition_id": "installation-control",
+    "procedure_assistance": "output_contract_only",
+    "repetitions": 1,
+    "trialdev_tasks": [
+      "td-985624a3c246",
+      "td-380e55dc68e4"
+    ],
+    "trialdev_turns_per_step": 12,
+    "trialeval_tasks": [
+      "te_01c3a21948a2f2a66be3"
+    ],
+    "trialeval_turns": 12,
+    "watchdog_seconds": 900,
+    "analysis_language": "python_r"
+  },
+  "release_directory": "../benchmark/full",
+  "schema_id": "trialagentbench.campaign_configuration/v1"
+}

@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "Please cite TrialAgentBench when using the benchmark or harness."
+title: "TrialAgentBench: Evaluating AI Agents for Clinical-Trial Analysis and Long-Horizon Drug-Development Decisions"
+type: software
+version: 1.1.0
+date-released: 2026-11-07
+authors:
+  - family-names: "Segal"
+    given-names: "Bradley"
+  - family-names: "Bolton"
+    given-names: "William"
+  - family-names: "Torr"
+    given-names: "Philip"
+  - family-names: "Clifton"
+    given-names: "David"
+  - family-names: "Clifton"
+    given-names: "Lei"
+repository-code: "https://github.com/BradSegal/TrialAgentBench"
+url: "https://huggingface.co/datasets/BradSegal/TrialAgentBench/"
+license: "Apache-2.0"
+preferred-citation:
+  type: conference-paper
+  title: "TrialAgentBench: Evaluating AI Agents for Clinical-Trial Analysis and Long-Horizon Drug-Development Decisions"
+  authors:
+    - family-names: "Segal"
+      given-names: "Bradley"
+    - family-names: "Bolton"
+      given-names: "William"
+    - family-names: "Torr"
+      given-names: "Philip"
+    - family-names: "Clifton"
+      given-names: "David"
+    - family-names: "Clifton"
+      given-names: "Lei"
+  collection-title: "Advances in Neural Information Processing Systems (NeurIPS), Evaluations and Datasets Track"
+  conference:
+    name: "NeurIPS 2026, Evaluations and Datasets Track"
+  year: 2026

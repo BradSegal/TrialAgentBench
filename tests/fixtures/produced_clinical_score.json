@@ -1,0 +1,210 @@
+{
+  "source": "development-control/programme_run.json",
+  "source_sha256": "b68ccce5ce916228d96c92bb309af4237d10214d96e897221472390615b2d78c",
+  "score": {
+    "normalization_scale": 2.0,
+    "normalized_absolute_error": 0.13115628805124313,
+    "normalized_interval_loss": 1.0,
+    "reference_value": 0.26231257610248626,
+    "status": "reported",
+    "target_id": "hzp-46854:clinical_outcome"
+  },
+  "estimate": {
+    "estimate": 0.0,
+    "lower": -1.0,
+    "target_id": "hzp-46854:clinical_outcome",
+    "upper": 1.0
+  },
+  "preferences": {
+    "annual_cost_per_safety_percentage_point_usd": 12500000.0,
+    "annual_profit_per_benefit_unit_usd": 250000000.0,
+    "benefit_unit": 2.0,
+    "discount_rate_per_year": 0.1,
+    "exclusivity_end_day": 6575,
+    "outcome_unit": "days per 28 days",
+    "programme_cost_per_day_usd": 15000.0,
+    "regulatory_review_days": 365
+  },
+  "target": {
+    "asset_id": "hzp-46854",
+    "comparison_sample_size": 83,
+    "decision_scale": 3.0,
+    "endpoint": "clinical_outcome",
+    "estimand": "standardized_observed_association",
+    "oracle_monte_carlo_standard_error": 0.0,
+    "oracle_value": 0.26231257610248626,
+    "point_identified": true,
+    "unit": "days per 28 days"
+  },
+  "replay": {
+    "checkpoint_id": "initial",
+    "entrypoint": "analysis.py",
+    "error": null,
+    "estimates": [
+      {
+        "estimate": 0.0,
+        "lower": -1.0,
+        "target_id": "hzp-46854:clinical_outcome",
+        "upper": 1.0
+      },
+      {
+        "estimate": 0.0,
+        "lower": -1.0,
+        "target_id": "hzp-46854:safety_risk",
+        "upper": 1.0
+      },
+      {
+        "estimate": 0.0,
+        "lower": -1.0,
+        "target_id": "hzp-27474:clinical_outcome",
+        "upper": 1.0
+      },
+      {
+        "estimate": 0.0,
+        "lower": -1.0,
+        "target_id": "hzp-27474:safety_risk",
+        "upper": 1.0
+      },
+      {
+        "estimate": 0.0,
+        "lower": -1.0,
+        "target_id": "hzp-28018:clinical_outcome",
+        "upper": 1.0
+      },
+      {
+        "estimate": 0.0,
+        "lower": -1.0,
+        "target_id": "hzp-28018:safety_risk",
+        "upper": 1.0
+      },
+      {
+        "estimate": 0.0,
+        "lower": -1.0,
+        "target_id": "hzp-85563:clinical_outcome",
+        "upper": 1.0
+      },
+      {
+        "estimate": 0.0,
+        "lower": -1.0,
+        "target_id": "hzp-85563:safety_risk",
+        "upper": 1.0
+      },
+      {
+        "estimate": 0.0,
+        "lower": -1.0,
+        "target_id": "hzp-69870:clinical_outcome",
+        "upper": 1.0
+      },
+      {
+        "estimate": 0.0,
+        "lower": -1.0,
+        "target_id": "hzp-69870:safety_risk",
+        "upper": 1.0
+      }
+    ],
+    "evidence_artifacts": [
+      {
+        "byte_length": 4183,
+        "relative_path": "documents/td-11d69ca5e4e7/portfolio_management_request.md",
+        "sha256": "697d12a0826804f57840e63d7a42eaf434eb5ff87ad1a0a9fa8832b75948f990"
+      },
+      {
+        "byte_length": 9424,
+        "relative_path": "documents/td-11d69ca5e4e7/committee_brief.md",
+        "sha256": "d5b7d92c9ce7eef4ad96fdb5c4d61958fe6b84a5b8c2bb99518e5d290b733920"
+      },
+      {
+        "byte_length": 2516,
+        "relative_path": "documents/site_network.csv",
+        "sha256": "7fef2bb46596ae61f8d3f5196df68d2a0ce9d6392b1ff42a7aeea751adb9a3f6"
+      },
+      {
+        "byte_length": 13502,
+        "relative_path": "data/initial/participants.parquet",
+        "sha256": "2d41f6d56d7900757de5563bbc436398ece927720858f2b6d6ecf31be7810e90"
+      },
+      {
+        "byte_length": 3650,
+        "relative_path": "data/initial/treatments.parquet",
+        "sha256": "085d30a3ee718a096aa95c8520d628cba43f2a654f9bc636dc3a37ae078f37b1"
+      },
+      {
+        "byte_length": 4047,
+        "relative_path": "data/initial/clinical_assessments.parquet",
+        "sha256": "f7dae887df8468c97b13ee564600fbd85245d411c003729b338c8a8d929a57f5"
+      },
+      {
+        "byte_length": 3826,
+        "relative_path": "data/initial/safety_assessments.parquet",
+        "sha256": "ddf50584ad46d48789a9d60937ee2e6ec251618070e6c5c4853833359a5d7c6f"
+      },
+      {
+        "byte_length": 4715,
+        "relative_path": "documents/evidence_protocol.md",
+        "sha256": "6518a3745cdc759a16d04ce4efd9d86ab50f53a7136a15058a07d0fd7cc6cb0e"
+      },
+      {
+        "byte_length": 1540,
+        "relative_path": "documents/observational_data_dictionary.csv",
+        "sha256": "c183c622b8858b4597afb1ad55ba9eff3c4d5f68bcac7c697d4285b1664a513f"
+      },
+      {
+        "byte_length": 9511,
+        "relative_path": "data/target_population.parquet",
+        "sha256": "d62770a450a354d55994cec4f06d6633da8b789e4c23cdba5e260b689d67e25b"
+      },
+      {
+        "byte_length": 946,
+        "relative_path": "documents/target_population_dictionary.csv",
+        "sha256": "eb8de1c63ab146ec5d556e11befa0ea051643653e0ab5302becc6c47606425a0"
+      }
+    ],
+    "executions": [
+      {
+        "cpu_seconds": 0.032239,
+        "elapsed_seconds": 0.09948241300298832,
+        "language": "python",
+        "output": "",
+        "output_truncated": false,
+        "session_peak_memory_bytes": 272920576,
+        "session_peak_processes": 9,
+        "status": "success"
+      },
+      {
+        "cpu_seconds": 0.031843,
+        "elapsed_seconds": 0.08783104599569924,
+        "language": "python",
+        "output": "",
+        "output_truncated": false,
+        "session_peak_memory_bytes": 272855040,
+        "session_peak_processes": 9,
+        "status": "success"
+      }
+    ],
+    "program_artifacts": [
+      {
+        "byte_length": 123,
+        "relative_path": "scratch/analysis.py",
+        "sha256": "b46429aee8c72802fa5ddece600e36601c4484825ad09c11124e350f787df1e3"
+      }
+    ],
+    "replayed_csv_sha256s": [
+      "861f0c217efad6e8e8dee47cfed3df22e54f38b7b13c22c1aed9b64cf462e19b",
+      "861f0c217efad6e8e8dee47cfed3df22e54f38b7b13c22c1aed9b64cf462e19b"
+    ],
+    "status": "reproduced",
+    "submitted_csv_sha256": "861f0c217efad6e8e8dee47cfed3df22e54f38b7b13c22c1aed9b64cf462e19b",
+    "target_ids": [
+      "hzp-46854:clinical_outcome",
+      "hzp-46854:safety_risk",
+      "hzp-27474:clinical_outcome",
+      "hzp-27474:safety_risk",
+      "hzp-28018:clinical_outcome",
+      "hzp-28018:safety_risk",
+      "hzp-85563:clinical_outcome",
+      "hzp-85563:safety_risk",
+      "hzp-69870:clinical_outcome",
+      "hzp-69870:safety_risk"
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+"""TrialAgentBench harness trace contracts."""

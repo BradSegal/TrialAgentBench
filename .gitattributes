@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.svg text eol=lf whitespace=-trailing-space
+*.gz binary
+*.parquet binary
+*.png binary
+*.whl binary
+*.zip binary
