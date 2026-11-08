@@ -54,7 +54,7 @@ If an agent does not perform a task or if the agent’s code fails on a new tria
 
 Most trials are conducted with a locked analysis plan prior to seeing the data. The plan specifies a primary analysis and may include an alternative analysis. For example, in a trial to test a new drug in preventing stroke, the primary analysis would typically be the comparison of stroke rates between the treatment and control groups using site records, and the alternative analysis would be the same comparison after correcting the site records using a random sample of participants whose records were verified against source documents (i.e. the audit sample).
 
-We score 3 baselines using the same methodology as the agents, using clean analysis tables and without knowledge of the true effect. The plan’s primary analysis always performs the primary analysis, and always corrected always performs the alternative analysis. The process-aware analysis knows whether recording errors differ between the arms and only performs the correction if they do. Agents are not informed of the specific trial they are working on, and there is no published key.
+We score 3 baselines using the same methodology as the agents, using clean analysis tables and without knowledge of the true effect. The plan’s primary analysis always performs the primary analysis, and always corrected always performs the alternative analysis. The process-aware analysis uses the simulator's knowledge of which assumptions hold in each trial, without using the true effect. Agents are not informed of the specific trial they are working on, and there is no published key.
 
 ## 4. Scoring development decisions on TrialDev
 
