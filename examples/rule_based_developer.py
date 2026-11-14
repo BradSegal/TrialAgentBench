@@ -61,7 +61,7 @@ from trialagentbench.trialdev.value import (
 TrialDevPolicyId = Literal["stop", "fixed_first", "readout_rank", "reference"]
 CRITICAL_Z = 1.959963984540054
 CONFIRMATION_SIZES = (300, 400, 600, 800, 1000, 1500, 2000, 3000)
-# R7: exploration sizes searched by the reference's preposterior plan, and the network
+# Exploration sizes searched by the reference's preposterior plan, and the network
 # fractions every planned study chooses its site count from.
 EXPLORATION_SIZES = (30, 50, 75, 100, 150, 200, 300, 400, 500, 750, 1000, 1500)
 SITE_FRACTIONS = (1.0, 0.75, 0.5, 0.375, 0.25, 0.125)
@@ -312,7 +312,7 @@ def _forecast_cost_and_duration(
     network = design.recruitment.sites[:sites]
     total = arms * per_arm
     passing = 1 - design.recruitment.screen_failure_fraction
-    # R3': twice the forecast recruitment duration and 30 days allow for arrival and
+    # Twice the forecast recruitment duration and 30 days allow for arrival and
     # reporting variation; observed accrual took 0.99-1.61 times the unbuffered forecast
     # . Never a private accrual lookup; shared by the policies.
     enrolled_per_month = passing * sum(site.screening_candidates_per_month for site in network)
@@ -382,7 +382,7 @@ def _expected_approval_value(
     annual_profit: npt.ArrayLike,
     price: float,
 ) -> _Floats:
-    """Posterior-expected approval power times annual profit (R1 assurance sizing).
+    """Posterior-expected approval power times annual profit (assurance sizing).
 
     The benefit is uncertain, ``b ~ N(relative_benefit, posterior_sd**2)``; profit moves
     with it at ``price`` per benefit unit. The expectation of the normal-approximation
@@ -457,7 +457,7 @@ def _confirmation_values(
     relative_sd: dict[int, float],
     annual_profit: _Floats,
 ) -> tuple[_Floats, _Integers]:
-    """Forecast expected net value of every confirmation design for each belief (R1).
+    """Forecast expected net value of every confirmation design for each belief.
 
     Parameters
     ----------
@@ -569,7 +569,7 @@ class _Belief(NamedTuple):
 def _posterior(
     prior: tuple[tuple[float, float, float], ...], evidence: tuple[tuple[float, float, _Evidence], ...]
 ) -> _Belief:
-    """Update a normal-mixture prior with linear normal evidence (R6).
+    """Update a normal-mixture prior with linear normal evidence.
 
     Each item is an estimate, its sampling standard error and its evidence model; the
     estimate's variance adds the model's excess error, so a confounded association informs
@@ -606,10 +606,10 @@ def _posterior(
 
 
 def _readout_preposterior(belief: _Belief, error: float, model: _Evidence) -> tuple[_Floats, _Floats, _Floats]:
-    """Return the posterior means, SDs and probabilities a readout of this precision can produce (R7).
+    """Return the posterior means, SDs and probabilities a readout of this precision can produce.
 
     The readout's predictive law is a mixture over the belief's components; each component
-    contributes Gauss-Hermite nodes, and each node's posterior is moment-matched for R1.
+    contributes Gauss-Hermite nodes, and each node's posterior is moment-matched for confirmation planning.
     """
     variance = error**2 + model.excess_sd**2
     predictive = np.sqrt(model.slope**2 * belief.sds**2 + variance)
@@ -631,7 +631,7 @@ def _readout_preposterior(belief: _Belief, error: float, model: _Evidence) -> tu
 
 
 class _CandidateBelief(NamedTuple):
-    """An asset's R6 belief from its observed association, before any study."""
+    """An asset's posterior belief from its observed association, before any study."""
 
     asset_id: str
     benefit: _Belief
@@ -641,7 +641,7 @@ class _CandidateBelief(NamedTuple):
 def _candidate_belief(
     row: TrialDevReadoutValue, preferences: TrialDevSponsorPreferences, model: _PlanningModel
 ) -> _CandidateBelief:
-    """Return the R6 posterior of one asset's observed association with no randomized readout yet."""
+    """Return the posterior of one asset's observed association with no randomized readout yet."""
     observed = -row.clinical_difference / preferences.benefit_unit
     observed_error = row.clinical_standard_error / preferences.benefit_unit
     benefit = _posterior(model.benefit_prior, ((observed, observed_error, model.association),))
@@ -683,14 +683,14 @@ def _plan_screening(
     early_size: int,
     model: _PlanningModel,
 ) -> _ScreeningPlan | None:
-    """Choose candidates, exploration size and sites by preposterior expected net value (R7).
+    """Choose candidates, exploration size and sites by preposterior expected net value.
 
     Each plan explores the ``k`` leading candidates with ``n`` patients per arm on ``s``
     sites. Its exploration readout of a candidate follows the calibrated evidence model, so
-    the candidate's R6 posterior mean after the readout is normal around its current belief,
+    the candidate's posterior mean after the readout is normal around its current belief,
     with the variance the readout removes.
     After the readout the sponsor confirms the best candidate or stops: each candidate
-    is worth its best R1 confirmation under the remaining budget, or zero. The plan's
+    is worth its best confirmation design under the remaining budget, or zero. The plan's
     value is the expectation of that maximum over independent candidates (21-node
     Gauss-Hermite rule) less the screening cost and programme time. Budget only bounds
     the plans considered, so planned value cannot fall as the budget grows.
@@ -702,7 +702,7 @@ def _plan_screening(
     budget_usd
         Programme budget.
     beliefs
-        Candidates in rank order with their R6 beliefs before any study.
+        Candidates in rank order with their posterior beliefs before any study.
     relative_sd
         Planning outcome standard deviation in benefit units.
     early_size
@@ -793,17 +793,17 @@ def _run_reference_policy(
     public_root: Path,
     output: Path,
 ) -> tuple[TrialDevBudgetLedger, tuple[TrialDevReadoutValue, ...], float]:
-    """Plan screening by preposterior value, select on the R6 posterior and confirm on expected value.
+    """Plan screening by preposterior value, select on the posterior and confirm on expected value.
 
     The policy uses public information only: the initial observed associations,
     released readouts, tariffs, site forecasts and the declared asset prior. It is
     the decision-analytic baseline. Before any study it chooses how many leading
     candidates to explore, how many patients per arm and on how many sites by the
-    expected net value of the decision the exploration readout will inform (R7); it
+    expected net value of the decision the exploration readout will inform; it
     stops at once when no screening is worth its cost. After exploration, selection,
     go/no-go and sizing use one posterior that keeps the observed association as biased
-    evidence (R6); confirmation follow-up, size and sites maximize posterior-expected
-    power times value (R1), and the programme stops if and only if the best
+    evidence; confirmation follow-up, size and sites maximize posterior-expected
+    power times value, and the programme stops if and only if the best
     confirmation's expected net value is not positive. The budget is only a constraint.
 
     Returns

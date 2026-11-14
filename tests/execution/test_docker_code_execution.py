@@ -468,7 +468,7 @@ def test_executor_environment_probe_timeout_removes_its_owned_container(monkeypa
     from trialagentbench_verifier import executor
 
     monkeypatch.setenv("DOCKER_HOST", "unix:///offline/daemon.sock")
-    # Assembled at run time so the published source carries no key-shaped literal (release credential scan).
+    # Synthetic provider credentials are assembled for this isolated adapter test.
     monkeypatch.setenv("OPENAI_API_KEY", "sk-" + "offline-test-only")
     environment = executor._docker_environment()
     assert "OPENAI_API_KEY" not in environment

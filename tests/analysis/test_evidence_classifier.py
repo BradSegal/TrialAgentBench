@@ -214,7 +214,7 @@ def test_trialeval_participant_members_use_canonical_roles() -> None:
 
 
 def test_trialeval_instructed_interface_files_and_unknown_agent_paths_classify() -> None:
-    """Every file the instructions name classifies; an agent's unknown path never aborts finish (F-4)."""
+    """Every file the instructions name classifies; an agent's unknown path never aborts finish."""
     for name in ("interface/targets.csv", "interface/reporting.py", "interface/reporting.R"):
         result = classify_evidence_source(name, participant_release_relative=True)
         assert result.source_role == "release_public_file"

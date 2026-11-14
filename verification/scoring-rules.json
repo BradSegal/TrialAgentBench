@@ -1,0 +1,158 @@
+{
+  "schema_id": "trialagentbench.scoring_declaration/v1",
+  "benchmark_release": "1.1.0",
+  "rules": {
+    "arithmetic.metrics_decimal": {
+      "value": {
+        "precision_decimal_significant_digits": 80
+      }
+    },
+    "trialeval.serious_miss": {
+      "value": {
+        "threshold_SE": 0.5
+      }
+    },
+    "trialeval.fit_order": {
+      "value": {
+        "fixed_rows": [
+          "policy:follow_plan",
+          "policy:always_robust",
+          "policy:scripted_reference",
+          "pipeline",
+          "policy:always_naive"
+        ]
+      }
+    },
+    "trialeval.fit_algorithm": {
+      "value": {
+        "maximum_passes": 500,
+        "stop_absolute_threshold": 1e-12
+      }
+    },
+    "bootstrap.engine": {
+      "value": {
+        "accepted_resamples": 2000,
+        "seed": 20261105
+      }
+    },
+    "bootstrap.quantiles": {
+      "value": {
+        "percentiles": [
+          2.5,
+          97.5
+        ]
+      }
+    },
+    "trialeval.bootstrap_deviation": {
+      "value": {
+        "numpy_resample_order": "F"
+      }
+    },
+    "trialdev.approval_estimator": {
+      "value": {
+        "per_study_n_minimum": 2
+      }
+    },
+    "trialdev.approval_threshold": {
+      "value": {
+        "critical_z": 1.959963984540054,
+        "minimum_completed_treated": 300
+      }
+    },
+    "trialdev.tariff.early_safety.setup": {
+      "value": 1000000
+    },
+    "trialdev.tariff.early_safety.per_site": {
+      "value": 50000
+    },
+    "trialdev.tariff.early_safety.screening": {
+      "value": 1000
+    },
+    "trialdev.tariff.early_safety.enrollment": {
+      "value": 12000
+    },
+    "trialdev.tariff.early_safety.followup_day": {
+      "value": 60
+    },
+    "trialdev.tariff.early_safety.assessment": {
+      "value": 1500
+    },
+    "trialdev.tariff.exploration.setup": {
+      "value": 2000000
+    },
+    "trialdev.tariff.exploration.per_site": {
+      "value": 75000
+    },
+    "trialdev.tariff.exploration.screening": {
+      "value": 1500
+    },
+    "trialdev.tariff.exploration.enrollment": {
+      "value": 10000
+    },
+    "trialdev.tariff.exploration.followup_day": {
+      "value": 40
+    },
+    "trialdev.tariff.exploration.assessment": {
+      "value": 600
+    },
+    "trialdev.tariff.confirmation.setup": {
+      "value": 4000000
+    },
+    "trialdev.tariff.confirmation.per_site": {
+      "value": 100000
+    },
+    "trialdev.tariff.confirmation.screening": {
+      "value": 2000
+    },
+    "trialdev.tariff.confirmation.enrollment": {
+      "value": 12000
+    },
+    "trialdev.tariff.confirmation.followup_day": {
+      "value": 40
+    },
+    "trialdev.tariff.confirmation.assessment": {
+      "value": 800
+    },
+    "trialdev.preference_default.annual_profit_per_benefit_unit_usd": {
+      "value": {
+        "default": 250000000
+      }
+    },
+    "trialdev.preference_default.annual_cost_per_safety_percentage_point_usd": {
+      "value": {
+        "default": 20000000
+      }
+    },
+    "trialdev.preference_default.discount_rate_per_year": {
+      "value": {
+        "default": 0.1
+      }
+    },
+    "trialdev.preference_default.exclusivity_end_day": {
+      "value": {
+        "default": 6575
+      }
+    },
+    "trialdev.preference_default.regulatory_review_days": {
+      "value": {
+        "default": 365
+      }
+    },
+    "trialdev.preference_default.programme_cost_per_day_usd": {
+      "value": {
+        "default": 15000
+      }
+    },
+    "trialdev.market_discounting": {
+      "value": {
+        "year_days": 365.25
+      }
+    },
+    "trialdev.oracle_bootstrap": {
+      "value": {
+        "resamples": 2000,
+        "seed": 20261105
+      }
+    }
+  }
+}

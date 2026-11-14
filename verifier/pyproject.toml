@@ -1,6 +1,6 @@
 [project]
 name = "trialagentbench-verifier"
-version = "1.1.0"
+version = "1.2.0"
 description = "Independent released-byte verification and normalized score replay for TrialAgentBench"
 readme = "README.md"
 requires-python = ">=3.11,<3.13"
@@ -63,6 +63,13 @@ include = ["/CITATION.cff", "/LICENSE", "/README.md", "/pyproject.toml", "/src",
 exclude = [
   "/.venv", "/.mypy_cache", "/.pytest_cache", "/.ruff_cache", "/dist", "**/__pycache__",
   "/examples/scientific/*-records.zip",
+  "/tests/fixtures/properties", "/tests/unit/test_property_contracts.py",
+  "/tests/unit/test_property_checks.py",
+  "/tests/unit/test_property_transfers.py", "/tests/unit/test_property_inputs.py",
+  "/tests/unit/test_property_schedules.py", "/tests/unit/test_property_design_evidence.py",
+  "/tests/unit/test_property_split.py",
+  "/tests/unit/test_property_rotation.py",
+  "/tests/integration/test_property_views.py",
 ]
 
 [tool.ruff]

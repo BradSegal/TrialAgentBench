@@ -11,13 +11,17 @@ if TYPE_CHECKING:
         PracticeVerificationReportV1,
         VerificationReportV1,
     )
-    from trialagentbench_verifier.execution import ExecutionSubmissionV1, execute_submission, execute_submissions
-    from trialagentbench_verifier.practice import verify_practice_suite
-    from trialagentbench_verifier.release import (
+    from trialagentbench_verifier.releases.practice import verify_practice_suite
+    from trialagentbench_verifier.releases.release import (
         ScoreSubmissionV1,
         score_submission,
         score_submissions,
         verify_release,
+    )
+    from trialagentbench_verifier.runtime.execution import (
+        ExecutionSubmissionV1,
+        execute_submission,
+        execute_submissions,
     )
 
 __all__ = [
@@ -42,14 +46,14 @@ _EXPORTS = {
     "NormalizedSubmissionV1": "trialagentbench_verifier.contracts",
     "PracticeVerificationReportV1": "trialagentbench_verifier.contracts",
     "VerificationReportV1": "trialagentbench_verifier.contracts",
-    "ExecutionSubmissionV1": "trialagentbench_verifier.execution",
-    "execute_submission": "trialagentbench_verifier.execution",
-    "execute_submissions": "trialagentbench_verifier.execution",
-    "verify_practice_suite": "trialagentbench_verifier.practice",
-    "ScoreSubmissionV1": "trialagentbench_verifier.release",
-    "score_submission": "trialagentbench_verifier.release",
-    "score_submissions": "trialagentbench_verifier.release",
-    "verify_release": "trialagentbench_verifier.release",
+    "ExecutionSubmissionV1": "trialagentbench_verifier.runtime.execution",
+    "execute_submission": "trialagentbench_verifier.runtime.execution",
+    "execute_submissions": "trialagentbench_verifier.runtime.execution",
+    "verify_practice_suite": "trialagentbench_verifier.releases.practice",
+    "ScoreSubmissionV1": "trialagentbench_verifier.releases.release",
+    "score_submission": "trialagentbench_verifier.releases.release",
+    "score_submissions": "trialagentbench_verifier.releases.release",
+    "verify_release": "trialagentbench_verifier.releases.release",
 }
 
 

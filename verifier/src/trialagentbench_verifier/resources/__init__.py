@@ -1,1 +1,1 @@
-"""Packaged data and report commands outside the scorer identity."""
+"""Packaged data and report commands."""

@@ -7,7 +7,14 @@ import json
 from collections.abc import Sequence
 from pathlib import Path
 
-from trialagentbench_verifier.campaign import (
+from trialagentbench_verifier.artifacts.io import VerificationInputError, read_json_object, sha256_file
+from trialagentbench_verifier.contracts import (
+    ExecutionProofV1,
+    PracticeVerificationReportV1,
+    VerificationFailureReportV1,
+    VerificationReportV1,
+)
+from trialagentbench_verifier.evaluation.campaign import (
     TrialEvalCampaignAnalysisV1,
     TrialEvalCampaignPlanV1,
     TrialEvalCampaignUnavailableV1,
@@ -15,18 +22,12 @@ from trialagentbench_verifier.campaign import (
     analyse_trial_eval_campaign_v1,
     trial_eval_answer_rows_v1,
 )
-from trialagentbench_verifier.campaign_contracts import BudgetCensoringV1, CampaignPlanV1
-from trialagentbench_verifier.contracts import (
-    ExecutionProofV1,
-    PracticeVerificationReportV1,
-    VerificationFailureReportV1,
-    VerificationReportV1,
-)
-from trialagentbench_verifier.execution import execute_submission
-from trialagentbench_verifier.io import VerificationInputError, read_json_object, sha256_file
-from trialagentbench_verifier.practice import verify_practice_suite
-from trialagentbench_verifier.release import score_submission, verify_release
-from trialagentbench_verifier.release_set import (
+from trialagentbench_verifier.evaluation.campaign_contracts import BudgetCensoringV1, CampaignPlanV1
+from trialagentbench_verifier.evaluation.replay_scoring import answers_csv, load_replay_evidence_v1
+from trialagentbench_verifier.identity.scorer import current_scorer
+from trialagentbench_verifier.releases.practice import verify_practice_suite
+from trialagentbench_verifier.releases.release import score_submission, verify_release
+from trialagentbench_verifier.releases.release_set import (
     ExecutorAttestationV1,
     ReleaseSetManifestV1,
     ReproducibilityManifestV1,
@@ -37,8 +38,7 @@ from trialagentbench_verifier.release_set import (
     verify_reproducibility_archive,
     verify_toolkit_archive,
 )
-from trialagentbench_verifier.replay_scoring import answers_csv, load_replay_evidence_v1
-from trialagentbench_verifier.scorer import current_scorer
+from trialagentbench_verifier.runtime.execution import execute_submission
 
 
 def _parser() -> argparse.ArgumentParser:
@@ -49,6 +49,25 @@ def _parser() -> argparse.ArgumentParser:
         description="Verify TrialAgentBench releases and reproduce submission scores.",
     )
     commands = parser.add_subparsers(dest="command", required=True)
+    setup = commands.add_parser("setup", help="Authenticate downloaded data and create campaign configurations.")
+    setup.add_argument("release", type=Path)
+    setup.add_argument("--anchor", type=Path, required=True)
+    setup.add_argument("--examples", type=Path, default=Path("examples"))
+    setup.add_argument("--output", type=Path, default=Path.cwd())
+    report = commands.add_parser("report", help="Aggregate authenticated verification results into public claims.")
+    report.add_argument("--inputs", type=Path, required=True)
+    report.add_argument("--output", type=Path, required=True)
+    properties = commands.add_parser(
+        "properties", help="Falsify declared trial properties on authenticated observations."
+    )
+    properties.add_argument("--release", type=Path, required=True)
+    properties.add_argument("--inputs", type=Path, required=True)
+    properties.add_argument("--split", choices=("public", "withheld"), required=True)
+    properties.add_argument("--output", type=Path, required=True)
+    properties.add_argument("--anchor-sha256", required=True)
+    properties.add_argument("--sums", type=Path, required=True)
+    properties.add_argument("--r-package", type=Path, required=True)
+    properties.add_argument("--r-dependencies", type=Path, required=True)
     assets = commands.add_parser("assets", help="Package or inspect selectively downloadable benchmark assets.")
     asset_commands = assets.add_subparsers(dest="asset_command", required=True)
     pack = asset_commands.add_parser("pack", help="Losslessly package a pinned evaluator ZIP.")
@@ -154,6 +173,8 @@ def _parser() -> argparse.ArgumentParser:
     reproducibility.add_argument("--expected-base-release-sha256", required=True)
     reproducibility.add_argument("--output", type=Path, required=True)
     analyse = commands.add_parser("analyse-trialeval", help="Recompute the controlled TrialEval campaign report.")
+    analyse.add_argument("--grading-key", type=Path, required=True, help="Pinned grading-key records.jsonl.")
+    analyse.add_argument("--grading-key-sha256", required=True)
     analyse.add_argument("--campaign-plan", type=Path, required=True)
     analyse.add_argument("--expected-campaign-plan-sha256", required=True)
     analyse.add_argument("--result-export", type=Path, required=True)
@@ -232,6 +253,14 @@ def _parser() -> argparse.ArgumentParser:
     campaign.add_argument("--oracle-values", type=Path, help="Release-bound construction oracle values.")
     campaign.add_argument("--expected-oracle-values-sha256", help="Externally pinned oracle input digest.")
     campaign.add_argument("--budget-censoring", type=Path, help="Campaign finish's censoring.json record.")
+    for command in (release_set, reproducibility):
+        command.add_argument("--grading-key", type=Path, help="Required when recomputing TrialEval campaign results.")
+        command.add_argument("--grading-key-sha256", help="Trusted SHA-256 of the grading-key records.")
+    for command in (release, release_set, score):
+        anchor = command.add_mutually_exclusive_group(required=True)
+        anchor.add_argument("--anchor-sha256", help="GitHub release-dataset sha256sums_sha256.")
+        anchor.add_argument("--anchor-url", help="GitHub release-dataset URL@full-commit.")
+        command.add_argument("--sums", type=Path, help="Override the root SHA256SUMS location.")
     return parser
 
 
@@ -297,13 +326,44 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     parser = _parser()
     args = parser.parse_args(list(argv) if argv is not None else None)
+    if args.command == "setup":
+        from trialagentbench_verifier.releases.setup import setup_campaigns
+
+        print(
+            json.dumps([str(path) for path in setup_campaigns(args.release, args.anchor, args.examples, args.output)])
+        )
+        return 0
+    if args.command == "report":
+        from trialagentbench_verifier.verification.report import write_report
+
+        property_report = write_report(args.inputs, args.output)
+        print(json.dumps({"claims": len(property_report.claims), "output": str(args.output)}))
+        return 0
+    if args.command == "properties":
+        from trialagentbench_verifier.properties.statistical import run
+
+        print(
+            json.dumps(
+                run(
+                    args.release,
+                    args.inputs,
+                    args.split,
+                    args.output,
+                    anchor_sha256=args.anchor_sha256,
+                    sums=args.sums,
+                    r_package=args.r_package,
+                    r_dependencies=args.r_dependencies,
+                )
+            )
+        )
+        return 0
     if args.command == "analyse-trialeval" and (
         (args.replay_bank is None) != (args.replay_bank_sha256 is None)
         or (args.replays is not None and args.replay_bank is None)
     ):
         parser.error("--replay-bank and --replay-bank-sha256 go together; --replays requires them")
     if args.command == "assets":
-        from trialagentbench_verifier.assets import asset_footprint, pack_release_assets, read_asset_catalog
+        from trialagentbench_verifier.artifacts.assets import asset_footprint, pack_release_assets, read_asset_catalog
 
         if args.asset_command == "pack":
             if (args.reuse_catalog is None) != (args.expected_reuse_sha256 is None):
@@ -316,7 +376,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             )
             print("\n".join(str(path) for path in paths))
         elif args.asset_command == "fetch":
-            from trialagentbench_verifier.asset_cache import acquire_asset_selection
+            from trialagentbench_verifier.artifacts.asset_cache import acquire_asset_selection
 
             path = acquire_asset_selection(
                 args.catalog,
@@ -329,7 +389,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         else:
             catalog = read_asset_catalog(args.catalog, expected_sha256=args.expected_sha256)
             tasks = None if args.task_id is None else tuple(args.task_id)
-            from trialagentbench_verifier.asset_cache import cache_footprint
+            from trialagentbench_verifier.artifacts.asset_cache import cache_footprint
 
             storage = (
                 None
@@ -365,7 +425,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     if args.command == "compare-trialdev":
         from pydantic import TypeAdapter
 
-        from trialagentbench_verifier.development_campaign import (
+        from trialagentbench_verifier.development_rules.development_campaign import (
             TrialDevCampaignExportV1,
             analyse_trialdev_campaign,
             render_trialdev_comparisons,
@@ -395,7 +455,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         render_trialdev_comparisons(development_report, args.output)
         return 0
     if args.command == "behaviour":
-        from trialagentbench_verifier.behaviour import reproduce_behaviour_figures
+        from trialagentbench_verifier.reporting.behaviour import reproduce_behaviour_figures
 
         reproduce_behaviour_figures(
             args.bundle, expected_manifest_sha256=args.expected_manifest_sha256, output=args.output
@@ -417,23 +477,35 @@ def main(argv: Sequence[str] | None = None) -> int:
     try:
         if args.command == "release":
             if args.development:
-                from trialagentbench_verifier.campaign_inputs import verify_development_evaluator
+                from trialagentbench_verifier.evaluation.campaign_inputs import verify_development_evaluator
 
                 if args.task_id is not None:
                     raise ValueError("--task-id requires the released asset catalog, not --development")
                 if args.expected_sha256 is None:
                     raise ValueError("Development verification requires --expected-sha256")
-                report = verify_development_evaluator(args.release, expected_sha256=args.expected_sha256)
+                report = verify_development_evaluator(
+                    args.release,
+                    expected_sha256=args.expected_sha256,
+                    anchor_sha256=args.anchor_sha256,
+                    anchor_url=args.anchor_url,
+                    sums=args.sums,
+                )
             else:
                 report = verify_release(
                     args.release,
                     expected_sha256=args.expected_sha256,
+                    anchor_sha256=args.anchor_sha256,
+                    anchor_url=args.anchor_url,
+                    sums=args.sums,
                     task_ids=None if args.task_id is None else tuple(args.task_id),
                 )
         elif args.command == "score":
             report = score_submission(
                 args.release,
                 args.submission,
+                anchor_sha256=args.anchor_sha256,
+                anchor_url=args.anchor_url,
+                sums=args.sums,
                 expected_sha256=args.expected_sha256,
                 execution_proof=args.execution_proof,
                 expected_execution_proof_sha256=args.expected_execution_proof_sha256,
@@ -457,7 +529,12 @@ def main(argv: Sequence[str] | None = None) -> int:
         elif args.command == "release-set":
             report = verify_release_set(
                 args.release_set,
+                grading_key=args.grading_key,
+                grading_key_sha256=args.grading_key_sha256,
                 expected_manifest_sha256=args.expected_manifest_sha256,
+                anchor_sha256=args.anchor_sha256,
+                anchor_url=args.anchor_url,
+                sums=args.sums,
             )
             summary = release_set_verification_summary(args.release_set, report)
             print(
@@ -475,6 +552,8 @@ def main(argv: Sequence[str] | None = None) -> int:
                 args.archive,
                 expected_sha256=args.expected_sha256,
                 expected_base_release_sha256=args.expected_base_release_sha256,
+                grading_key=args.grading_key,
+                grading_key_sha256=args.grading_key_sha256,
             )
         elif args.command == "analyse-trialeval":
             if sha256_file(args.campaign_plan) != args.expected_campaign_plan_sha256:
@@ -493,6 +572,8 @@ def main(argv: Sequence[str] | None = None) -> int:
             if args.answers is not None:
                 answers = trial_eval_answer_rows_v1(
                     str(args.result_export),
+                    grading_key=args.grading_key,
+                    grading_key_sha256=args.grading_key_sha256,
                     expected_release_id=args.expected_release_id,
                     expected_release_manifest_sha256=args.expected_release_manifest_sha256,
                     expected_archive_sha256=args.expected_result_export_sha256,
@@ -504,6 +585,8 @@ def main(argv: Sequence[str] | None = None) -> int:
             try:
                 report = analyse_trial_eval_campaign_v1(
                     str(args.result_export),
+                    grading_key=args.grading_key,
+                    grading_key_sha256=args.grading_key_sha256,
                     expected_release_id=args.expected_release_id,
                     expected_release_manifest_sha256=args.expected_release_manifest_sha256,
                     expected_archive_sha256=args.expected_result_export_sha256,
@@ -524,7 +607,7 @@ def main(argv: Sequence[str] | None = None) -> int:
                     campaign_plan_sha256=plan.checksum,
                 )
         elif args.command == "analyse-trialdev":
-            from trialagentbench_verifier.development import verify_trialdev_ranking
+            from trialagentbench_verifier.development_rules.development import verify_trialdev_ranking
 
             report = verify_trialdev_ranking(
                 args.release,
@@ -562,7 +645,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         print(f"No paired TrialEval analysis: {report.reason}.")
         return 0
     if getattr(args, "review_dir", None) is not None:
-        from trialagentbench_verifier.review import write_review
+        from trialagentbench_verifier.releases.review import write_review
 
         if not isinstance(
             report,

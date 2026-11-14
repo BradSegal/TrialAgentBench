@@ -1,15 +1,15 @@
 r"""Compute TrialEval truth recovery and TrialDev share of oracle value from a campaign's recorded outputs.
 
 The command reads the per-answer scores the verifier already writes (``trialeval_answers.csv``), the release's grading
-key and, for TrialDev, each job's verified ``ranking.json`` with the sealed oracle values. It aggregates those scores
-and scores nothing itself, so it sits under ``resources/``, outside the scorer identity: running it, or changing it,
-leaves every retained grade valid.
+key and, for TrialDev, each job's verified ``ranking.json`` with the sealed oracle values.
+It aggregates the recorded scores and does not rescore answers.
 
 Run on a finished campaign, from a download of the release::
 
     python -m trialagentbench_verifier.resources.truth_recovery --campaign results/comparison \\
       --evaluator-catalog benchmark/full/trialeval-evaluator.assets.json --evaluator-catalog-sha256 "$CATALOG_SHA256" \\
       --replay-bank replay-bank --replay-bank-sha256 "$REPLAY_BANK_SHA256" --fixed-analyses benchmark/fixed-analyses \\
+      --anchor-sha256 "$ANCHOR_SHA256" --sums benchmark/SHA256SUMS --tasks benchmark/full/TASKS.csv \\
       --oracle-values benchmark/oracle-values/trialdev_oracle_values.json \\
       --expected-oracle-values-sha256 "$ORACLE_SHA256" --output results/comparison/truth-recovery
 
@@ -35,6 +35,7 @@ import numpy as np
 import numpy.typing as npt
 from pydantic import BaseModel, ConfigDict, Field
 
+from trialagentbench_verifier.artifacts.anchor import ReleaseInputResolver
 from trialagentbench_verifier.assets import materialize_asset_selection
 from trialagentbench_verifier.campaign import _strata
 from trialagentbench_verifier.campaign_contracts import CampaignPlanV1
@@ -55,6 +56,11 @@ from trialagentbench_verifier.response import TrialDevRunRankingV1
 from trialagentbench_verifier.trialeval import TrialEvalGradingKeyRecordV1
 
 _Array = npt.NDArray[np.float64]
+
+
+class MissingKeyRecordError(ValueError):
+    """A task declared as TrialEval has no record in the supplied grading key."""
+
 
 MAIN_CONTEXT = "C5"
 """The main selection's evidence context; rows are read at it and at the declared economics."""
@@ -892,6 +898,9 @@ def campaign_truth_recovery(
     ValueError
         If the process-aware analysis has no source.
     """
+    missing = set().union(*schedule.values()) - key.keys()
+    if missing:
+        raise MissingKeyRecordError(f"scheduled TrialEval tasks have no key record: {', '.join(sorted(missing))}")
     tables = () if fixed_analyses is None else (fixed_analyses / FIXED_ANALYSIS_ROWS,)
     cells = read_cells((*answers, *tables), schedule, pipeline)
     if fixed_analyses is not None:
@@ -1088,6 +1097,11 @@ def _parser() -> argparse.ArgumentParser:
     parser.add_argument("--evaluator-catalog", type=Path, help="Evaluator catalog beside its shards.")
     parser.add_argument("--evaluator-catalog-sha256", help="SHA-256 of the evaluator catalog.")
     parser.add_argument("--evaluator-release", type=Path, help="Extracted evaluator release, instead of the catalog.")
+    parser.add_argument("--tasks", type=Path, help="Anchor-bound full/TASKS.csv benchmark inventory.")
+    anchor = parser.add_mutually_exclusive_group(required=True)
+    anchor.add_argument("--anchor-sha256")
+    anchor.add_argument("--anchor-url")
+    parser.add_argument("--sums", type=Path)
     parser.add_argument("--output", type=Path, required=True, help="Directory for the output CSVs.")
     parser.add_argument("--pipeline-answers", type=Path, help="Answer CSV of the test-then-correct pipeline.")
     parser.add_argument("--replay-bank", type=Path, help="Replay bank, when the rows carry no process-aware analysis.")
@@ -1156,10 +1170,31 @@ def main(argv: Sequence[str] | None = None) -> None:
     """
     args = _parser().parse_args(argv)
     answers, schedule, stores = _campaign_inputs(args)
+    source = args.evaluator_release if args.evaluator_release is not None else args.evaluator_catalog
+    resolver = ReleaseInputResolver(
+        source, anchor_sha256=args.anchor_sha256, anchor_url=args.anchor_url, sums=args.sums
+    )
+    resolver.require(source, expected_sha256=args.evaluator_catalog_sha256)
+    tasks_path = args.tasks
+    if tasks_path is None:
+        tasks_path = next(
+            (root / "full/TASKS.csv" for root in resolver.roots if (root / "full/TASKS.csv").is_file()), None
+        )
+    if tasks_path is None:
+        raise ValueError("the anchor-bound full/TASKS.csv benchmark inventory is required")
+    resolver.require(tasks_path)
+    with tasks_path.open(newline="", encoding="utf-8") as handle:
+        benchmarks = {row["task_id"]: row["benchmark"] for row in csv.DictReader(handle)}
+    unknown = set().union(*schedule.values()) - benchmarks.keys()
+    if unknown:
+        raise ValueError(f"scheduled tasks are absent from full/TASKS.csv: {', '.join(sorted(unknown))}")
+    schedule = {
+        model: {task for task in tasks if benchmarks[task] == "trialeval"} for model, tasks in schedule.items()
+    }
     key = _grading_records(args, next((task for tasks in schedule.values() for task in tasks), ""))
     table = campaign_truth_recovery(
         answers,
-        {model: frozenset(task for task in tasks if task in key) for model, tasks in schedule.items()},
+        {model: frozenset(tasks) for model, tasks in schedule.items()},
         key,
         pipeline=args.pipeline_answers,
         replay_bank=None if args.replay_bank is None else (args.replay_bank, args.replay_bank_sha256),

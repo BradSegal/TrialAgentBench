@@ -1,6 +1,6 @@
 [project]
 name = "trial-agent-bench"
-version = "1.1.0"
+version = "1.2.0"
 description = "TrialAgentBench: harnesses for clinical-trial agent benchmarks (TrialEval trial analysis and TrialDev treatment-development decisions)"
 readme = "README.md"
 requires-python = ">=3.11,<3.13"
@@ -15,7 +15,7 @@ dependencies = [
     "pandas>=2.2,<3",
     "pydantic>=2.12,<3",
     "pyarrow>=18,<24",
-    "trialagentbench-verifier==1.1.0",
+    "trialagentbench-verifier==1.2.0",
 ]
 
 [project.urls]

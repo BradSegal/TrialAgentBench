@@ -23,7 +23,7 @@ from trialagentbench.adapters.llm_providers import (
 from trialagentbench.contracts.core.config import ProviderRetryPolicyV1
 from trialagentbench.ports import ProviderRequestError
 
-# Assembled at run time so the published source carries no key-shaped literal (release credential scan).
+# Synthetic provider credentials are assembled for this isolated adapter test.
 _OPAQUE_CONTINUATION = "opaque-sk-" + "feature-continuation"
 
 
@@ -582,7 +582,7 @@ def test_http_retry_causes_are_saved_without_authentication_material(tmp_path, m
     provider._retry_policy = ProviderRetryPolicyV1(maximum_attempts=2, base_delay_seconds=0)
     ordinary_response = completions.create
     attempts = 0
-    # Assembled at run time so the published source carries no key-shaped literal (release credential scan).
+    # Synthetic provider credentials are assembled for this isolated adapter test.
     secret = "sk-" + "test-credential-must-never-be-logged"
 
     def create(**kwargs):

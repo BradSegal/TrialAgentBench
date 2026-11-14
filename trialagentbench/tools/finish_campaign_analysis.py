@@ -425,6 +425,8 @@ def replay_trialeval_answers(
         ).experiment_condition.reporting_interface
         source = load_trial_eval_campaign_grade_source_v1(
             "",
+            grading_key=plan.configuration.grading_key,
+            grading_key_sha256=plan.configuration.grading_key_sha256,
             expected_release_id=release_id,
             expected_release_manifest_sha256=release_manifest_sha256,
             expected_archive_sha256=None,
@@ -644,6 +646,8 @@ def finish_comparisons(
             # Every observed answer is scored even when the paired analysis below is unavailable
             # (a C5-only campaign) or restricted to the tasks every model completed.
             answers = trial_eval_answer_rows_v1(
+                grading_key=configuration.grading_key,
+                grading_key_sha256=configuration.grading_key_sha256,
                 expected_release_id=combined.release_id,
                 expected_release_manifest_sha256=combined.release_manifest_sha256,
                 plan=combined,
@@ -655,6 +659,8 @@ def finish_comparisons(
             try:
                 analysis = analyse_trial_eval_campaign_v1(
                     "",
+                    grading_key=configuration.grading_key,
+                    grading_key_sha256=configuration.grading_key_sha256,
                     expected_release_id=combined.release_id,
                     expected_release_manifest_sha256=combined.release_manifest_sha256,
                     expected_archive_sha256=None,

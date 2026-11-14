@@ -128,7 +128,21 @@ def _development_inputs(
         executor=DevelopmentExecutorV1(image_id=executor.image_id, environment_sha256=executor.semantic_sha256()),
     )
     (root / "development-inputs.json").write_text(manifest.model_dump_json())
+    with zipfile.ZipFile(evaluator) as source:
+        (root / "records.jsonl").write_bytes(source.read("grading_key/records.jsonl"))
+    sums = root / "publisher-SHA256SUMS"
+    paths = sorted(path for path in root.iterdir() if path.is_file())
+    sums.write_text("".join(f"{sha256_file(path)}  {path.name}\n" for path in paths))
     return sha256_file(root / "development-inputs.json"), executor.image_id
+
+
+def _development_verifier_inputs(root: Path) -> dict[str, str]:
+    """Carry fixture publisher trust and the exact TrialEval grading key into every campaign."""
+    key = root / "records.jsonl"
+    sums = root / "publisher-SHA256SUMS"
+    return dict(
+        grading_key=str(key), grading_key_sha256=sha256_file(key), sums=str(sums), anchor_sha256=sha256_file(sums)
+    )
 
 
 def test_budget_capped_campaign_finishes_with_paired_comparisons(
@@ -141,6 +155,7 @@ def test_budget_capped_campaign_finishes_with_paired_comparisons(
         json.dumps(
             {
                 "release_directory": str(release),
+                **_development_verifier_inputs(release),
                 "input_mode": "development",
                 "expected_release_manifest_sha256": manifest_sha256,
                 "executor_image_id": image_id,
@@ -232,6 +247,7 @@ def _run_faulted_primary(
         json.dumps(
             {
                 "release_directory": str(release),
+                **_development_verifier_inputs(release),
                 "input_mode": "development",
                 "expected_release_manifest_sha256": manifest_sha256,
                 "executor_image_id": image_id,

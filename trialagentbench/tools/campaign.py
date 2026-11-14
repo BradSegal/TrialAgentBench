@@ -18,7 +18,7 @@ from pathlib import Path
 from typing import Literal
 from zipfile import ZipFile
 
-from pydantic import BaseModel, ConfigDict, Field, JsonValue
+from pydantic import BaseModel, ConfigDict, Field, JsonValue, TypeAdapter
 from trialagentbench_verifier.asset_cache import cache_footprint
 from trialagentbench_verifier.assets import AssetTask, ReleaseAssets, read_asset_catalog
 from trialagentbench_verifier.campaign import (
@@ -85,6 +85,15 @@ def _campaign_inputs(
     configuration: CampaignConfigurationV1, *, full_verification: bool = False
 ) -> ReleaseSetManifestV1 | DevelopmentCampaignInputsV1:
     """Authenticate the selected input class without weakening qualified release checks."""
+    if configuration.grading_key is not None:
+        from trialagentbench_verifier.artifacts.anchor import ReleaseInputResolver
+
+        ReleaseInputResolver(
+            configuration.release_directory,
+            anchor_sha256=configuration.anchor_sha256,
+            anchor_url=configuration.anchor_url,
+            sums=configuration.sums,
+        ).require(configuration.grading_key, expected_sha256=configuration.grading_key_sha256)
     if configuration.input_mode == "development":
         if configuration.panel.split != "public":
             raise ValueError("Development inputs have no withheld evaluation split")
@@ -104,10 +113,17 @@ def _campaign_inputs(
                     configuration.release_directory / artifact.filename,
                     expected_sha256=artifact.sha256,
                     benchmark=benchmark,
+                    anchor_sha256=configuration.anchor_sha256,
+                    anchor_url=configuration.anchor_url,
+                    sums=configuration.sums,
                 )
         return manifest
     qualified = authenticate_release_set_manifest(
-        configuration.release_directory, expected_manifest_sha256=configuration.expected_release_manifest_sha256
+        configuration.release_directory,
+        expected_manifest_sha256=configuration.expected_release_manifest_sha256,
+        anchor_sha256=configuration.anchor_sha256,
+        anchor_url=configuration.anchor_url,
+        sums=configuration.sums,
     )
     if full_verification:
         selections = _campaign_asset_selections(configuration, qualified)
@@ -129,6 +145,11 @@ def _campaign_inputs(
         return verify_release_set(
             configuration.release_directory,
             expected_manifest_sha256=configuration.expected_release_manifest_sha256,
+            anchor_sha256=configuration.anchor_sha256,
+            anchor_url=configuration.anchor_url,
+            sums=configuration.sums,
+            grading_key=configuration.grading_key,
+            grading_key_sha256=configuration.grading_key_sha256,
             task_selections=by_benchmark,
             split=configuration.panel.split,
         )
@@ -195,6 +216,12 @@ def _configuration_payload(path: Path) -> tuple[Path, dict[str, JsonValue]]:
     if sha256_file(release / manifest_name) != payload["expected_release_manifest_sha256"]:
         raise ValueError("Campaign manifest differs from its pinned digest")
     payload["release_directory"] = str(release)
+    for name in ("sums", "grading_key"):
+        value = payload.get(name)
+        if value is not None:
+            if not isinstance(value, str):
+                raise ValueError(f"Campaign {name} must be a path string")
+            payload[name] = str((parent / value).resolve(strict=True))
     return release, payload
 
 
@@ -224,7 +251,11 @@ def load_configuration(path: Path, *, prepare_executor: bool = False) -> Campaig
             attestation = None
         if prepare_executor and attestation is None and isinstance(manifest, ReleaseSetManifestV1):
             authenticate_release_set_manifest(
-                release, expected_manifest_sha256=str(payload["expected_release_manifest_sha256"])
+                release,
+                expected_manifest_sha256=str(payload["expected_release_manifest_sha256"]),
+                anchor_sha256=TypeAdapter(str | None).validate_python(payload.get("anchor_sha256")),
+                anchor_url=TypeAdapter(str | None).validate_python(payload.get("anchor_url")),
+                sums=None if payload.get("sums") is None else Path(str(payload["sums"])),
             )
             toolkit = next(item for item in manifest.artifacts if item.kind == "public_toolkit")
             # Reuse the image the documentation builds; identity is the environment hash, not the tag.
@@ -576,6 +607,9 @@ class _PreviewConfiguration(BaseModel):
     model_config = ConfigDict(extra="ignore", frozen=True)
     release_directory: Path
     expected_release_manifest_sha256: str = Field(pattern=r"^[0-9a-f]{64}$")
+    anchor_sha256: str | None = None
+    anchor_url: str | None = None
+    sums: Path | None = None
     input_mode: Literal["qualified", "development"] = "qualified"
     panel: CampaignPanelV1 = Field(default_factory=CampaignPanelV1)
     models: tuple[_PreviewModel, ...] = Field(min_length=1)
@@ -591,7 +625,11 @@ def preview_configuration(path: Path, *, inventory: Path | None = None) -> None:
         )
         if configuration.input_mode == "development"
         else authenticate_release_set_manifest(
-            release, expected_manifest_sha256=configuration.expected_release_manifest_sha256
+            release,
+            expected_manifest_sha256=configuration.expected_release_manifest_sha256,
+            anchor_sha256=configuration.anchor_sha256,
+            anchor_url=configuration.anchor_url,
+            sums=configuration.sums,
         )
     )
     anchors = {artifact.filename: artifact.sha256 for artifact in manifest.artifacts}
@@ -1062,6 +1100,10 @@ def _finish_native_runs(
         ]
         if configuration.panel.split != "public":
             arguments.extend(["--split", configuration.panel.split])
+        for name in ("anchor_sha256", "anchor_url", "sums", "grading_key", "grading_key_sha256"):
+            value = getattr(configuration, name)
+            if value is not None:
+                arguments.extend(["--" + name.replace("_", "-"), str(value)])
         if run.benchmark == "trialeval":
             arguments.extend(
                 [

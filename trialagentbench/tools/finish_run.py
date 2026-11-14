@@ -82,6 +82,11 @@ def main(argv: Sequence[str] | None = None, *, qualified_manifest: ReleaseSetMan
     parser.add_argument("benchmark", choices=("trialeval", "trialdev"))
     parser.add_argument("--release-dir", type=Path, required=True)
     parser.add_argument("--expected-manifest-sha256", required=True)
+    parser.add_argument("--anchor-sha256")
+    parser.add_argument("--anchor-url")
+    parser.add_argument("--sums", type=Path)
+    parser.add_argument("--grading-key", type=Path)
+    parser.add_argument("--grading-key-sha256")
     parser.add_argument("--run-root", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--executor-image-id")
@@ -105,6 +110,8 @@ def main(argv: Sequence[str] | None = None, *, qualified_manifest: ReleaseSetMan
     if args.budget_censored and args.benchmark != "trialeval":
         parser.error("TrialDev rankings record unrun tasks natively; --budget-censored is TrialEval-only")
     if args.benchmark == "trialeval":
+        if args.grading_key is None or args.grading_key_sha256 is None:
+            parser.error("TrialEval requires its authenticated grading key and trusted SHA-256")
         if args.campaign_plan is None or args.expected_plan_sha256 is None or args.executor_image_id is None:
             parser.error("TrialEval requires its prospectively retained plan digest and local executor image ID")
         if sha256_file(args.campaign_plan) != args.expected_plan_sha256:
@@ -123,8 +130,20 @@ def main(argv: Sequence[str] | None = None, *, qualified_manifest: ReleaseSetMan
         authenticate_development_inputs(release_dir, expected_manifest_sha256=args.expected_manifest_sha256)
         if args.development
         else qualified_manifest
-        or authenticate_release_set_manifest(release_dir, expected_manifest_sha256=args.expected_manifest_sha256)
+        or authenticate_release_set_manifest(
+            release_dir,
+            expected_manifest_sha256=args.expected_manifest_sha256,
+            anchor_sha256=args.anchor_sha256,
+            anchor_url=args.anchor_url,
+            sums=args.sums,
+        )
     )
+    if not args.development and args.grading_key is not None:
+        from trialagentbench_verifier.artifacts.anchor import ReleaseInputResolver
+
+        ReleaseInputResolver(
+            release_dir, anchor_sha256=args.anchor_sha256, anchor_url=args.anchor_url, sums=args.sums
+        ).require(args.grading_key, expected_sha256=args.grading_key_sha256)
     anchors = {artifact.filename: artifact.sha256 for artifact in manifest.artifacts}
     evaluator_role = "withheld-evaluator" if args.split == "withheld" else "evaluator"
     evaluator = release_dir / role_filename(anchors, args.benchmark, evaluator_role)
@@ -182,6 +201,8 @@ def main(argv: Sequence[str] | None = None, *, qualified_manifest: ReleaseSetMan
         try:
             analysis = analyse_trial_eval_campaign_v1(
                 "",
+                grading_key=args.grading_key,
+                grading_key_sha256=args.grading_key_sha256,
                 expected_release_id=plan.release_id,
                 expected_release_manifest_sha256=plan.release_manifest_sha256,
                 expected_archive_sha256=None,

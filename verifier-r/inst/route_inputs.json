@@ -1,0 +1,59 @@
+{
+  "S05": {
+    "covariates": ["baseline_hba1c_percent", "bmi_kg_m2"],
+    "reference_field": "bmi_kg_m2",
+    "reference_threshold": 35,
+    "reference_member_column": "reference_population_member",
+    "provenance": [
+      {
+        "member": "participant/tasks/te_0d970b5d141d581b9375/documents/protocol.md",
+        "sha256": "713cbc642422b7a7f71db89c7c00cfbc974e53cc212fe10b3db367258d2f4c9d"
+      },
+      {
+        "member": "participant/tasks/te_0d970b5d141d581b9375/documents/statistical_analysis_plan.md",
+        "sha256": "77dc8d16b82508c1afedbef97aa89bdfddc02f98ff48b773a415204da612ddb3"
+      },
+      {
+        "member": "participant/tasks/te_0d970b5d141d581b9375/documents/data_dictionary.csv",
+        "sha256": "3f211b0085af2bac211b910fb4d85f4c15933111ec248bc1035b86fcc9e5bdce"
+      },
+      {
+        "member": "participant/tasks/te_5ab5ee2bb2c013460b26/documents/protocol.md",
+        "sha256": "77093e47cbaf38a5182b13a21b0ee98a7aaeeb4f326f54643e9b751dba46af7c"
+      },
+      {
+        "member": "participant/tasks/te_5ab5ee2bb2c013460b26/documents/statistical_analysis_plan.md",
+        "sha256": "3adf628751defa438c2bb45b33b16b1488f29ae8117e9c735bd646e1b575066b"
+      },
+      {
+        "member": "participant/tasks/te_5ab5ee2bb2c013460b26/documents/data_dictionary.csv",
+        "sha256": "3f211b0085af2bac211b910fb4d85f4c15933111ec248bc1035b86fcc9e5bdce"
+      },
+      {
+        "member": "participant/tasks/te_6e4fe1e8261c6ce9b772/documents/protocol.md",
+        "sha256": "e9e4b5e0d3fd26a0f2c923220619f2ce1c85aca60d903fa8ad91849f0274eacd"
+      },
+      {
+        "member": "participant/tasks/te_6e4fe1e8261c6ce9b772/documents/statistical_analysis_plan.md",
+        "sha256": "570e8ff2fc5d6f356d62fc44356c811f03544bfa4ba48072f281af41da1b97b9"
+      },
+      {
+        "member": "participant/tasks/te_6e4fe1e8261c6ce9b772/documents/data_dictionary.csv",
+        "sha256": "3f211b0085af2bac211b910fb4d85f4c15933111ec248bc1035b86fcc9e5bdce"
+      },
+      {
+        "member": "participant/tasks/te_ecb15c2d4914647d70c4/documents/protocol.md",
+        "sha256": "62236d68bfe95631503b8d2479714b311a4211d48c7c883c78bd70039083ef61"
+      },
+      {
+        "member": "participant/tasks/te_ecb15c2d4914647d70c4/documents/statistical_analysis_plan.md",
+        "sha256": "3873bdd897135871bd416759cd38787fcf3304a9690b33e594594115c59d9598"
+      },
+      {
+        "member": "participant/tasks/te_ecb15c2d4914647d70c4/documents/data_dictionary.csv",
+        "sha256": "3f211b0085af2bac211b910fb4d85f4c15933111ec248bc1035b86fcc9e5bdce"
+      }
+    ],
+    "derivation": "Numeric baseline fields with exact dictionary roles baseline covariate and prognostic covariate (also explicitly named in the released SAP); protocol BMI >= threshold; released reference_population_member is checked against this rule in every fit."
+  }
+}

@@ -103,7 +103,11 @@ def campaign(
     monkeypatch.setattr(finish, "rerun_timeout_v1", rerun)
     sha = _bank(tmp_path / "bank", replays=request.param)
     plan = SimpleNamespace(
-        configuration=SimpleNamespace(operations=SimpleNamespace(executor_capacity=1, grading_workers=1))
+        configuration=SimpleNamespace(
+            grading_key=None,
+            grading_key_sha256=None,
+            operations=SimpleNamespace(executor_capacity=1, grading_workers=1),
+        )
     )
 
     def run(workers: int | None = None) -> object:
@@ -165,7 +169,11 @@ def test_a_replacement_script_in_another_retry_run_gets_its_own_missing_bank_rep
     def run():
         return finish.replay_trialeval_answers(
             tmp_path / "campaign",
-            SimpleNamespace(configuration=SimpleNamespace(operations=SimpleNamespace(executor_capacity=1))),
+            SimpleNamespace(
+                configuration=SimpleNamespace(
+                    grading_key=None, grading_key_sha256=None, operations=SimpleNamespace(executor_capacity=1)
+                )
+            ),
             (tmp_path / "grade", retry_grade),
             bank=tmp_path / "bank",
             bank_manifest_sha256=bank_sha,
