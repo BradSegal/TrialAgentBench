@@ -22,12 +22,10 @@ typecheck:
 
 test:
 	$(DEV_PY) -m pytest -p no:cacheprovider -c pyproject.toml --rootdir=.
-	$(if $(VERIFIER),$(DEV_PY) -m pytest -p no:cacheprovider -c verifier/pyproject.toml --rootdir=verifier -m "not executor" verifier/tests)
 
 test-executor:
 	docker build -t trialagentbench/executor:1.0.1 executor
 	$(DEV_PY) -m pytest -p no:cacheprovider -c pyproject.toml --rootdir=. -m executor tests
-	$(if $(VERIFIER),$(DEV_PY) -m pytest -p no:cacheprovider -c verifier/pyproject.toml --rootdir=verifier -m executor verifier/tests)
 
 build:
 	$(DEV_PY) -m build

@@ -200,7 +200,7 @@ def _release_sets(tmp_path, monkeypatch, *, participant="c", environment="e"):
     monkeypatch.setattr(
         regrade_module,
         "authenticate_release_set",
-        lambda root, *, expected_manifest_sha256: manifests[(Path(root), expected_manifest_sha256)],
+        lambda root, *, expected_manifest_sha256, **_trust: manifests[(Path(root), expected_manifest_sha256)],
     )
     monkeypatch.setattr(finish_campaign_analysis, "campaign_censoring", lambda *_: None)
     return original, rebuilt
@@ -247,3 +247,31 @@ def test_regrade_refuses_rebinding_to_other_inputs_before_writing(tmp_path, monk
         regrade_campaign(source, tmp_path / "regraded", release=rebuilt)
     assert not (tmp_path / "regraded").exists()
     assert _bytes(source) == original
+
+
+@pytest.mark.parametrize("anchor_kind", ("sha256", "url"))
+def test_regrade_forwards_configured_anchor_to_both_release_authentications(tmp_path, monkeypatch, anchor_kind):
+    """Retained configuration supplies the publisher trust for both sides of a release rebind."""
+    original, rebuilt = _release_sets(tmp_path, monkeypatch)
+    plan = _retained_campaign(original, missing_scorer_identity=False)
+    trust = dict(anchor_sha256="f" * 64, anchor_url=None, sums=tmp_path / "publisher-SHA256SUMS")
+    if anchor_kind == "url":
+        trust.update(
+            anchor_sha256=None, anchor_url="https://github.com/BradSegal/TrialAgentBench/anchor.json@" + "1" * 40
+        )
+    plan = plan.model_copy(update={"configuration": plan.configuration.model_copy(update=trust)})
+    authenticate = regrade_module.authenticate_release_set
+    calls = []
+
+    def anchored(root, **kwargs):
+        calls.append((root, kwargs))
+        assert {name: kwargs[name] for name in trust} == trust
+        return authenticate(root, **kwargs)
+
+    monkeypatch.setattr(regrade_module, "authenticate_release_set", anchored)
+    rebound = regrade_module._rebind_release(plan, rebuilt)
+    assert [root for root, _ in calls] == [original, rebuilt]
+    assert rebound.configuration.release_directory == rebuilt
+    assert rebound.configuration.anchor_sha256 == trust["anchor_sha256"]
+    assert rebound.configuration.anchor_url == trust["anchor_url"]
+    assert rebound.configuration.sums == trust["sums"]

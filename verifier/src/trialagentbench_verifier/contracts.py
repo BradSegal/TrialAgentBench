@@ -8,16 +8,16 @@ from typing import Final, Literal, Self
 
 from pydantic import BaseModel, ConfigDict, Field, JsonValue, model_validator
 
-from trialagentbench_verifier.execution_contracts import ReplayInputArtifactV1
-from trialagentbench_verifier.scorer import CurrentScorer
+from trialagentbench_verifier.identity.scorer import CurrentScorer
+from trialagentbench_verifier.runtime.execution_contracts import ReplayInputArtifactV1
 
-VerifierVersion = Literal["1.0.0", "1.0.1", "1.1.0"]
+VerifierVersion = Literal["1.0.0", "1.0.1", "1.1.0", "1.2.0"]
 """Package releases whose reports remain readable; every one shares these report schemas.
 
 The version names the producing package only. Scores are current exactly when their
 ``scorer`` identity is, so retained execution proofs from any listed release still verify.
 """
-VERIFIER_VERSION: Final = "1.1.0"
+VERIFIER_VERSION: Final = "1.2.0"
 """Version stamped on new reports: the installed package's."""
 
 

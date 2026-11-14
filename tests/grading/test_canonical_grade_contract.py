@@ -452,6 +452,11 @@ def test_trial_eval_offline_grader_retains_attempts(
         source_sha256="c" * 64,
         score_input_sha256="d" * 64,
         score_input=IndependentScoreInput.model_validate(verification_input.model_dump(mode="json")),
+        record=record,
+    )
+    assert "decision_rule" not in scored.scores.model_dump()
+    assert (None if independent.outcome.decision is None else independent.outcome.decision.model_dump()) == (
+        None if scored.scores.decision is None else scored.scores.decision.model_dump()
     )
     assert independent.observed_attempt_outcome == ("completed" if submitted else "model_noncompletion")
     # The unreported plan as executed is inaccurate, apart from the task's loss and decision.
@@ -488,12 +493,13 @@ def test_trial_eval_offline_grader_retains_attempts(
         changed = verification_input.model_copy(
             update={"submitted_result": verification_input.submitted_result.model_copy(update={"value": 999})}
         )
-        with pytest.raises(ValueError, match="certified CSV numbers"):
+        with pytest.raises(ValueError, match="graded point values differ"):
             _campaign_row(
                 json.loads((graded / "items" / f"{TASK_ID}.json").read_text()),
                 source_sha256="c" * 64,
                 score_input_sha256="d" * 64,
                 score_input=IndependentScoreInput.model_validate(changed.model_dump(mode="json")),
+                record=record,
             )
 
     summary = json.loads((graded / "summary.json").read_text(encoding="utf-8"))
@@ -814,6 +820,7 @@ def test_offline_grader_retains_partial_pair_and_continues_to_next_task(
         score_input=IndependentScoreInput.model_validate_json(
             (graded / "verification_inputs" / f"{first.task_id}.json").read_text()
         ),
+        record=first,
     )
     assert independent.outcome.signal_loss is None
     assert independent.outcome.completion.status == "not_satisfied"
@@ -982,6 +989,8 @@ def test_offline_grader_retains_partial_pair_and_continues_to_next_task(
         expected_release_manifest_sha256=combined.release_manifest_sha256,
         expected_archive_sha256=None,
         grade_roots=selected_roots,
+        grading_key=suite / "grading_key/records.jsonl",
+        grading_key_sha256=sha256_file(suite / "grading_key/records.jsonl"),
     )
     bound = _bind_attempts(selected_plan, source)
     by_task = {attempt.plan.task_id: attempt.row for attempt in bound}

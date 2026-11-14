@@ -58,7 +58,7 @@ We validate the simulation against what we know about real clinical trials:
 Requires Python 3.11 or 3.12 and [uv](https://docs.astral.sh/uv/) installed. Docker must be running.
 
 ```bash
-git clone --branch v1.1.0 https://github.com/BradSegal/TrialAgentBench
+git clone --branch v1.2.0 https://github.com/BradSegal/TrialAgentBench
 cd TrialAgentBench
 uv sync --locked
 docker build --tag trialagentbench/executor:1.0.1 executor

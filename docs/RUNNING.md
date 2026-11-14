@@ -7,7 +7,7 @@ To run TrialAgentBench, you execute a campaign, a checksummed plan which locks t
 Requires Python 3.11 or 3.12, uv, Docker, and a Linux x86_64 system.
 
 ```bash
-git clone --branch v1.1.0 https://github.com/BradSegal/TrialAgentBench
+git clone --branch v1.2.0 https://github.com/BradSegal/TrialAgentBench
 cd TrialAgentBench
 uv sync --locked
 docker build --tag trialagentbench/executor:1.0.1 executor
@@ -25,17 +25,25 @@ The demo setup doesn't require any downloads or credentials, since we use a scri
 
 ## 2. Download and verify the release
 
-We fix the release tag to ensure all files are from the same release. Our harness only downloads task shards that are needed on demand, so you only download files that you need based on your task selection. Overall, this is about 20GB, and the whole release is 32.1 GB. We recommend keeping the cache, release folder, and the evaluator catalogues outside of the agent's workspace as they contain the true values.
+The source release's `.github/release-dataset.json` pins the data revision and its root checksum. Keep the evaluator and cache outside the workspace given to a benchmark participant. Software and data versions are independent.
 
 ```bash
+export TAB_DATA_REVISION=$(uv run python -c 'import json; print(json.load(open(".github/release-dataset.json"))["revision"])')
+export ANCHOR_SHA256=$(uv run python -c 'import json; print(json.load(open(".github/release-dataset.json"))["sha256sums_sha256"])')
 export HF_HOME="$PWD/cache/huggingface"
 uvx --from huggingface_hub hf download BradSegal/TrialAgentBench --repo-type dataset \
-  --revision v1.1.0 --include "SHA256SUMS" --include "full/*" --include "main/*" --exclude "full/shards/*" \
+  --revision "$TAB_DATA_REVISION" --include "SHA256SUMS" --include "full/*" --include "main/*" --exclude "full/shards/*" \
   --local-dir benchmark
+printf '%s  %s\n' "$ANCHOR_SHA256" benchmark/SHA256SUMS | sha256sum --check
 (cd benchmark && sha256sum --check --ignore-missing SHA256SUMS)
 export TRIALAGENTBENCH_CACHE_DIR="$PWD/cache"
-export TRIALAGENTBENCH_ASSET_BASE_URL=https://huggingface.co/datasets/BradSegal/TrialAgentBench/resolve/v1.1.0/full
+export TRIALAGENTBENCH_ASSET_BASE_URL="https://huggingface.co/datasets/BradSegal/TrialAgentBench/resolve/$TAB_DATA_REVISION/full"
+export CATALOG_SHA256=$(awk '$2 == "trialeval-evaluator.assets.json" {print $1}' benchmark/full/SHA256SUMS)
+export EVALUATOR="$PWD/evaluator"
+uv run trialagentbench-verify setup benchmark --anchor .github/release-dataset.json
 ```
+
+Edit the new `campaign.json` to select your model, tasks and spend limits.
 
 ## 3. Smoke run
 
@@ -44,8 +52,8 @@ We'll perform a quick "smoke test" run where we just run 3 tasks using the defau
 This will make sure everything runs ok before you spend money on a model.
 
 ```bash
-uv run trialagentbench campaign preview --config examples/smoke.json
-uv run trialagentbench campaign prepare --config examples/smoke.json --campaign results/smoke
+uv run trialagentbench campaign preview --config smoke.json
+uv run trialagentbench campaign prepare --config smoke.json --campaign results/smoke
 uv run trialagentbench campaign run --campaign results/smoke
 uv run trialagentbench campaign finish --campaign results/smoke
 ```
@@ -57,7 +65,6 @@ We start with the example config and update the config to point to our release f
 ```bash
 uv sync --locked --extra providers
 read -r -s -p 'OpenRouter API key: ' OPENROUTER_API_KEY && export OPENROUTER_API_KEY
-cp examples/campaign.json campaign.json
 uv run trialagentbench campaign preview --config campaign.json
 uv run trialagentbench campaign prepare --config campaign.json --campaign results/main
 uv run trialagentbench campaign run --campaign results/main
@@ -90,7 +97,7 @@ To perform truth recovery for your own campaign, first download and validate the
 
 ```bash
 uvx --from huggingface_hub hf download BradSegal/TrialAgentBench --repo-type dataset \
-  --revision v1.1.0 --include "replay-bank/*" --include "fixed-analyses/*" --local-dir .
+  --revision "$TAB_DATA_REVISION" --include "replay-bank/*" --include "fixed-analyses/*" --local-dir .
 for archive in replay-bank/tasks/*.zip; do unzip -q -o "$archive" -d replay-bank/tasks; done
 ```
 
@@ -102,6 +109,7 @@ uv run python -m trialagentbench_verifier.resources.truth_recovery \
   --evaluator-catalog-sha256 "$CATALOG_SHA256" \
   --replay-bank replay-bank --replay-bank-sha256 "$REPLAY_BANK_SHA256" \
   --fixed-analyses fixed-analyses \
+  --anchor-sha256 "$ANCHOR_SHA256" --sums benchmark/SHA256SUMS --tasks benchmark/full/TASKS.csv \
   --output results/main/truth-recovery
 ```
 

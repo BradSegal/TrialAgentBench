@@ -1196,6 +1196,8 @@ def _slice_campaign(tmp_path, run_root):
             "release_directory": str(tmp_path),
             "expected_release_manifest_sha256": "a" * 64,
             "executor_image_id": EXECUTOR_ENVIRONMENT.image_id,
+            "grading_key": str(tmp_path / "records.jsonl"),
+            "grading_key_sha256": "d" * 64,
             "models": [
                 {
                     "name": "fixture",

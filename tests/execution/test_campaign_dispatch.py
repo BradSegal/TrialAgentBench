@@ -234,6 +234,7 @@ def test_order_interleaves_benchmarks_and_rotates_models(tmp_path):
     payload = config.model_dump(mode="json")
     payload["panel"]["benchmarks"] = ["trialeval", "trialdev"]
     payload["panel"]["trialeval_tasks"] = ["e1", "e2"]
+    payload.update(grading_key=str(tmp_path / "records.jsonl"), grading_key_sha256="d" * 64)
     priorities = [("trialeval", "e1"), ("trialdev", "b"), ("trialeval", "e2"), ("trialdev", "a"), ("trialdev", "c")]
     payload["dispatch"]["task_order"] = [dict(benchmark=b, task_id=t) for b, t in priorities]
     config = CampaignConfigurationV1.model_validate(payload)

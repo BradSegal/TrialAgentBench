@@ -12,6 +12,10 @@ These files support the [running guide](../docs/RUNNING.md).
 - `reprice_programme.py` recomputes a finished programme's value with the verifier, optionally at a different profit.
 - [`clinical/`](clinical/README.md) is a clinical walkthrough driven by a fixed script, with its two small archives.
 
+Before preparing either campaign template, replace its zero `anchor_sha256` and `grading_key_sha256` placeholders
+with trusted publisher digests, and set `sums` and `grading_key` to the retained census and extracted TrialEval key.
+Paths are relative to the configuration file. Both qualified and development TrialEval preparation authenticate the key.
+
 The first command runs the demonstration, which needs the executor image and no download. The others read the release
 downloaded to `benchmark/`.
 

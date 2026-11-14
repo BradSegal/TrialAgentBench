@@ -63,5 +63,9 @@
     "analysis_language": "python_r"
   },
   "release_directory": "../benchmark/full",
-  "schema_id": "trialagentbench.campaign_configuration/v1"
+  "schema_id": "trialagentbench.campaign_configuration/v1",
+  "anchor_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "sums": "../benchmark/SHA256SUMS",
+  "grading_key": "../evaluator/grading_key/records.jsonl",
+  "grading_key_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
 }

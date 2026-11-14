@@ -27,5 +27,9 @@
     "model_workers": 1,
     "task_workers": 1,
     "spend_limit_micro_usd": 10000000
-  }
+  },
+  "anchor_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "sums": "../benchmark/SHA256SUMS",
+  "grading_key": "../evaluator/grading_key/records.jsonl",
+  "grading_key_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
 }

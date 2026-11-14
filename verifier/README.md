@@ -27,8 +27,8 @@ and mismatches; obtaining them beside files does not establish their publisher.
 
 | Command fragment | Scope |
 | --- | --- |
-| `release-set DIR --expected-manifest-sha256 D` | Complete manifest, catalogs, toolkit and every shard |
-| `release CATALOG --expected-sha256 D [--task-id T ...]` | Selected logical bytes and supplied verification records |
+| `release-set DIR --expected-manifest-sha256 D --anchor-sha256 A --sums ROOT_SHA256SUMS` | Complete manifest, catalogs, toolkit and every shard |
+| `release CATALOG --expected-sha256 D [--task-id T ...] --anchor-sha256 A --sums ROOT_SHA256SUMS` | Selected logical bytes and supplied verification records |
 | `toolkit ZIP --expected-sha256 D` | Toolkit members and distributions |
 | `assets fetch CATALOG --expected-sha256 D --cache-directory C` | Verified selective acquisition |
 
@@ -39,7 +39,7 @@ rerun them.
 
 | Command | Recomputed result |
 | --- | --- |
-| `analyse-trialeval` | Replay loss, decision error rates, accuracy, completion and paired comparisons |
+| `analyse-trialeval --grading-key KEY --grading-key-sha256 D` | Replay loss, decision error rates, accuracy, completion and paired comparisons |
 | `analyse-trialdev` | One run's initial-analysis loss, acquired-study scores and development value |
 | `compare-trialdev` | Whole-campaign paired comparisons over independent worlds |
 | `execute` | Fresh reproduction of a saved analysis in the pinned executor |
@@ -53,7 +53,9 @@ nothing. `schedule.csv` has the columns `model,task_id` and lists every schedule
 uv run python -m trialagentbench_verifier.resources.truth_recovery \
   --answers comparisons/trialeval/trialeval_answers.csv --schedule schedule.csv \
   --evaluator-release EVALUATOR --replay-bank replay-bank \
-  --replay-bank-sha256 "$REPLAY_BANK_SHA256" --output truth-recovery
+  --replay-bank-sha256 "$REPLAY_BANK_SHA256" \
+  --anchor-sha256 "$ANCHOR_SHA256" --sums benchmark/SHA256SUMS --tasks benchmark/full/TASKS.csv \
+  --output truth-recovery
 ```
 
 `EVALUATOR` is an extracted TrialEval evaluator release. Rows from the public bank carry the

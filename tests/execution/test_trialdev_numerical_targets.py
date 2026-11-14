@@ -217,7 +217,7 @@ def test_standalone_runner_scores_analysis_without_programme_state(tmp_path, mon
     if submitted:
         loop.run_until_report.side_effect = submit
     else:
-        # A task time limit is a task outcome (F-2): it never stops the run or its siblings.
+        # A task time limit is a task outcome: it never stops the run or its siblings.
         loop.run_until_report.side_effect = (
             AgentTurnLimitExceeded("Turn budget exhausted")
             if outcome == "turn_limit"

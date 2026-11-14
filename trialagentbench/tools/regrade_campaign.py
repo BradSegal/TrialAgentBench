@@ -92,9 +92,19 @@ def _rebind_release(plan: CampaignPlanV1, release: Path) -> CampaignPlanV1:
     release = release.resolve(strict=True)
     digest = detached_manifest_digest(release, "release-set-manifest.json")
     original = authenticate_release_set(
-        configuration.release_directory, expected_manifest_sha256=configuration.expected_release_manifest_sha256
+        configuration.release_directory,
+        expected_manifest_sha256=configuration.expected_release_manifest_sha256,
+        anchor_sha256=configuration.anchor_sha256,
+        anchor_url=configuration.anchor_url,
+        sums=configuration.sums,
     )
-    target = authenticate_release_set(release, expected_manifest_sha256=digest)
+    target = authenticate_release_set(
+        release,
+        expected_manifest_sha256=digest,
+        anchor_sha256=configuration.anchor_sha256,
+        anchor_url=configuration.anchor_url,
+        sums=configuration.sums,
+    )
 
     def inputs(manifest: ReleaseSetManifestV1) -> dict[str, str]:
         names = [artifact.filename for artifact in manifest.artifacts]

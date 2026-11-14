@@ -4,6 +4,13 @@
 {
   "release_directory": "../benchmark/full", // Relative to this file.
   "input_mode": "qualified",
+  // Publisher trust for qualified inputs: supply one anchor, with an optional separate root census.
+  "anchor_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "anchor_url": null, // Alternative: GitHub release-dataset.json URL followed by @ and its full commit.
+  "sums": null, // Path relative to this file; null searches the release's ancestors for SHA256SUMS.
+  // TrialEval analysis requires the evaluator records and their publisher-authenticated digest.
+  "grading_key": "../evaluator/grading_key/records.jsonl",
+  "grading_key_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
   // Both are filled from the release and the local executor at prepare; set them only to pin an identity.
   "expected_release_manifest_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
   "executor_image_id": "sha256:0000000000000000000000000000000000000000000000000000000000000000",

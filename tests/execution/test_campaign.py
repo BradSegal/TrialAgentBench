@@ -145,6 +145,8 @@ def test_participant_session_loss_with_partial_answer_cannot_schedule_a_retry(
         update={
             "models": config.models[:1],
             "panel": config.panel.model_copy(update={"benchmarks": ("trialeval",)}),
+            "grading_key": tmp_path / "records.jsonl",
+            "grading_key_sha256": "d" * 64,
         }
     )
     primary = CampaignRunV1(
@@ -262,7 +264,14 @@ def test_campaign_finalizer_preserves_the_selected_split(tmp_path, monkeypatch, 
 
     config = configuration(tmp_path)
     config = config.model_copy(
-        update={"panel": config.panel.model_copy(update={"split": split}), "models": config.models[:1]}
+        update={
+            "panel": config.panel.model_copy(update={"split": split}),
+            "models": config.models[:1],
+            "anchor_sha256": "c" * 64,
+            "sums": tmp_path / "publisher-SHA256SUMS",
+            "grading_key": tmp_path / "records.jsonl",
+            "grading_key_sha256": "d" * 64,
+        }
     )
     run = CampaignRunV1(
         job_id="first-trialdev-1",
@@ -279,6 +288,8 @@ def test_campaign_finalizer_preserves_the_selected_split(tmp_path, monkeypatch, 
     campaign._finish_native_runs(tmp_path, plan, SimpleNamespace(), plan.runs)
     assert len(calls) == 1
     assert (calls[0][calls[0].index("--split") + 1] if "--split" in calls[0] else "public") == split
+    for name in ("anchor_sha256", "sums", "grading_key", "grading_key_sha256"):
+        assert calls[0][calls[0].index("--" + name.replace("_", "-")) + 1] == str(getattr(config, name))
 
 
 @pytest.mark.parametrize("split", ["public", "withheld"])
@@ -1632,7 +1643,11 @@ def test_combined_trialeval_plan_fixes_repetition_one_before_outcomes(tmp_path: 
 
     config = configuration(tmp_path)
     config = config.model_copy(
-        update={"panel": config.panel.model_copy(update={"benchmarks": ("trialeval",), "repetitions": 2})}
+        update={
+            "panel": config.panel.model_copy(update={"benchmarks": ("trialeval",), "repetitions": 2}),
+            "grading_key": tmp_path / "records.jsonl",
+            "grading_key_sha256": "d" * 64,
+        }
     )
     runs = []
     for model, repetition, retry_of in (

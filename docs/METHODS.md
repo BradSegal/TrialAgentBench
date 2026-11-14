@@ -34,13 +34,15 @@ The 5 context levels share the same underlying observations but differ in recons
 
 | Context | Records | Planning document | Reconstruction required |
 |---|---|---|---|
-| Tables and analysis plan | Analysis tables in standard formats | Locked analysis plan | Analyse the supplied tables |
-| Tables and protocol | Analysis tables in standard formats | Protocol only | Choose the analysis |
-| Source records and analysis plan | Source tables with participant identifiers and timestamps | Locked analysis plan | Reconstruct analysis tables |
-| Source records and protocol | Source tables with participant identifiers and timestamps | Protocol only | Reconstruct tables and choose the analysis |
-| Raw source records and protocol (headline) | Source tables with corrections, unit errors and time misalignments | Protocol; no analysis plan | Reconcile inconsistencies, reconstruct tables and choose the analysis |
+| C1: Tables and analysis plan | Analysis tables in standard formats | Locked analysis plan | Analyse the supplied tables |
+| C2: Tables and protocol | Analysis tables in standard formats | Protocol only | Choose the analysis |
+| C3: Source records and analysis plan | Source tables with participant identifiers and timestamps | Locked analysis plan | Reconstruct analysis tables |
+| C4: Source records and protocol | Source tables with participant identifiers and timestamps | Protocol only | Reconstruct tables and choose the analysis |
+| C5: Raw source records and protocol (headline) | Source tables with corrections, unit errors and time misalignments | Protocol; no analysis plan | Reconcile inconsistencies, reconstruct tables and choose the analysis |
 
-## 3. Scoring analyses
+The declaration tiers describe the analysis assumptions: **A1** is compatible with the default analysis; **A2** has an observable departure for which the default remains valid and the tempting correction is valid but decision-costly; **A3** has a detectable, consequential violation for which the default fails and the declared corrected route succeeds. Task instructions do not label these tiers. A **credited analysis route** is a procedure named in the cell's declaration as a reference for the stated estimand; it is not inferred from an answer's method name. The [public cell declarations](../verification/public_cell_declarations.json) identify these routes and their parameters.
+
+## 3. Historical v1.1.0 analysis scores
 
 We save the analysis code written by the agent and re-execute it on 30 fresh trials from the same simulated world (new participants and new recording errors, but the same true effect, trial design and size). A single trial is not enough to determine the quality of an analysis, as any estimate could be close to the true effect by chance, just like how a single test example is not informative about the performance of a classifier. These fresh trials are released as the replay bank, enabling anyone to independently repeat the scoring.
 
@@ -54,7 +56,7 @@ If an agent does not perform a task or if the agent’s code fails on a new tria
 
 Most trials are conducted with a locked analysis plan prior to seeing the data. The plan specifies a primary analysis and may include an alternative analysis. For example, in a trial to test a new drug in preventing stroke, the primary analysis would typically be the comparison of stroke rates between the treatment and control groups using site records, and the alternative analysis would be the same comparison after correcting the site records using a random sample of participants whose records were verified against source documents (i.e. the audit sample).
 
-We score 3 baselines using the same methodology as the agents, using clean analysis tables and without knowledge of the true effect. The plan’s primary analysis always performs the primary analysis, and always corrected always performs the alternative analysis. The process-aware analysis uses the simulator's knowledge of which assumptions hold in each trial, without using the true effect. Agents are not informed of the specific trial they are working on, and there is no published key.
+We score 3 baselines using the same methodology as the agents, using clean analysis tables and without knowledge of the true effect. The plan’s primary analysis always performs the primary analysis, and always corrected always performs the alternative analysis. The process-aware analysis uses the simulator's knowledge of which assumptions hold in each trial, without using the true effect. Task instructions do not disclose the assumption tier; grading keys remain outside the participant workspace.
 
 ## 4. Scoring development decisions on TrialDev
 
