@@ -34,7 +34,7 @@ Across 24 closed- and open-weight models, we find that the best agents can now a
 </p>
 
 <p align="center">
-  <img src="docs/figures/trialdev-value.png" alt="Share of oracle value captured and lost on TrialDev." width="560">
+  <img src="docs/figures/trialdev-value.png" alt="Share of oracle value captured and lost on TrialDev." width="760">
   <br>
   <sub>Value captured and lost relative to an oracle on TrialDev, for each agent and the rule-based developer.</sub>
 </p>
