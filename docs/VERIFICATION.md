@@ -1,6 +1,6 @@
 # Verification
 
-TrialAgentBench v1.1.0 (Hugging Face revision `5fdbecf941e3a04bec4070abaed44efcab81f2ab`, scorer `644c4d60`) was checked against its own declarations, and its analyses and published scores were reproduced independently in R 4.5.1. Every check passed. [Methods](METHODS.md) defines the task contexts C1–C5, assumption tiers A1–A3 and credited analysis routes.
+TrialAgentBench v1.1.0 was checked against its own declarations, and its analyses and published scores were reproduced independently in R 4.5.1. Every check passed. [Methods](METHODS.md) defines the task contexts C1–C5, assumption tiers A1–A3 and credited analysis routes.
 
 ## The released data match their declarations
 
@@ -34,12 +34,11 @@ The A3 consequence test correctly rejects in all 4 positive controls, where the 
 | Reproduced | Result |
 | --- | --- |
 | Stored replay references, credited key values and plan readouts | 2,439/2,439 within declared tolerances |
-| External-reference routes, at release source `3c113f53` | 18/18 routes; 77/77 comparisons |
+| External-reference routes | 18/18 routes; 77/77 comparisons |
 | Refits of 33 real trials (17,100 participants) | 165/165; atol 1e-10, rtol 1e-08 |
 | Group-sequential monitoring dataset | Matches stored readouts at 6-decimal precision |
 | TrialDev negative-binomial fits | 59/59 estimates and standard errors |
-| Re-scoring from the retained raw submissions | 5,241/5,241 published values: 5,134 numeric within relative 1e-12 (4,978 bit-exact), 107 displays at printed precision |
-| Leaderboard, given the pipeline baseline's 84 stored task scores | 177/177 effects, intervals and ranks: 96 bit-exact, 81 at printed precision |
+| Leaderboard, given the test-then-correct analysis's 84 stored task scores | 177/177 effects, intervals and ranks: 96 bit-exact, 81 at printed precision |
 
 ## Realism
 

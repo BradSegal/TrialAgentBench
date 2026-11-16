@@ -2793,7 +2793,7 @@
        "source_direction": 1,
        "source_field_id": "sex_code",
        "source_ids": [
-        "TAB-SRC-087"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6997070/"
        ],
        "support": null,
        "timing": {
@@ -2837,7 +2837,7 @@
        "source_direction": 1,
        "source_field_id": "primary_tumour_resected",
        "source_ids": [
-        "TAB-SRC-087"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6997070/"
        ],
        "support": null,
        "timing": {
@@ -2881,7 +2881,7 @@
        "source_direction": 1,
        "source_field_id": "performance_status",
        "source_ids": [
-        "TAB-SRC-087"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6997070/"
        ],
        "support": null,
        "timing": {
@@ -2925,7 +2925,7 @@
        "source_direction": 1,
        "source_field_id": "ldh_elevated",
        "source_ids": [
-        "TAB-SRC-087"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6997070/"
        ],
        "support": null,
        "timing": {
@@ -2969,7 +2969,7 @@
        "source_direction": 1,
        "source_field_id": "induction_response",
        "source_ids": [
-        "TAB-SRC-087"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6997070/"
        ],
        "support": null,
        "timing": {
@@ -3024,7 +3024,7 @@
        "NLD"
       ],
       "site_count": 64,
-      "source_id": "TAB-SRC-087"
+      "source_id": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6997070/"
      },
      "safety_event_category": "blood and lymphatic system disorders",
      "safety_event_definition": "TE-S01:safety_event_definition",
@@ -3102,13 +3102,13 @@
     "safety_handling_id": "safety_reported_separately_from_primary_efficacy",
     "secondary_endpoint_ids": [],
     "source_ids": [
-     "TAB-SRC-001",
-     "TAB-SRC-011",
-     "TAB-SRC-012",
-     "TAB-SRC-013",
-     "TAB-SRC-025",
-     "TAB-SRC-026",
-     "TAB-SRC-087"
+     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/e9r1-statistical-principles-clinical-trials-addendum-estimands-and-sensitivity-analysis-clinical",
+     "https://pmc.ncbi.nlm.nih.gov/articles/PMC11162097/",
+     "https://pmc.ncbi.nlm.nih.gov/articles/PMC7001779/",
+     "https://doi.org/10.1161/CIRCULATIONAHA.119.040680",
+     "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2023/217639Orig1s000MultidisciplineR.pdf",
+     "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2021/022387Orig1s017.pdf",
+     "https://pmc.ncbi.nlm.nih.gov/articles/PMC6997070/"
     ],
     "target_population": "all_randomized_participants",
     "treatment_effect_time_profile": [
@@ -3505,7 +3505,7 @@
        "source_direction": 1,
        "source_field_id": "sex_code",
        "source_ids": [
-        "TAB-SRC-080"
+        "https://academic.oup.com/ndt/article/35/10/1700/5899227"
        ],
        "support": null,
        "timing": {
@@ -3549,7 +3549,7 @@
        "source_direction": 1,
        "source_field_id": "type_2_diabetes",
        "source_ids": [
-        "TAB-SRC-080"
+        "https://academic.oup.com/ndt/article/35/10/1700/5899227"
        ],
        "support": null,
        "timing": {
@@ -3593,7 +3593,7 @@
        "source_direction": 1,
        "source_field_id": "ras_blockade",
        "source_ids": [
-        "TAB-SRC-080"
+        "https://academic.oup.com/ndt/article/35/10/1700/5899227"
        ],
        "support": null,
        "timing": {
@@ -3631,7 +3631,7 @@
        "source_direction": 1,
        "source_field_id": "body_mass_index",
        "source_ids": [
-        "TAB-SRC-080"
+        "https://academic.oup.com/ndt/article/35/10/1700/5899227"
        ],
        "support": {
         "lower": 15.0,
@@ -3672,7 +3672,7 @@
        "source_direction": 1,
        "source_field_id": "haemoglobin",
        "source_ids": [
-        "TAB-SRC-080"
+        "https://academic.oup.com/ndt/article/35/10/1700/5899227"
        ],
        "support": {
         "lower": 60.0,
@@ -3713,7 +3713,7 @@
        "source_direction": 1,
        "source_field_id": "uacr",
        "source_ids": [
-        "TAB-SRC-080"
+        "https://academic.oup.com/ndt/article/35/10/1700/5899227"
        ],
        "support": {
         "lower": 0.0,
@@ -3774,7 +3774,7 @@
        "DEU"
       ],
       "site_count": 300,
-      "source_id": "TAB-SRC-080"
+      "source_id": "https://academic.oup.com/ndt/article/35/10/1700/5899227"
      },
      "safety_event_category": "metabolism and nutrition disorders",
      "safety_event_definition": "TE-S02:safety_event_definition",
@@ -3852,10 +3852,10 @@
     "safety_handling_id": "safety_reported_separately_from_primary_efficacy",
     "secondary_endpoint_ids": [],
     "source_ids": [
-     "TAB-SRC-001",
-     "TAB-SRC-014",
-     "TAB-SRC-046",
-     "TAB-SRC-080"
+     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/e9r1-statistical-principles-clinical-trials-addendum-estimands-and-sensitivity-analysis-clinical",
+     "https://doi.org/10.1111/j.0006-341X.2000.00779.x",
+     "https://www.bmj.com/content/378/bmj-2022-071349",
+     "https://academic.oup.com/ndt/article/35/10/1700/5899227"
     ],
     "target_population": "all_randomized_participants",
     "treatment_effect_time_profile": [
@@ -4226,7 +4226,7 @@
        "source_direction": 1,
        "source_field_id": "sex_code",
        "source_ids": [
-        "TAB-SRC-085"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9493406/"
        ],
        "support": null,
        "timing": {
@@ -4270,7 +4270,7 @@
        "source_direction": 1,
        "source_field_id": "gd_enhancing_lesions",
        "source_ids": [
-        "TAB-SRC-085"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9493406/"
        ],
        "support": null,
        "timing": {
@@ -4308,7 +4308,7 @@
        "source_direction": 1,
        "source_field_id": "t2_lesion_volume",
        "source_ids": [
-        "TAB-SRC-085"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9493406/"
        ],
        "support": {
         "lower": 0.0,
@@ -4349,7 +4349,7 @@
        "source_direction": 1,
        "source_field_id": "normalized_brain_volume",
        "source_ids": [
-        "TAB-SRC-085"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9493406/"
        ],
        "support": {
         "lower": 1100.0,
@@ -4501,7 +4501,7 @@
        "FRA"
       ],
       "site_count": 160,
-      "source_id": "TAB-SRC-085"
+      "source_id": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9493406/"
      },
      "safety_event_category": "infections and infestations",
      "safety_event_definition": "TE-S03:safety_event_definition",
@@ -4583,10 +4583,10 @@
      "death_or_hosp"
     ],
     "source_ids": [
-     "TAB-SRC-001",
-     "TAB-SRC-046",
-     "TAB-SRC-052",
-     "TAB-SRC-085"
+     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/e9r1-statistical-principles-clinical-trials-addendum-estimands-and-sensitivity-analysis-clinical",
+     "https://www.bmj.com/content/378/bmj-2022-071349",
+     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/m11-clinical-electronic-structured-harmonised-protocol",
+     "https://pmc.ncbi.nlm.nih.gov/articles/PMC9493406/"
     ],
     "target_population": "all_randomized_participants",
     "treatment_effect_time_profile": [
@@ -4989,7 +4989,7 @@
        "source_direction": 1,
        "source_field_id": "sex_code",
        "source_ids": [
-        "TAB-SRC-081"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6983496/"
        ],
        "support": null,
        "timing": {
@@ -5033,7 +5033,7 @@
        "source_direction": 1,
        "source_field_id": "high_dose_ics",
        "source_ids": [
-        "TAB-SRC-081"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6983496/"
        ],
        "support": null,
        "timing": {
@@ -5071,7 +5071,7 @@
        "source_direction": 1,
        "source_field_id": "body_mass_index",
        "source_ids": [
-        "TAB-SRC-081"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6983496/"
        ],
        "support": {
         "lower": 15.0,
@@ -5112,7 +5112,7 @@
        "source_direction": 1,
        "source_field_id": "eosinophils",
        "source_ids": [
-        "TAB-SRC-081"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6983496/"
        ],
        "support": {
         "lower": 0.0,
@@ -5153,7 +5153,7 @@
        "source_direction": 1,
        "source_field_id": "feno",
        "source_ids": [
-        "TAB-SRC-081"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6983496/"
        ],
        "support": {
         "lower": 0.0,
@@ -5194,7 +5194,7 @@
        "source_direction": 1,
        "source_field_id": "fev1_reversibility",
        "source_ids": [
-        "TAB-SRC-081"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6983496/"
        ],
        "support": {
         "lower": 0.0,
@@ -5255,7 +5255,7 @@
        "DEU"
       ],
       "site_count": 320,
-      "source_id": "TAB-SRC-081"
+      "source_id": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6983496/"
      },
      "safety_event_category": "immune system disorders",
      "safety_event_definition": "TE-S04:safety_event_definition",
@@ -5343,14 +5343,14 @@
      "death_or_hosp"
     ],
     "source_ids": [
-     "TAB-SRC-001",
-     "TAB-SRC-014",
-     "TAB-SRC-024",
-     "TAB-SRC-044",
-     "TAB-SRC-046",
-     "TAB-SRC-058",
-     "TAB-SRC-059",
-     "TAB-SRC-081"
+     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/e9r1-statistical-principles-clinical-trials-addendum-estimands-and-sensitivity-analysis-clinical",
+     "https://doi.org/10.1111/j.0006-341X.2000.00779.x",
+     "https://pmc.ncbi.nlm.nih.gov/articles/PMC4317325/",
+     "https://pmc.ncbi.nlm.nih.gov/articles/PMC5465459/",
+     "https://www.bmj.com/content/378/bmj-2022-071349",
+     "https://pmc.ncbi.nlm.nih.gov/articles/PMC4037927/",
+     "https://pmc.ncbi.nlm.nih.gov/articles/PMC3983405/",
+     "https://pmc.ncbi.nlm.nih.gov/articles/PMC6983496/"
     ],
     "target_population": "all_randomized_participants",
     "treatment_effect_time_profile": null
@@ -5646,7 +5646,7 @@
        "source_direction": 1,
        "source_field_id": "sex_code",
        "source_ids": [
-        "TAB-SRC-082"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6250637/"
        ],
        "support": null,
        "timing": {
@@ -5690,7 +5690,7 @@
        "source_direction": 1,
        "source_field_id": "insulin_use",
        "source_ids": [
-        "TAB-SRC-082"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6250637/"
        ],
        "support": null,
        "timing": {
@@ -5728,7 +5728,7 @@
        "source_direction": 1,
        "source_field_id": "systolic_pressure",
        "source_ids": [
-        "TAB-SRC-082"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6250637/"
        ],
        "support": {
         "lower": 70.0,
@@ -5789,7 +5789,7 @@
        "DEU"
       ],
       "site_count": 400,
-      "source_id": "TAB-SRC-082"
+      "source_id": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6250637/"
      },
      "safety_event_category": "renal and urinary disorders",
      "safety_event_definition": "TE-S05:safety_event_definition",
@@ -5870,10 +5870,10 @@
      "e3"
     ],
     "source_ids": [
-     "TAB-SRC-001",
-     "TAB-SRC-004",
-     "TAB-SRC-010",
-     "TAB-SRC-082"
+     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/e9r1-statistical-principles-clinical-trials-addendum-estimands-and-sensitivity-analysis-clinical",
+     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/adjusting-covariates-randomized-clinical-trials-drugs-and-biological-products",
+     "https://www.bmj.com/content/384/bmj-2023-076316",
+     "https://pmc.ncbi.nlm.nih.gov/articles/PMC6250637/"
     ],
     "target_population": "randomized_participants_meeting_prespecified_bmi_threshold",
     "treatment_effect_time_profile": [
@@ -6237,7 +6237,7 @@
        "source_direction": 1,
        "source_field_id": "sex_code",
        "source_ids": [
-        "TAB-SRC-084"
+        "https://academic.oup.com/eurheartj/article/43/27/2603/6546019"
        ],
        "support": null,
        "timing": {
@@ -6281,7 +6281,7 @@
        "source_direction": 1,
        "source_field_id": "diabetes",
        "source_ids": [
-        "TAB-SRC-084"
+        "https://academic.oup.com/eurheartj/article/43/27/2603/6546019"
        ],
        "support": null,
        "timing": {
@@ -6325,7 +6325,7 @@
        "source_direction": 1,
        "source_field_id": "atrial_arrhythmia",
        "source_ids": [
-        "TAB-SRC-084"
+        "https://academic.oup.com/eurheartj/article/43/27/2603/6546019"
        ],
        "support": null,
        "timing": {
@@ -6363,7 +6363,7 @@
        "source_direction": 1,
        "source_field_id": "body_mass_index",
        "source_ids": [
-        "TAB-SRC-084"
+        "https://academic.oup.com/eurheartj/article/43/27/2603/6546019"
        ],
        "support": {
         "lower": 15.0,
@@ -6404,7 +6404,7 @@
        "source_direction": 1,
        "source_field_id": "egfr",
        "source_ids": [
-        "TAB-SRC-084"
+        "https://academic.oup.com/eurheartj/article/43/27/2603/6546019"
        ],
        "support": {
         "lower": 5.0,
@@ -6463,7 +6463,7 @@
        "CAN"
       ],
       "site_count": 64,
-      "source_id": "TAB-SRC-084"
+      "source_id": "https://academic.oup.com/eurheartj/article/43/27/2603/6546019"
      },
      "safety_event_category": "infections and infestations",
      "safety_event_definition": "TE-S06:safety_event_definition",
@@ -6541,13 +6541,13 @@
     "safety_handling_id": "safety_reported_separately_from_primary_efficacy",
     "secondary_endpoint_ids": [],
     "source_ids": [
-     "TAB-SRC-001",
-     "TAB-SRC-007",
-     "TAB-SRC-008",
-     "TAB-SRC-044",
-     "TAB-SRC-045",
-     "TAB-SRC-059",
-     "TAB-SRC-084"
+     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/e9r1-statistical-principles-clinical-trials-addendum-estimands-and-sensitivity-analysis-clinical",
+     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/real-world-data-assessing-electronic-health-records-and-medical-claims-data-support-regulatory",
+     "https://www.fda.gov/files/about%20fda/published/The-Use-of-Clinical-Source-Data-in-the-Review-of-Marketing-Applications.pdf",
+     "https://pmc.ncbi.nlm.nih.gov/articles/PMC5465459/",
+     "https://pmc.ncbi.nlm.nih.gov/articles/PMC7313361/",
+     "https://pmc.ncbi.nlm.nih.gov/articles/PMC3983405/",
+     "https://academic.oup.com/eurheartj/article/43/27/2603/6546019"
     ],
     "target_population": "all_randomized_participants",
     "treatment_effect_time_profile": null
@@ -6900,7 +6900,7 @@
        "source_direction": 1,
        "source_field_id": "sex_code",
        "source_ids": [
-        "TAB-SRC-091"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5861801/"
        ],
        "support": null,
        "timing": {
@@ -6944,7 +6944,7 @@
        "source_direction": 1,
        "source_field_id": "heart_failure",
        "source_ids": [
-        "TAB-SRC-091"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5861801/"
        ],
        "support": null,
        "timing": {
@@ -6988,7 +6988,7 @@
        "source_direction": 1,
        "source_field_id": "diabetes",
        "source_ids": [
-        "TAB-SRC-091"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5861801/"
        ],
        "support": null,
        "timing": {
@@ -7032,7 +7032,7 @@
        "source_direction": 1,
        "source_field_id": "chronic_lung_disease",
        "source_ids": [
-        "TAB-SRC-091"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5861801/"
        ],
        "support": null,
        "timing": {
@@ -7076,7 +7076,7 @@
        "source_direction": 1,
        "source_field_id": "recent_hospitalization",
        "source_ids": [
-        "TAB-SRC-091"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5861801/"
        ],
        "support": null,
        "timing": {
@@ -7131,7 +7131,7 @@
        "USA"
       ],
       "site_count": "randomization_units",
-      "source_id": "TAB-SRC-091"
+      "source_id": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5861801/"
      },
      "safety_event_category": "general disorders and administration-site conditions",
      "safety_event_definition": "TE-S07:safety_event_definition",
@@ -7203,13 +7203,13 @@
     "safety_handling_id": "safety_reported_separately_from_primary_efficacy",
     "secondary_endpoint_ids": [],
     "source_ids": [
-     "TAB-SRC-001",
-     "TAB-SRC-014",
-     "TAB-SRC-047",
-     "TAB-SRC-048",
-     "TAB-SRC-067",
-     "TAB-SRC-075",
-     "TAB-SRC-091"
+     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/e9r1-statistical-principles-clinical-trials-addendum-estimands-and-sensitivity-analysis-clinical",
+     "https://doi.org/10.1111/j.0006-341X.2000.00779.x",
+     "https://pmc.ncbi.nlm.nih.gov/articles/PMC9908044/",
+     "https://www.bmj.com/content/393/bmj-2025-089050",
+     "https://doi.org/10.1186/s12874-020-00971-7",
+     "https://pmc.ncbi.nlm.nih.gov/articles/PMC12704422/",
+     "https://pmc.ncbi.nlm.nih.gov/articles/PMC5861801/"
     ],
     "target_population": "participants_enrolled_in_randomized_facilities",
     "treatment_effect_time_profile": [
@@ -7578,7 +7578,7 @@
        "source_direction": 1,
        "source_field_id": "age",
        "source_ids": [
-        "TAB-SRC-102"
+        "https://doi.org/10.1111/1471-0528.12630"
        ],
        "support": {
         "lower": 10.0,
@@ -7703,7 +7703,7 @@
        "source_direction": 1,
        "source_field_id": "parous",
        "source_ids": [
-        "TAB-SRC-104"
+        "https://doi.org/10.1016/S2214-109X(15)70094-X"
        ],
        "support": null,
        "timing": {
@@ -7747,7 +7747,7 @@
        "source_direction": 1,
        "source_field_id": "sex_code",
        "source_ids": [
-        "TAB-SRC-092"
+        "https://www.frontiersin.org/journals/global-womens-health/articles/10.3389/fgwh.2025.1527261/full"
        ],
        "support": null,
        "timing": {
@@ -7791,7 +7791,7 @@
        "source_direction": 1,
        "source_field_id": "previous_caesarean",
        "source_ids": [
-        "TAB-SRC-101"
+        "https://www.nature.com/articles/srep44093"
        ],
        "support": null,
        "timing": {
@@ -7835,7 +7835,7 @@
        "source_direction": 1,
        "source_field_id": "previous_postpartum_haemorrhage",
        "source_ids": [
-        "TAB-SRC-092"
+        "https://www.frontiersin.org/journals/global-womens-health/articles/10.3389/fgwh.2025.1527261/full"
        ],
        "support": null,
        "timing": {
@@ -7879,7 +7879,7 @@
        "source_direction": 1,
        "source_field_id": "chronic_hypertension",
        "source_ids": [
-        "TAB-SRC-092"
+        "https://www.frontiersin.org/journals/global-womens-health/articles/10.3389/fgwh.2025.1527261/full"
        ],
        "support": null,
        "timing": {
@@ -7923,7 +7923,7 @@
        "source_direction": 1,
        "source_field_id": "delivery_mode",
        "source_ids": [
-        "TAB-SRC-104"
+        "https://doi.org/10.1016/S2214-109X(15)70094-X"
        ],
        "support": null,
        "timing": {
@@ -7961,7 +7961,7 @@
        "source_direction": 1,
        "source_field_id": "gestational_age",
        "source_ids": [
-        "TAB-SRC-092"
+        "https://www.frontiersin.org/journals/global-womens-health/articles/10.3389/fgwh.2025.1527261/full"
        ],
        "support": {
         "lower": 24.0,
@@ -8107,7 +8107,7 @@
        "ZAF"
       ],
       "site_count": "randomization_units",
-      "source_id": "TAB-SRC-092"
+      "source_id": "https://www.frontiersin.org/journals/global-womens-health/articles/10.3389/fgwh.2025.1527261/full"
      },
      "safety_event_category": "infections and infestations",
      "safety_event_definition": "TE-S08:safety_event_definition",
@@ -8176,15 +8176,15 @@
     "safety_handling_id": "safety_reported_separately_from_primary_efficacy",
     "secondary_endpoint_ids": [],
     "source_ids": [
-     "TAB-SRC-001",
-     "TAB-SRC-035",
-     "TAB-SRC-049",
-     "TAB-SRC-067",
-     "TAB-SRC-092",
-     "TAB-SRC-101",
-     "TAB-SRC-102",
-     "TAB-SRC-103",
-     "TAB-SRC-104"
+     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/e9r1-statistical-principles-clinical-trials-addendum-estimands-and-sensitivity-analysis-clinical",
+     "https://clinicaltrials.gov/study/NCT04078594",
+     "https://www.bmj.com/content/350/bmj.h391",
+     "https://doi.org/10.1186/s12874-020-00971-7",
+     "https://www.frontiersin.org/journals/global-womens-health/articles/10.3389/fgwh.2025.1527261/full",
+     "https://www.nature.com/articles/srep44093",
+     "https://doi.org/10.1111/1471-0528.12630",
+     "https://cdn.clinicaltrials.gov/large-docs/62/NCT04341662/Prot_000.pdf",
+     "https://doi.org/10.1016/S2214-109X(15)70094-X"
     ],
     "target_population": "people_giving_birth_in_randomized_maternity_units_between_the_first_and_last_unit_switches",
     "treatment_effect_time_profile": null
@@ -8537,7 +8537,7 @@
        "source_direction": 1,
        "source_field_id": "sex_code",
        "source_ids": [
-        "TAB-SRC-090"
+        "https://jamanetwork.com/journals/jama/fullarticle/2382981"
        ],
        "support": null,
        "timing": {
@@ -8581,7 +8581,7 @@
        "source_direction": 1,
        "source_field_id": "creatinine_clearance_category",
        "source_ids": [
-        "TAB-SRC-090"
+        "https://jamanetwork.com/journals/jama/fullarticle/2382981"
        ],
        "support": null,
        "timing": {
@@ -8625,7 +8625,7 @@
        "source_direction": 1,
        "source_field_id": "prior_distal_or_superficial_thrombosis",
        "source_ids": [
-        "TAB-SRC-090"
+        "https://jamanetwork.com/journals/jama/fullarticle/2382981"
        ],
        "support": null,
        "timing": {
@@ -8669,7 +8669,7 @@
        "source_direction": 1,
        "source_field_id": "chronic_heart_failure",
        "source_ids": [
-        "TAB-SRC-090"
+        "https://jamanetwork.com/journals/jama/fullarticle/2382981"
        ],
        "support": null,
        "timing": {
@@ -8713,7 +8713,7 @@
        "source_direction": 1,
        "source_field_id": "chronic_respiratory_failure",
        "source_ids": [
-        "TAB-SRC-090"
+        "https://jamanetwork.com/journals/jama/fullarticle/2382981"
        ],
        "support": null,
        "timing": {
@@ -8768,7 +8768,7 @@
        "FRA"
       ],
       "site_count": 160,
-      "source_id": "TAB-SRC-090"
+      "source_id": "https://jamanetwork.com/journals/jama/fullarticle/2382981"
      },
      "safety_event_category": "vascular disorders",
      "safety_event_definition": "TE-S09:safety_event_definition",
@@ -8841,11 +8841,11 @@
     "safety_handling_id": "safety_reported_separately_from_primary_efficacy",
     "secondary_endpoint_ids": [],
     "source_ids": [
-     "TAB-SRC-001",
-     "TAB-SRC-005",
-     "TAB-SRC-006",
-     "TAB-SRC-027",
-     "TAB-SRC-090"
+     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/e9r1-statistical-principles-clinical-trials-addendum-estimands-and-sensitivity-analysis-clinical",
+     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/adaptive-design-clinical-trials-drugs-and-biologics-guidance-industry",
+     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/establishment-and-operation-clinical-trial-data-monitoring-committees",
+     "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2015/207620orig1s000sumr.pdf",
+     "https://jamanetwork.com/journals/jama/fullarticle/2382981"
     ],
     "target_population": "all_randomized_participants",
     "treatment_effect_time_profile": null
@@ -9176,7 +9176,7 @@
        "source_direction": 1,
        "source_field_id": "sex_code",
        "source_ids": [
-        "TAB-SRC-086"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10836543/"
        ],
        "support": null,
        "timing": {
@@ -9214,7 +9214,7 @@
        "source_direction": 1,
        "source_field_id": "body_mass_index",
        "source_ids": [
-        "TAB-SRC-086"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10836543/"
        ],
        "support": {
         "lower": 15.0,
@@ -9255,7 +9255,7 @@
        "source_direction": 1,
        "source_field_id": "supine_systolic_pressure",
        "source_ids": [
-        "TAB-SRC-086"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10836543/"
        ],
        "support": {
         "lower": 70.0,
@@ -9296,7 +9296,7 @@
        "source_direction": 1,
        "source_field_id": "supine_heart_rate",
        "source_ids": [
-        "TAB-SRC-086"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10836543/"
        ],
        "support": {
         "lower": 40.0,
@@ -9354,7 +9354,7 @@
        "USA"
       ],
       "site_count": 3,
-      "source_id": "TAB-SRC-093"
+      "source_id": "https://link.springer.com/article/10.1186/s13063-018-2958-z"
      },
      "safety_event_category": "injury and procedural complications",
      "safety_event_definition": "TE-S10:safety_definition",
@@ -9479,11 +9479,11 @@
     "safety_handling_id": "safety_reported_separately_from_primary_efficacy",
     "secondary_endpoint_ids": [],
     "source_ids": [
-     "TAB-SRC-001",
-     "TAB-SRC-004",
-     "TAB-SRC-052",
-     "TAB-SRC-086",
-     "TAB-SRC-093"
+     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/e9r1-statistical-principles-clinical-trials-addendum-estimands-and-sensitivity-analysis-clinical",
+     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/adjusting-covariates-randomized-clinical-trials-drugs-and-biological-products",
+     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/m11-clinical-electronic-structured-harmonised-protocol",
+     "https://pmc.ncbi.nlm.nih.gov/articles/PMC10836543/",
+     "https://link.springer.com/article/10.1186/s13063-018-2958-z"
     ],
     "target_population": "all_randomized_participants",
     "treatment_effect_time_profile": null
@@ -9845,7 +9845,7 @@
        "source_direction": 1,
        "source_field_id": "sex_code",
        "source_ids": [
-        "TAB-SRC-083"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6617804/"
        ],
        "support": null,
        "timing": {
@@ -9889,7 +9889,7 @@
        "source_direction": 1,
        "source_field_id": "current_smoking",
        "source_ids": [
-        "TAB-SRC-083"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6617804/"
        ],
        "support": null,
        "timing": {
@@ -9927,7 +9927,7 @@
        "source_direction": 1,
        "source_field_id": "systolic_pressure",
        "source_ids": [
-        "TAB-SRC-083"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6617804/"
        ],
        "support": {
         "lower": 70.0,
@@ -9968,7 +9968,7 @@
        "source_direction": 1,
        "source_field_id": "fasting_glucose",
        "source_ids": [
-        "TAB-SRC-083"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6617804/"
        ],
        "support": {
         "lower": 2.0,
@@ -10009,7 +10009,7 @@
        "source_direction": 1,
        "source_field_id": "ldl_cholesterol",
        "source_ids": [
-        "TAB-SRC-083"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6617804/"
        ],
        "support": {
         "lower": 2.0,
@@ -10070,7 +10070,7 @@
        "LVA"
       ],
       "site_count": 24,
-      "source_id": "TAB-SRC-083"
+      "source_id": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6617804/"
      },
      "safety_event_category": "metabolism and nutrition disorders",
      "safety_event_definition": "TE-S11:safety_definition",
@@ -10197,10 +10197,10 @@
     "safety_handling_id": "safety_reported_separately_from_primary_efficacy",
     "secondary_endpoint_ids": [],
     "source_ids": [
-     "TAB-SRC-001",
-     "TAB-SRC-004",
-     "TAB-SRC-052",
-     "TAB-SRC-083"
+     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/e9r1-statistical-principles-clinical-trials-addendum-estimands-and-sensitivity-analysis-clinical",
+     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/adjusting-covariates-randomized-clinical-trials-drugs-and-biological-products",
+     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/m11-clinical-electronic-structured-harmonised-protocol",
+     "https://pmc.ncbi.nlm.nih.gov/articles/PMC6617804/"
     ],
     "target_population": "all_randomized_participants",
     "treatment_effect_time_profile": null
@@ -10598,7 +10598,7 @@
        "source_direction": 1,
        "source_field_id": "sex_code",
        "source_ids": [
-        "TAB-SRC-081"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6983496/"
        ],
        "support": null,
        "timing": {
@@ -10642,7 +10642,7 @@
        "source_direction": 1,
        "source_field_id": "high_dose_ics",
        "source_ids": [
-        "TAB-SRC-081"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6983496/"
        ],
        "support": null,
        "timing": {
@@ -10680,7 +10680,7 @@
        "source_direction": 1,
        "source_field_id": "body_mass_index",
        "source_ids": [
-        "TAB-SRC-081"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6983496/"
        ],
        "support": {
         "lower": 15.0,
@@ -10721,7 +10721,7 @@
        "source_direction": 1,
        "source_field_id": "eosinophils",
        "source_ids": [
-        "TAB-SRC-081"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6983496/"
        ],
        "support": {
         "lower": 0.0,
@@ -10762,7 +10762,7 @@
        "source_direction": 1,
        "source_field_id": "feno",
        "source_ids": [
-        "TAB-SRC-081"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6983496/"
        ],
        "support": {
         "lower": 0.0,
@@ -10803,7 +10803,7 @@
        "source_direction": 1,
        "source_field_id": "fev1_reversibility",
        "source_ids": [
-        "TAB-SRC-081"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6983496/"
        ],
        "support": {
         "lower": 0.0,
@@ -10864,7 +10864,7 @@
        "DEU"
       ],
       "site_count": 16,
-      "source_id": "TAB-SRC-081"
+      "source_id": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6983496/"
      },
      "safety_event_category": "infections and infestations",
      "safety_event_definition": "TE-S12:safety_definition",
@@ -10985,14 +10985,14 @@
     "safety_handling_id": "safety_reported_separately_from_primary_efficacy",
     "secondary_endpoint_ids": [],
     "source_ids": [
-     "TAB-SRC-001",
-     "TAB-SRC-004",
-     "TAB-SRC-014",
-     "TAB-SRC-024",
-     "TAB-SRC-052",
-     "TAB-SRC-074",
-     "TAB-SRC-076",
-     "TAB-SRC-081"
+     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/e9r1-statistical-principles-clinical-trials-addendum-estimands-and-sensitivity-analysis-clinical",
+     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/adjusting-covariates-randomized-clinical-trials-drugs-and-biological-products",
+     "https://doi.org/10.1111/j.0006-341X.2000.00779.x",
+     "https://pmc.ncbi.nlm.nih.gov/articles/PMC4317325/",
+     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/m11-clinical-electronic-structured-harmonised-protocol",
+     "https://doi.org/10.1164/rccm.200801-060ST",
+     "https://pmc.ncbi.nlm.nih.gov/articles/PMC5722863/",
+     "https://pmc.ncbi.nlm.nih.gov/articles/PMC6983496/"
     ],
     "target_population": "all_randomized_participants",
     "treatment_effect_time_profile": null
@@ -11385,7 +11385,7 @@
        "source_direction": 1,
        "source_field_id": "sex_code",
        "source_ids": [
-        "TAB-SRC-080"
+        "https://academic.oup.com/ndt/article/35/10/1700/5899227"
        ],
        "support": null,
        "timing": {
@@ -11429,7 +11429,7 @@
        "source_direction": 1,
        "source_field_id": "type_2_diabetes",
        "source_ids": [
-        "TAB-SRC-080"
+        "https://academic.oup.com/ndt/article/35/10/1700/5899227"
        ],
        "support": null,
        "timing": {
@@ -11473,7 +11473,7 @@
        "source_direction": 1,
        "source_field_id": "ras_blockade",
        "source_ids": [
-        "TAB-SRC-080"
+        "https://academic.oup.com/ndt/article/35/10/1700/5899227"
        ],
        "support": null,
        "timing": {
@@ -11511,7 +11511,7 @@
        "source_direction": 1,
        "source_field_id": "body_mass_index",
        "source_ids": [
-        "TAB-SRC-080"
+        "https://academic.oup.com/ndt/article/35/10/1700/5899227"
        ],
        "support": {
         "lower": 15.0,
@@ -11552,7 +11552,7 @@
        "source_direction": 1,
        "source_field_id": "haemoglobin",
        "source_ids": [
-        "TAB-SRC-080"
+        "https://academic.oup.com/ndt/article/35/10/1700/5899227"
        ],
        "support": {
         "lower": 60.0,
@@ -11652,7 +11652,7 @@
        "DEU"
       ],
       "site_count": 24,
-      "source_id": "TAB-SRC-080"
+      "source_id": "https://academic.oup.com/ndt/article/35/10/1700/5899227"
      },
      "safety_event_category": "metabolism and nutrition disorders",
      "safety_event_definition": "TE-S13:safety_definition",
@@ -11779,10 +11779,10 @@
     "safety_handling_id": "safety_reported_separately_from_primary_efficacy",
     "secondary_endpoint_ids": [],
     "source_ids": [
-     "TAB-SRC-001",
-     "TAB-SRC-004",
-     "TAB-SRC-052",
-     "TAB-SRC-080"
+     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/e9r1-statistical-principles-clinical-trials-addendum-estimands-and-sensitivity-analysis-clinical",
+     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/adjusting-covariates-randomized-clinical-trials-drugs-and-biological-products",
+     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/m11-clinical-electronic-structured-harmonised-protocol",
+     "https://academic.oup.com/ndt/article/35/10/1700/5899227"
     ],
     "target_population": "all_randomized_participants",
     "treatment_effect_time_profile": null
@@ -12145,7 +12145,7 @@
        "source_direction": 1,
        "source_field_id": "sex_code",
        "source_ids": [
-        "TAB-SRC-089"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10891158/"
        ],
        "support": null,
        "timing": {
@@ -12189,7 +12189,7 @@
        "source_direction": 1,
        "source_field_id": "three_vaccine_doses",
        "source_ids": [
-        "TAB-SRC-089"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10891158/"
        ],
        "support": null,
        "timing": {
@@ -12227,7 +12227,7 @@
        "source_direction": 1,
        "source_field_id": "symptom_duration",
        "source_ids": [
-        "TAB-SRC-089"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10891158/"
        ],
        "support": {
         "lower": 0.0,
@@ -12268,7 +12268,7 @@
        "source_direction": 1,
        "source_field_id": "viral_load",
        "source_ids": [
-        "TAB-SRC-089"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10891158/"
        ],
        "support": {
         "lower": 0.0,
@@ -12309,7 +12309,7 @@
        "source_direction": 1,
        "source_field_id": "spike_antibody",
        "source_ids": [
-        "TAB-SRC-089"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10891158/"
        ],
        "support": {
         "lower": 0.0,
@@ -12367,7 +12367,7 @@
        "GBR"
       ],
       "site_count": 65,
-      "source_id": "TAB-SRC-089"
+      "source_id": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10891158/"
      },
      "safety_event_category": "gastrointestinal disorders",
      "safety_event_definition": "TE-S14:safety_definition",
@@ -12442,12 +12442,12 @@
     "safety_handling_id": "safety_reported_separately_from_primary_efficacy",
     "secondary_endpoint_ids": [],
     "source_ids": [
-     "TAB-SRC-001",
-     "TAB-SRC-004",
-     "TAB-SRC-014",
-     "TAB-SRC-052",
-     "TAB-SRC-077",
-     "TAB-SRC-089"
+     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/e9r1-statistical-principles-clinical-trials-addendum-estimands-and-sensitivity-analysis-clinical",
+     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/adjusting-covariates-randomized-clinical-trials-drugs-and-biological-products",
+     "https://doi.org/10.1111/j.0006-341X.2000.00779.x",
+     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/m11-clinical-electronic-structured-harmonised-protocol",
+     "https://pmc.ncbi.nlm.nih.gov/articles/PMC8651156/",
+     "https://pmc.ncbi.nlm.nih.gov/articles/PMC10891158/"
     ],
     "target_population": "all_randomized_participants",
     "treatment_effect_time_profile": null
@@ -12801,7 +12801,7 @@
        "source_direction": 1,
        "source_field_id": "sex_code",
        "source_ids": [
-        "TAB-SRC-088"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9808439/"
        ],
        "support": null,
        "timing": {
@@ -12845,7 +12845,7 @@
        "source_direction": 1,
        "source_field_id": "primary_tumour_resected",
        "source_ids": [
-        "TAB-SRC-088"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9808439/"
        ],
        "support": null,
        "timing": {
@@ -12889,7 +12889,7 @@
        "source_direction": 1,
        "source_field_id": "performance_status",
        "source_ids": [
-        "TAB-SRC-088"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9808439/"
        ],
        "support": null,
        "timing": {
@@ -12933,7 +12933,7 @@
        "source_direction": 1,
        "source_field_id": "braf_mutation",
        "source_ids": [
-        "TAB-SRC-088"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9808439/"
        ],
        "support": null,
        "timing": {
@@ -12977,7 +12977,7 @@
        "source_direction": 1,
        "source_field_id": "right_sided_primary",
        "source_ids": [
-        "TAB-SRC-088"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9808439/"
        ],
        "support": null,
        "timing": {
@@ -13032,7 +13032,7 @@
        "ITA"
       ],
       "site_count": 34,
-      "source_id": "TAB-SRC-088"
+      "source_id": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9808439/"
      },
      "safety_event_category": "blood and lymphatic system disorders",
      "safety_event_definition": "TE-S15:safety_definition",
@@ -13113,12 +13113,12 @@
     "safety_handling_id": "safety_reported_separately_from_primary_efficacy",
     "secondary_endpoint_ids": [],
     "source_ids": [
-     "TAB-SRC-001",
-     "TAB-SRC-004",
-     "TAB-SRC-044",
-     "TAB-SRC-052",
-     "TAB-SRC-059",
-     "TAB-SRC-088"
+     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/e9r1-statistical-principles-clinical-trials-addendum-estimands-and-sensitivity-analysis-clinical",
+     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/adjusting-covariates-randomized-clinical-trials-drugs-and-biological-products",
+     "https://pmc.ncbi.nlm.nih.gov/articles/PMC5465459/",
+     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/m11-clinical-electronic-structured-harmonised-protocol",
+     "https://pmc.ncbi.nlm.nih.gov/articles/PMC3983405/",
+     "https://pmc.ncbi.nlm.nih.gov/articles/PMC9808439/"
     ],
     "target_population": "all_randomized_participants",
     "treatment_effect_time_profile": null
@@ -13517,7 +13517,7 @@
        "source_direction": 1,
        "source_field_id": "sex_code",
        "source_ids": [
-        "TAB-SRC-081"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6983496/"
        ],
        "support": null,
        "timing": {
@@ -13561,7 +13561,7 @@
        "source_direction": 1,
        "source_field_id": "high_dose_ics",
        "source_ids": [
-        "TAB-SRC-081"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6983496/"
        ],
        "support": null,
        "timing": {
@@ -13599,7 +13599,7 @@
        "source_direction": 1,
        "source_field_id": "body_mass_index",
        "source_ids": [
-        "TAB-SRC-081"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6983496/"
        ],
        "support": {
         "lower": 15.0,
@@ -13640,7 +13640,7 @@
        "source_direction": 1,
        "source_field_id": "eosinophils",
        "source_ids": [
-        "TAB-SRC-081"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6983496/"
        ],
        "support": {
         "lower": 0.0,
@@ -13681,7 +13681,7 @@
        "source_direction": 1,
        "source_field_id": "feno",
        "source_ids": [
-        "TAB-SRC-081"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6983496/"
        ],
        "support": {
         "lower": 0.0,
@@ -13722,7 +13722,7 @@
        "source_direction": 1,
        "source_field_id": "fev1_reversibility",
        "source_ids": [
-        "TAB-SRC-081"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6983496/"
        ],
        "support": {
         "lower": 0.0,
@@ -13783,7 +13783,7 @@
        "DEU"
       ],
       "site_count": 214,
-      "source_id": "TAB-SRC-081"
+      "source_id": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6983496/"
      },
      "safety_event_category": "immune system disorders",
      "safety_event_definition": "TE-S16:safety_definition",
@@ -13867,14 +13867,14 @@
     "safety_handling_id": "safety_reported_separately_from_primary_efficacy",
     "secondary_endpoint_ids": [],
     "source_ids": [
-     "TAB-SRC-001",
-     "TAB-SRC-004",
-     "TAB-SRC-014",
-     "TAB-SRC-052",
-     "TAB-SRC-059",
-     "TAB-SRC-074",
-     "TAB-SRC-078",
-     "TAB-SRC-081"
+     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/e9r1-statistical-principles-clinical-trials-addendum-estimands-and-sensitivity-analysis-clinical",
+     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/adjusting-covariates-randomized-clinical-trials-drugs-and-biological-products",
+     "https://doi.org/10.1111/j.0006-341X.2000.00779.x",
+     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/m11-clinical-electronic-structured-harmonised-protocol",
+     "https://pmc.ncbi.nlm.nih.gov/articles/PMC3983405/",
+     "https://doi.org/10.1164/rccm.200801-060ST",
+     "https://doi.org/10.1056/NEJMoa1804093",
+     "https://pmc.ncbi.nlm.nih.gov/articles/PMC6983496/"
     ],
     "target_population": "all_randomized_participants",
     "treatment_effect_time_profile": null
@@ -14234,7 +14234,7 @@
        "source_direction": 1,
        "source_field_id": "sex_code",
        "source_ids": [
-        "TAB-SRC-084"
+        "https://academic.oup.com/eurheartj/article/43/27/2603/6546019"
        ],
        "support": null,
        "timing": {
@@ -14278,7 +14278,7 @@
        "source_direction": 1,
        "source_field_id": "diabetes",
        "source_ids": [
-        "TAB-SRC-084"
+        "https://academic.oup.com/eurheartj/article/43/27/2603/6546019"
        ],
        "support": null,
        "timing": {
@@ -14322,7 +14322,7 @@
        "source_direction": 1,
        "source_field_id": "atrial_arrhythmia",
        "source_ids": [
-        "TAB-SRC-084"
+        "https://academic.oup.com/eurheartj/article/43/27/2603/6546019"
        ],
        "support": null,
        "timing": {
@@ -14360,7 +14360,7 @@
        "source_direction": 1,
        "source_field_id": "body_mass_index",
        "source_ids": [
-        "TAB-SRC-084"
+        "https://academic.oup.com/eurheartj/article/43/27/2603/6546019"
        ],
        "support": {
         "lower": 15.0,
@@ -14401,7 +14401,7 @@
        "source_direction": 1,
        "source_field_id": "egfr",
        "source_ids": [
-        "TAB-SRC-084"
+        "https://academic.oup.com/eurheartj/article/43/27/2603/6546019"
        ],
        "support": {
         "lower": 5.0,
@@ -14460,7 +14460,7 @@
        "CAN"
       ],
       "site_count": 24,
-      "source_id": "TAB-SRC-084"
+      "source_id": "https://academic.oup.com/eurheartj/article/43/27/2603/6546019"
      },
      "safety_event_category": "vascular disorders",
      "safety_event_definition": "TE-S17:safety_definition",
@@ -14544,17 +14544,16 @@
     "safety_handling_id": "safety_reported_separately_from_primary_efficacy",
     "secondary_endpoint_ids": [],
     "source_ids": [
-     "TAB-SRC-001",
-     "TAB-SRC-004",
-     "TAB-SRC-052",
-     "TAB-SRC-059",
-     "TAB-SRC-084"
+     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/e9r1-statistical-principles-clinical-trials-addendum-estimands-and-sensitivity-analysis-clinical",
+     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/adjusting-covariates-randomized-clinical-trials-drugs-and-biological-products",
+     "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/m11-clinical-electronic-structured-harmonised-protocol",
+     "https://pmc.ncbi.nlm.nih.gov/articles/PMC3983405/",
+     "https://academic.oup.com/eurheartj/article/43/27/2603/6546019"
     ],
     "target_population": "all_randomized_participants",
     "treatment_effect_time_profile": null
    }
   ],
-  "source_commit": "0265376975f691b6dc7e3def020a298cea0b3710",
   "split": "public",
   "tier_only_reason": "shares declared mechanism parameters with a withheld cell",
   "release_numeric_decimal_places": 6,

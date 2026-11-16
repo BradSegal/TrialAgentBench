@@ -40,6 +40,6 @@ linear congruential state and the XSL RR 64-bit output permutation using exact
 16-bit limbs. Bounded draws use the buffered 32-bit Lemire algorithm.
 The statistical functions accept an authenticated declaration as their final
 argument. Computation and comparison are separate executable phases.
-The published leaderboard verification is conditional on the pipeline baseline's 84 stored task scores.
+The published leaderboard verification is conditional on the test-then-correct analysis's 84 stored task scores.
 }
 \keyword{internal}

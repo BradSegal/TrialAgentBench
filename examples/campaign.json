@@ -1,5 +1,5 @@
 {
-  "release_directory": "../release",
+  "release_directory": "../benchmark/full",
   "models": [
     {
       "name": "first",
