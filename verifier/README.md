@@ -59,7 +59,7 @@ uv run python -m trialagentbench_verifier.resources.truth_recovery \
 ```
 
 `EVALUATOR` is an extracted TrialEval evaluator release. Rows from the public bank carry the
-process-aware analysis only; add `--fixed-analyses benchmark/fixed-analyses` for the other fixed
+process-aware analysis only; add `--fixed-analyses fixed-analyses` for the other fixed
 analyses. For TrialDev, add `--trialdev-rankings`, `--oracle-values` and
 `--expected-oracle-values-sha256`.
 

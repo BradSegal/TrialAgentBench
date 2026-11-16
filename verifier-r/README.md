@@ -20,6 +20,6 @@ Rscript verifier-r/exec/verify.R rescore verification/scoring-rules.json \
 
 The declaration digest must come from the release checksum file. The runner refuses an altered declaration or an existing scoring output. Request tables use relative CSV paths. Responses preserve fit failures and include the R and dependency versions.
 
-Scoring operations cover TrialEval error, missing-answer completion, model effects and world bootstrap, and TrialDev study costs, approval, value and oracle-share intervals. Benchmark constants are read from the authenticated scoring declaration. The published leaderboard verification is conditional on the pipeline baseline's 84 stored task scores; it is a verification result, rather than an end-to-end rerun from the public dataset alone.
+Scoring operations cover TrialEval error, missing-answer completion, model effects and world bootstrap, and TrialDev study costs, approval, value and oracle-share intervals. Benchmark constants are read from the authenticated scoring declaration. The published leaderboard verification is conditional on the test-then-correct analysis's 84 stored task scores; it is a verification result, rather than an end-to-end rerun from the public dataset alone.
 
 Observation-process checks use released contact histories and the matching declared observation law. For S10–S13 a missing declaration is reported as unavailable. The caller owns participant/world namespaces and Holm adjustment.

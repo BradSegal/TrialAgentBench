@@ -2,11 +2,11 @@ Package: tabverify
 Type: Package
 Title: Independent TrialAgentBench Property Verification
 Version: 1.2.0
-Authors@R: person("Bradley", "Segal", role = c("aut", "cre"), email = "bradleymaxsegal@gmail.com")
+Authors@R: person("Bradley", "Segal", role = c("aut", "cre"), email = "bradley.segal@wolfson.ox.ac.uk")
 Description: Reconstructs declared trial analyses and parameter falsification
     tests from released tables, and independently recomputes declared benchmark
     scores without importing generation or scoring code.
-License: MIT + file LICENSE
+License: Apache License (== 2.0) | file LICENSE
 Encoding: UTF-8
 Depends: R (>= 4.5.1)
 Imports: digest, geepack, gmp, gsDesign, jsonlite, MASS, nlme, Rmpfr, sandwich, stats, survival, utils, yaml

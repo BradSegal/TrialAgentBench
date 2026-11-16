@@ -8,7 +8,7 @@ Run on a finished campaign, from a download of the release::
 
     python -m trialagentbench_verifier.resources.truth_recovery --campaign results/comparison \\
       --evaluator-catalog benchmark/full/trialeval-evaluator.assets.json --evaluator-catalog-sha256 "$CATALOG_SHA256" \\
-      --replay-bank replay-bank --replay-bank-sha256 "$REPLAY_BANK_SHA256" --fixed-analyses benchmark/fixed-analyses \\
+      --replay-bank replay-bank --replay-bank-sha256 "$REPLAY_BANK_SHA256" --fixed-analyses fixed-analyses \\
       --anchor-sha256 "$ANCHOR_SHA256" --sums benchmark/SHA256SUMS --tasks benchmark/full/TASKS.csv \\
       --oracle-values benchmark/oracle-values/trialdev_oracle_values.json \\
       --expected-oracle-values-sha256 "$ORACLE_SHA256" --output results/comparison/truth-recovery

@@ -30,7 +30,7 @@ Across 24 closed- and open-weight models, we find that the best agents can now a
 <p align="center">
   <img src="docs/figures/trialeval-models.png" alt="Average error on TrialEval for all models." width="440">
   <br>
-  <sub>Average error on TrialEval across all models with 95% intervals, compared to the baselines and to reporting no effect.</sub>
+  <sub>Average error on TrialEval across all models with 95% intervals, compared to the baselines and to guessing no effect.</sub>
 </p>
 
 <p align="center">
@@ -45,7 +45,7 @@ We validate the simulation against what we know about real clinical trials:
 - **The trials resemble real trials.** Their size and conduct fall within, or close to, the range of held-out registry and published trials.
 - **Effect sizes are realistic.** 25.5% of z-statistics are beyond 1.96, against 26.2% expected from Cochrane reviews.
 - **The analysis code is independently reproducible.** The scored estimators agree with an independent R implementation on generated datasets, and the analysis code matches an independent calculation on real randomised trials.
-- **Scores are reliable.** We score each model on two random halves of tasks and find similar rankings. The split-half reliability, adjusted for the full set of tasks, is 0.89 for both suites (1 is a perfect match).
+- **Scores are reliable.** We score each model on two random halves of tasks and find similar rankings. The split-half reliability, adjusted for the full set of tasks, is 0.895 for both suites (1 is a perfect match).
 
 <p align="center">
   <img src="docs/figures/validation.png" alt="Validation of the simulated trials and scores." width="760">
@@ -67,6 +67,17 @@ uv run trialagentbench demo run --output results/demo
 
 The demo runs a scripted analyst in about a minute once the image is built. No API key or download is required, and the demo does not score any model. Open `results/demo/index.html`.
 
+## TrialAgentBench run configuration
+
+Users pick the model, tasks and run limits; prices, rules and worlds are fixed in the release, which keeps scores comparable.
+
+| You choose freely | You choose among released values | Fixed in the release |
+| --- | --- | --- |
+| Model, upstream route, reasoning effort, temperature, seed, output tokens | Tasks and panels | Study costs, profit and prices of harm, discount rate, six-year clock, approval rule |
+| Turn and time limits; language (Python, R or both) | Context level (5) | Phase limits and the action set |
+| Checklist help (TrialEval); reporting interface | Raw or analysis-ready view | Sandbox image and resource limits; no network |
+| Repetitions, concurrency, spend and rate limits, retries, dispatch order | Budget level, clinical programme, portfolio size | World parameters and true effects |
+
 ## Documentation
 
 | Document | Purpose |
@@ -75,6 +86,8 @@ The demo runs a scripted analyst in about a minute once the image is built. No A
 | [Methods](docs/METHODS.md) | Clinical questions, the choices an agent has, scoring |
 | [Verifier](verifier/README.md) | Verify a download and re-score a campaign without the harness |
 | [Examples](examples/README.md) | Configurations, a scripted walkthrough, your own agent, the rule-based developer |
+
+Contact: [bradley.segal@wolfson.ox.ac.uk](mailto:bradley.segal@wolfson.ox.ac.uk).
 
 ## Citation and licence
 
